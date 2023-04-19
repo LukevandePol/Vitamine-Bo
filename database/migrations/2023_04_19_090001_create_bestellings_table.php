@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bestellings', function (Blueprint $table) {
-            $table->Uuid();
+            $table->id();
             $table->integer('prijsInCenten');
             $table->date('gemaaktOpDatum');
             $table->date('bezorgDatum');
