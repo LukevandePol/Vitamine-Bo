@@ -22,7 +22,8 @@ class FruitFactory extends Factory
             'mandarijn',
             'banaan',
             'kiwi',
-            'sinasappel'
+            'sinasappel',
+            'peer'
         ];
         $products = Product::all()->pluck('id')->toArray();
 

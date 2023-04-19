@@ -17,10 +17,24 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
+        $product_namen = [
+            'krat',
+            'mandje',
+            'vierkante bak',
+            'houten kist',
+            'brievenbus flessenpost',
+            'duo brievenbus flessenpost',
+            'flessenpost meloen',
+            'flessenpost perzik',
+            'flessenpost spinazie',
+            'flessenpost bosvruchten',
+            'flessenpost aardbei',
+            'flessenpost sinaasappel'
+        ];
         $bestellings = Bestelling::all()->pluck('id')->toArray();
 
         return [
-            'naam' => $this->faker->name(),
+            'naam' => $this->faker->randomElement($product_namen),
             'bestelling_id' => $this->faker->randomElement($bestellings)
         ];
     }
