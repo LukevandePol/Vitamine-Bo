@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Bestelling;
+use App\Models\Fruit;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
 
@@ -24,5 +25,7 @@ class DatabaseSeeder extends Seeder
         Bestelling::factory(3)->create();
 
         Product::factory(10)->create();
+
+        Fruit::factory(100)->create();
     }
 }
