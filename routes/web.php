@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('registratie', [RegisterController::class, 'create']);
-Route::post('registratie', [RegisterController::class, 'store']);
+Route::get('registratie', [RegisterController::class, 'create'])->middleware('guest');
+Route::post('registratie', [RegisterController::class, 'store'])->middleware('guest');
