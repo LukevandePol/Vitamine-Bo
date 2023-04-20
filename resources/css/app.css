@@ -3,24 +3,26 @@ body {
     margin: 0px;
     padding: 0px;
 }
-.banner svg {
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
+.banner {
+    position: relative;
+    width: 100%;
+    height: auto;
 }
 
 .banner svg {
-    position: relative;
-    top: 0;
-    left: 0;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
     width: 100%;
-    margin-bottom: -5px;
 }
 
 .picture-container {
-    width: 120px;
+    position: absolute;
+    top: 8.7%;
+    left: 7.8%;
+    width: 11%;
 }
 
 .picture-container img {
     max-width: 100%;
     height: auto;
-    top: 0px;
 }
+
