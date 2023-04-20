@@ -1,3 +1,63 @@
+.banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.banner svg {
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
+    width: 100%;
+}
+
+.picture-container {
+    position: absolute;
+    top: 8.7%;
+    left: 7.8%;
+    width: 11%;
+}
+
+.picture-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.form-label {
+    border-radius: 10px;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+}
+
+.button-login{
+    background-color: #64BFEC;
+    padding: 15px;
+    border-radius: 10px;
+
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 100%;
+    margin-bottom: 25px;
+
 @font-face {
     font-family: 'geovanaregular';
     src: url('/public/fonts/geovana-webfont.woff2') format('woff2'),
