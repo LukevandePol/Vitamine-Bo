@@ -1,0 +1,26 @@
+body {
+    background: cadetblue;
+    margin: 0px;
+    padding: 0px;
+}
+.banner svg {
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
+}
+
+.banner svg {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: -5px;
+}
+
+.picture-container {
+    width: 120px;
+}
+
+.picture-container img {
+    max-width: 100%;
+    height: auto;
+    top: 0px;
+}
