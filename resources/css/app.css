@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'geovanaregular';
+    src: url('/public/fonts/geovana-webfont.woff2') format('woff2'),
+         url('/public/fonts/geovana-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'avenir_nextultra_light';
+    src: url('/public/fonts/avenirnext-ultralight-webfont.woff2') format('woff2'),
+         url('/public/fonts/avenirnext-ultralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bo-hoofdkleur {
+    color: rgb(99,190,235);
+}
+
+.bo-bijkleur-grijs {
+    color: rgb(77,77,77);
+}
+
+.bo-bijkleur-wit {
+    color: rgb(246,246,246);
+}
+
+body{
+    background-color: rgb(246,246,246);
+}
+
+h1, h2, h3{
+    font-family: 'geovanaregular', cursive;
+    color: rgb(77,77,77);
+}
+
+p{
+    font-family: 'avenir_nextultra_light', sans-serif;
+    color: rgb(77,77,77);
+}
