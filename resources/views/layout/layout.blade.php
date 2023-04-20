@@ -8,7 +8,7 @@
 
         <title>Vitamine Bo {{ $title ?? '' }}</title>
 
-        @vite(['resources/css/app.cs', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="antialiased">
         {{ $slot }}
