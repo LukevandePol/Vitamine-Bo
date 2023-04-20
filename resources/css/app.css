@@ -1,8 +1,9 @@
 body {
-    background: cadetblue;
+    background: #F5F5F5;
     margin: 0px;
     padding: 0px;
 }
+/*Header*/
 .banner {
     position: relative;
     width: 100%;
@@ -26,3 +27,47 @@ body {
     height: auto;
 }
 
+/*Login*/
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+
+.form-floating {
+    margin-bottom: 20px;
+    border-radius: 10px;
+
+}
+
+}
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.button-login{
+    background-color: #64BFEC;
+    padding: 15px;
+    border-radius: 10px;
+}
