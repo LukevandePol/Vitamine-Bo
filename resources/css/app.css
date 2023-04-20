@@ -1,0 +1,47 @@
+.bo-hoofdkleur {
+    color: rgb(99,190,235);
+}
+
+.bo-bijkleur-grijs {
+    color: rgb(77,77,77);
+}
+
+.bo-bijkleur-wit {
+    color: rgb(246,246,246);
+}
+
+body{
+    background-color: rgb(246,246,246);
+}
+
+h1,h2,h3{
+    font-family: Geovana;
+    color: rgb(77,77,77);
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3{
+
+}
+
+p{
+    font-family: AvenirNext;
+    color: rgb(77,77,77);
+}
+
+@font-face {
+    font-family: Geovana;
+    src: url('/fonts/Geovana.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: AvenirNext;
+    src: url('/fonts/AvenirNext-UltraLight.ttf');
+}
