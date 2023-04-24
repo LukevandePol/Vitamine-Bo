@@ -1,21 +1,24 @@
 <x-layout :title="'- Inloggen'">
-    <form method="POST" action="/inloggen">
-        @csrf
+    <main class="w-100">
+        <x-card>
+            <div class="center">
+                <img src="/images/Logo.PNG" class="logo" alt="Logo">
+            </div>
+            <h1 class="h3 mb-3 fw-normal">Log in</h1>
 
-        <div>
-            <label for="email">E-mailadres</label>
-            <input type="email" name="email" id="email">
+            <form method="POST" action="/inloggen">
+                @csrf
 
-            @error('email')
-                <p>{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div>
-            <label for="password">Wachtwoord</label>
-            <input type="password" name="password" id="password">
-        </div>
-
-        <button type="submit">Inloggen</button>
-    </form>
+                <x-input label="E-mailadres" type="email" name="email" />
+                <x-input label="Wachtwoord" type="password" name="password" />
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="remember" name="remember">
+                    <label class="form-check-label" for="remember">
+                        Onthoud mij
+                    </label>
+                </div>
+                <x-submit>Inloggen</x-submit>
+            </form>
+        </x-card>
+    </main>
 </x-layout>

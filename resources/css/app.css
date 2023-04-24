@@ -53,9 +53,9 @@ main {
     align-items: center;
 }
 
-.logo {
-    width: 100%;
-    margin-bottom: 25px;
+.auth-card .logo {
+    width: 82px;
+    height: 67px;
 }
 
 /**
