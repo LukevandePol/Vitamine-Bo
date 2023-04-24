@@ -1,5 +1,5 @@
 <x-layout :title="'- Registratie'">
-    <form method="POST" action="/registratie">
+    <form method="POST" action="/registreren">
         @csrf
 
         <div>
