@@ -1,42 +1,24 @@
-<x-layout :title="'- Registratie'">
-    <form method="POST" action="/registratie">
-        @csrf
+<x-layout :title="'- Registreren'">
+    <main class="w-100">
+        <x-card>
+            <div class="center">
+                <img src="/images/Logo.png" class="logo" alt="Logo">
+            </div>
 
-        <div>
-            <label for="name">Naam:</label>
-            <input type="text" name="name" id="name" required>
-        </div>
+            <h1 class="h3 mb-3 fw-normal">Registreren</h1>
 
-        <div>
-            <label for="password">Wachtwoord:</label>
-            <input type="password" name="password" id="password" required>
-        </div>
+            <form method="POST" action="/registreren">
+                @csrf
 
-        <div>
-            <label for="kvknummer">KvK nummer:</label>
-            <input type="number" name="kvknummer" id="kvknummer" required>
-        </div>
-
-        <div>
-            <label for="adres">Adres:</label>
-            <input type="text" name="adres" id="adres" required>
-        </div>
-
-        <div>
-            <label for="telefoon">Telefoonnummer:</label>
-            <input type="number" name="telefoon" id="telefoon" required>
-        </div>
-
-        <div>
-            <label for="postcode">Postcode:</label>
-            <input type="text" name="postcode" id="postcode" required>
-        </div>
-
-        <div>
-            <label for="email">E-mailadres:</label>
-            <input type="email" name="email" id="email" required>
-        </div>
-
-        <button type="submit">Registreren</button>
-    </form>
+                <x-input label="Naam:" name="email" />
+                <x-input label="Wachtwoord:" type="password" name="password" />
+                <x-input label="KvK nummer:" type="number" name="kvknummer" placeholder="8 cijfers" />
+                <x-input label="Adres:" name="adres" />
+                <x-input label="Telefoonnummer:" type="number" name="telefoon" />
+                <x-input label="Postcode:" name="postcode" />
+                <x-input label="E-mailadres:" type="email" name="email" />
+                <x-submit>Registreren</x-submit>
+            </form>
+        </x-card>
+    </main>
 </x-layout>

@@ -1,3 +1,12 @@
 <x-layout :title="'- Home'">
-    <strong>Database Connected: </strong> <?php try { \DB::connection()->getPDO(); echo \DB::connection()->getDatabaseName(); } catch (\Exception $e) { echo 'None'; } ?>
+
+    <form method="POST" action="/uitloggen">
+        @csrf
+        @auth
+            <button type="submit">Log Out</button>
+        @else
+            <a href="/inloggen">Inloggen</a>
+            <a href="/registreren">Registreren</a>
+        @endauth
+    </form>
 </x-layout>
