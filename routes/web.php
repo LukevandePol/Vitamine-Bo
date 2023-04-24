@@ -25,4 +25,4 @@ Route::post('registreren', [RegisterController::class, 'store'])->middleware('gu
 Route::get('inloggen', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('inloggen', [SessionsController::class, 'store'])->middleware('guest');
 
-Route::post('uitloggen', [SessionsController::class, 'destroy'])->middleware('auth');
+Route::post('uitloggen', [SessionsController::class, 'destroy']);
