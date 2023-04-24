@@ -3,7 +3,7 @@
         <polygon points="210 290.5 0 229.5 0 0 12520 0" fill="#FEFEFE" stroke="#F6F6F6" stroke-width="15" filter="url(#dropshadow)"/>
     </svg>
     <div class="logo-wrapper">
-        <img src="/images/Logo.PNG" class="img-fluid w-100" alt="logo">
+        <img src="/images/Logo.png" class="img-fluid w-100" alt="logo">
     </div>
 </header>
 

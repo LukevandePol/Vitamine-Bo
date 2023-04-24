@@ -1,5 +1,17 @@
 /**
- * Font Face
+ * Inhoudsopgave
+ * =============================
+ * 01. Font Face
+ * 02. Algemeen
+ * 03. Utilities
+ * 04. Header
+ * 05. Authenticatie
+ * 06. Form
+ */
+
+
+/**
+ * 01. Font Face
  */
 @font-face {
     font-family: 'geovanaregular';
@@ -18,7 +30,7 @@
 }
 
 /**
- * General
+ * 02. Algemeen
  */
 .bo-hoofdkleur {
     color: rgb(99,190,235);
@@ -59,7 +71,7 @@ main {
 }
 
 /**
- * Utilities
+ * 03. Utilities
  */
 .center{
     display: flex;
@@ -68,7 +80,7 @@ main {
 }
 
 /**
- * Header
+ * 04. Header
  */
 header {
     position: relative;
@@ -94,24 +106,29 @@ header {
 }
 
 /**
- * Authentication
+ * 05. Authenticatie
  */
 .auth-card {
     width: 25rem;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 /**
- * Form
+ * 06. Form
  */
 .form-label {
     border-radius: 10px;
 }
 
+.form-control::placeholder {
+    color: #9e9e9e;
+}
+
 .button-submit {
     background-color: #64BFEC;
-    padding: 15px;
+    border: none;
+    padding: 10px 20px;
     border-radius: 10px;
-
 }
