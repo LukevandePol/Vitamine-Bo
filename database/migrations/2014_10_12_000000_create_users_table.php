@@ -14,16 +14,17 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('password');
-            $table->string('kvknummer');
-            $table->string('adres');
-            $table->string('telefoon');
-            $table->string('postcode');
             $table->string('email')->unique();
-            $table->boolean('kanAanpassen')->default(true);
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->enum('rol',
+                [
+                'administrator',
+                'bo_medewerker',
+                'klant'
+            ]);
         });
     }
 
