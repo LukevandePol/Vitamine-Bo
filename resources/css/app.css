@@ -1,67 +1,10 @@
-.banner {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-
-.banner svg {
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
-    width: 100%;
-}
-
-.picture-container {
-    position: absolute;
-    top: 8.7%;
-    left: 7.8%;
-    width: 11%;
-}
-
-.picture-container img {
-    max-width: 100%;
-    height: auto;
-}
-
-main {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card {
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-.form-label {
-    border-radius: 10px;
-}
-
-.form-signin {
-    max-width: 330px;
-    padding: 15px;
-}
-
-.button-login{
-    background-color: #64BFEC;
-    padding: 15px;
-    border-radius: 10px;
-
-}
-
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo {
-    width: 100%;
-    margin-bottom: 25px;}
-
+/**
+ * Font Face
+ */
 @font-face {
     font-family: 'geovanaregular';
     src: url('/public/fonts/geovana-webfont.woff2') format('woff2'),
-         url('/public/fonts/geovana-webfont.woff') format('woff');
+    url('/public/fonts/geovana-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -69,11 +12,14 @@ main {
 @font-face {
     font-family: 'avenir_nextultra_light';
     src: url('/public/fonts/avenirnext-ultralight-webfont.woff2') format('woff2'),
-         url('/public/fonts/avenirnext-ultralight-webfont.woff') format('woff');
+    url('/public/fonts/avenirnext-ultralight-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
+/**
+ * General
+ */
 .bo-hoofdkleur {
     color: rgb(99,190,235);
 }
@@ -86,16 +32,86 @@ main {
     color: rgb(246,246,246);
 }
 
-body{
+body {
     background-color: rgb(246,246,246);
 }
 
-h1, h2, h3{
+h1, h2, h3 {
     font-family: 'geovanaregular', cursive;
     color: rgb(77,77,77);
 }
 
-p{
+p {
     font-family: 'avenir_nextultra_light', sans-serif;
     color: rgb(77,77,77);
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+/**
+ * Utilities
+ */
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/**
+ * Header
+ */
+header {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.header svg {
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
+    width: 100%;
+}
+
+.logo-wrapper {
+    position: absolute;
+    top: 8.7%;
+    left: 7.8%;
+    width: 11%;
+}
+
+.logo-wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+/**
+ * Authentication
+ */
+.auth-card {
+    width: 25rem;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * Form
+ */
+.form-label {
+    border-radius: 10px;
+}
+
+.button-submit {
+    background-color: #64BFEC;
+    padding: 15px;
+    border-radius: 10px;
+
 }
