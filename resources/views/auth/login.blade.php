@@ -2,7 +2,7 @@
     <main class="w-100">
         <x-card>
             <div class="center">
-                <img src="/images/Logo.PNG" class="logo" alt="Logo">
+                <img src="/images/Logo.png" class="logo" alt="Logo">
             </div>
             <h1 class="h3 mb-3 fw-normal">Log in</h1>
 
