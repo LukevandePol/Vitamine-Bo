@@ -10,7 +10,7 @@
             <form method="POST" action="/registreren">
                 @csrf
 
-                <x-input label="Naam:" name="email" />
+                <x-input label="Naam:" name="name" />
                 <x-input label="Wachtwoord:" type="password" name="password" />
                 <x-input label="KvK nummer:" type="number" name="kvknummer" placeholder="8 cijfers" />
                 <x-input label="Adres:" name="adres" />
