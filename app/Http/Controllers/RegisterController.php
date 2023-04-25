@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Klantgegevens;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,22 @@ class RegisterController extends Controller
 
         $attributes['password'] = bcrypt($attributes['password']);
 
-        $user = User::create($attributes);
+        $usergegevens = [
+            'name' => $attributes['name'],
+            'password' => bcrypt($attributes['password']),
+            'email' => $attributes['email']
+        ];
+        $user = User::create($usergegevens); // !
+
+        $klantgegevens = [
+            'kvkNummer'=> $attributes['kvknummer'],
+            'telefoonnummer' => $attributes['telefoon'],
+            'postcode'=> $attributes['postcode'],
+            'adres' => $attributes['adres'],
+            'user_id' => $user->id
+        ];
+
+        $klantgegevens = Klantgegevens::create($klantgegevens);
 
         auth()->login($user);
 
