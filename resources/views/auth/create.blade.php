@@ -17,6 +17,7 @@
                 <x-input label="Telefoonnummer:" type="number" name="telefoon" />
                 <x-input label="Postcode:" name="postcode" />
                 <x-input label="E-mailadres:" type="email" name="email" />
+
                 <x-submit>Registreren</x-submit>
             </form>
         </x-card>

@@ -42,7 +42,7 @@ class RegisterController extends Controller
             'user_id' => $user->id
         ];
 
-        $klantgegevens = Klantgegevens::create($klantgegevens);
+        Klantgegevens::create($klantgegevens);
 
         auth()->login($user);
 
