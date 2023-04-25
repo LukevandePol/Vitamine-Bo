@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bestelling extends Model
 {
-    public $timestamps = false;
     use HasFactory;
 
     public function user()

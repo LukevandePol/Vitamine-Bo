@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bestellings', function (Blueprint $table) {
+        Schema::create('klantgegevens', function (Blueprint $table) {
             $table->id();
-            $table->integer('prijsInCenten');
-            $table->date('gemaaktOpDatum');
-            $table->date('bezorgDatum');
-            $table->date('betaalDatum')->nullable();
+            $table->timestamps();
+            $table->integer('kvkNummer');
+            $table->String('telefoonnummer');
+            $table->date('aanpassingBevestigdDatum')->nullable();
+            $table->foreignId('user_id')->constrained();
         });
     }
 
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bestellings');
+        Schema::dropIfExists('klantgegevens');
     }
 };

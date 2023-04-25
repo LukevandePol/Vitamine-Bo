@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use Faker\Generator as Faker;
-use App\Models\Bestelling;
+use App\Models\Adres;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,14 +18,17 @@ class BestellingFactory extends Factory
      */
     public function definition(): array
     {
+        $user = User::all()->pluck('id')->toArray();
+        $adres = Adres::all()->pluck('id')->toArray();
+
         return [
-            'prijsInCenten' => $this->faker->numberBetween(1000,10000),
-            'gemaaktOpDatum' => $this->faker->dateTimeBetween('-3 weeks', 'now'),
-            'bezorgDatum' => $this->faker->dateTimeBetween( 'now', '+3 weeks'),
+            'prijsInCenten' => $this->faker->numberBetween(1000, 10000),
+            'bezorgDatum' => $this->faker->dateTimeBetween('now', '+3 weeks'),
             'betaalDatum' => $this->faker->dateTimeBetween('-2 weeks', 'now'),
+            'bezorgAdres' => $this->faker->randomElement($adres),
+            'factuurAdres' => $this->faker->randomElement($adres),
+            'user_id' => $this->faker->randomElement($user),
         ];
-
-
     }
 
 
