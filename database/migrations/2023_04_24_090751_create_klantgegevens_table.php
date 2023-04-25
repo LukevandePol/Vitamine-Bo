@@ -18,7 +18,7 @@ return new class extends Migration
             $table->String('telefoonnummer');
             $table->String('postcode');
             $table->String('adres');
-            $table->date('aanpassingBevestigdDatum');
+            $table->date('aanpassingBevestigdDatum')->nullable();
             $table->foreignId('user_id')->constrained();
         });
     }
