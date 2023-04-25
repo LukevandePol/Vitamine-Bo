@@ -21,10 +21,10 @@ return new class extends Migration
             $table->timestamps();
             $table->enum('rol',
                 [
+                'administrator',
                 'klant',
-                'bo_medewerker',
-                'administrator'
-            ]);
+                'bo_medewerker'
+            ])->default('klant');
         });
     }
 
