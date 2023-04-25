@@ -29,6 +29,7 @@ class FruitFactory extends Factory
 
         return [
             'naam' => $this->faker->randomElement($fruit_namen),
+            'aantal' => $this->faker->randomNumber(1,12),
             'product_id' =>$this->faker->randomElement($products)
         ];
     }

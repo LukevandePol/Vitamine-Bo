@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('fruits', function (Blueprint $table) {
             $table->id();
             $table->string('naam');
+            $table->integer('aantal');
             $table->foreignId('product_id')->constrained();
         });
     }
