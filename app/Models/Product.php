@@ -9,4 +9,14 @@ class Product extends Model
 {
     public $timestamps = false;
     use HasFactory;
+
+    public function bestelling()
+    {
+        return $this->belongsTo('App\Models\Bestelling');
+    }
+
+    public function fruit()
+    {
+        return $this->hasMany('App\Models\Fruit');
+    }
 }
