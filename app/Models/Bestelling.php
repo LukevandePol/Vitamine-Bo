@@ -18,4 +18,9 @@ class Bestelling extends Model
     {
         return $this->hasMany('App\Models\Product');
     }
+
+    public function adres()
+    {
+        return $this->hasMany('App\Models\Adres');
+    }
 }
