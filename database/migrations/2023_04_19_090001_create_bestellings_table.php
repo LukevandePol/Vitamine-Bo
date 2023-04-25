@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('prijsInCenten');
             $table->date('gemaaktOpDatum');
             $table->date('bezorgDatum');
-            $table->date('betaalDatum');
+            $table->date('betaalDatum')->nullable();
         });
     }
 
