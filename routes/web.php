@@ -16,9 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [SessionsController::class, 'index'])->middleware(['auth', 'status']);
+Route::get('/niet-goedgekeurd', function () {
+    return view('niet-goedgekeurd');
+})->name('niet-goedgekeurd');
 
 Route::get('registreren', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('registreren', [RegisterController::class, 'store'])->middleware('guest');
@@ -32,7 +33,3 @@ Route::post('uitloggen', [SessionsController::class, 'destroy'])->middleware('au
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 });
-
-//Route::get('admin', function () {
-//    return view('admin.dashboard');
-//});
