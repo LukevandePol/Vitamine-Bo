@@ -6,13 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Fruit extends Model
+class Adres extends Model
 {
-    public $timestamps = false;
     use HasFactory;
 
-    public function product(): BelongsTo
+    public function klantgegevens(): BelongsTo
     {
-        return $this->belongsTo('App\Models\Product');
+        return $this->belongsTo('App\Models\Klantgegevens');
     }
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Adres;
 use App\Models\Bestelling;
 use App\Models\Fruit;
 use App\Models\Klantgegevens;
@@ -43,6 +44,9 @@ class DatabaseSeeder extends Seeder
 
         User::factory(10)->create();
 
+        Klantgegevens::factory(5)->create();
+
+        Adres::factory(5)->create();
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
@@ -54,6 +58,5 @@ class DatabaseSeeder extends Seeder
 
         Fruit::factory(500)->create();
 
-        Klantgegevens::factory(3)->create();
     }
 }

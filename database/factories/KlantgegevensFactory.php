@@ -2,11 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Klantgegevens;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Klantgegevens>
+ * @extends Factory<Klantgegevens>
  */
 class KlantgegevensFactory extends Factory
 {
@@ -22,8 +23,6 @@ class KlantgegevensFactory extends Factory
         return [
             'kvkNummer' => $this->faker->NumberBetween(10000000, 99999999),
             'telefoonnummer' => $this->faker->phoneNumber(),
-            'postcode' => $this->faker->postcode(),
-            'adres' => $this->faker->numberBetween(1,1000),
             'aanpassingBevestigdDatum' => $this->faker->dateTimeBetween('-5 weeks', 'now'),
             'user_id' => $this->faker->randomElement($users)
         ];
