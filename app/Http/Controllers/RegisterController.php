@@ -25,8 +25,6 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255'
         ]);
 
-        $attributes['password'] = bcrypt($attributes['password']);
-
         $usergegevens = [
             'name' => $attributes['name'],
             'password' => bcrypt($attributes['password']),
