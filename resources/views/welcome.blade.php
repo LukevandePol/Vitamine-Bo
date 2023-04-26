@@ -1,12 +1,12 @@
 <x-layout title="- Home">
+    @auth
+        <form method="POST" action="/uitloggen">
+            @csrf
 
-    <form method="POST" action="/uitloggen">
-        @csrf
-        @auth
             <button type="submit">Log Out</button>
-        @else
-            <a href="/inloggen">Inloggen</a>
-            <a href="/registreren">Registreren</a>
-        @endauth
-    </form>
+        </form>
+    @else
+        <a href="/inloggen">Inloggen</a>
+        <a href="/registreren">Registreren</a>
+    @endauth
 </x-layout>
