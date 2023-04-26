@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->timestamps();
             $table->String('postcode');
             $table->String('adres');
-            $table->string('plaatsnaam');
+            $table->string('plaatsnaam')->nullable();
             $table->foreignId('klantgegevens_id')->constrained();
         });
     }

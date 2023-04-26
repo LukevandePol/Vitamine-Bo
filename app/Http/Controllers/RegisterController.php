@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Adres;
 use App\Models\Klantgegevens;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -35,14 +35,18 @@ class RegisterController extends Controller
         $user = User::create($usergegevens); // !
 
         $klantgegevens = [
-            'kvkNummer'=> $attributes['kvknummer'],
+            'kvkNummer' => $attributes['kvknummer'],
             'telefoonnummer' => $attributes['telefoon'],
-            'postcode'=> $attributes['postcode'],
-            'adres' => $attributes['adres'],
             'user_id' => $user->id
         ];
+        $klantgegevens = Klantgegevens::create($klantgegevens);
 
-        Klantgegevens::create($klantgegevens);
+        $adresgegevens = [
+            'postcode' => $attributes['postcode'],
+            'adres' => $attributes['adres'],
+            'klantgegevens_id' => $klantgegevens->id
+        ];
+        Adres::create($adresgegevens);
 
         auth()->login($user);
 

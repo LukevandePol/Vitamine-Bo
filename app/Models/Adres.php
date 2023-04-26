@@ -10,6 +10,7 @@ class Adres extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
     public function klantgegevens(): BelongsTo
     {
         return $this->belongsTo('App\Models\Klantgegevens');
