@@ -3,11 +3,12 @@
 namespace Database\Factories;
 
 use App\Models\Adres;
+use App\Models\Bestelling;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Bestelling>
+ * @extends Factory<Bestelling>
  */
 class BestellingFactory extends Factory
 {

@@ -2,11 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Adres;
 use App\Models\Klantgegevens;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Adres>
+ * @extends Factory<Adres>
  */
 class AdresFactory extends Factory
 {

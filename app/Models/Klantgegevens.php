@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Klantgegevens extends Model
 {
@@ -11,12 +13,12 @@ class Klantgegevens extends Model
 
     protected $guarded = [];
 
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo('App\Models\User');
     }
 
-    public function adres()
+    public function adres(): HasMany
     {
         return $this->hasMany('App\Models\Adres');
     }
