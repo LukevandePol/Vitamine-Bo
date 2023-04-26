@@ -2,7 +2,7 @@
     <main class="w-100">
         <x-card>
             <div class="center mb-5">
-                <img src="/images/Logo.png" class="logo" alt="Logo">
+                <x-logo/>
             </div>
 
             <h3 class="mb-3">Welkom, {{ ucwords(auth()->user()->name) }}!</h3>
