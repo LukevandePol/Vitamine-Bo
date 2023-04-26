@@ -1,4 +1,4 @@
-<x-layout :title="'- Inloggen'">
+<x-layout title="- Inloggen">
     <main class="w-100">
         <x-card>
             <div class="center">

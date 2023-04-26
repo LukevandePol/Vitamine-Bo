@@ -1,4 +1,4 @@
-<x-layout :title="'- Registreren'">
+<x-layout title="- Registreren">
     <main class="w-100">
         <x-card>
             <div class="center">

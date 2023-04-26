@@ -1,4 +1,4 @@
-<x-layout :title="'- Home'">
+<x-layout title="- Home">
 
     <form method="POST" action="/uitloggen">
         @csrf
