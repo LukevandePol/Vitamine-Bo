@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,16 @@ Route::get('/', function () {
 Route::get('registreren', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('registreren', [RegisterController::class, 'store'])->middleware('guest');
 
-Route::get('inloggen', [SessionsController::class, 'create'])->middleware('guest');
+Route::get('inloggen', [SessionsController::class, 'create'])->middleware('guest')->name('inloggen');
 Route::post('inloggen', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('uitloggen', [SessionsController::class, 'destroy'])->middleware('auth');
+
+// Admin
+Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+});
+
+//Route::get('admin', function () {
+//    return view('admin.dashboard');
+//});
