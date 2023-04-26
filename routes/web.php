@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KlantAccountAanpassenController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('account', function () {
+    return view('account');
+})->middleware('auth');
+
+
+Route::post('emailAanpassen', [KlantAccountAanpassenController::class, 'emailAanpassen'])->middleware('auth');
 
 Route::get('registreren', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('registreren', [RegisterController::class, 'store'])->middleware('guest');

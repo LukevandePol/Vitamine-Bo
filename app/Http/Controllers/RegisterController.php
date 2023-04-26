@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Adres;
 use App\Models\Klantgegevens;
 use App\Models\User;
+use Illuminate\View\View;
 
 class RegisterController extends Controller
 {
-    public function create()
+    public function create(): view
     {
         return view('auth.create');
     }
