@@ -25,7 +25,9 @@ Route::get('account', function () {
 })->middleware('auth');
 
 
-Route::post('emailAanpassen', [KlantAccountAanpassenController::class, 'emailAanpassen'])->middleware('auth');
+Route::post('updateEmail', [KlantAccountAanpassenController::class, 'updateEmail'])->middleware('auth');
+Route::post('updateNaam', [KlantAccountAanpassenController::class, 'updateNaam'])->middleware('auth');
+
 
 Route::get('registreren', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('registreren', [RegisterController::class, 'store'])->middleware('guest');

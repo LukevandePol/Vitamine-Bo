@@ -11,16 +11,31 @@ class KlantAccountAanpassenController extends Controller
         return view('account.blade');
     }
 
-    public function emailAanpassen()
+    public function updateEmail()
     {
         $attributes = request()->validate([
-            'email' => 'email'
+            'email' => ['required', 'email', 'max:255']
         ]);
 
         DB::table('users')
-            ->where('id', 3)
-            ->update(['email' => 'test@example.com']);
+            ->where('id', auth()->id())
+            ->update(['email' => $attributes['email']]);
 
         return redirect('/account');
+
+    }
+
+    public function updateNaam()
+    {
+        $attributes = request()->validate([
+            'naam' => ['required', 'max:255']
+        ]);
+
+        DB::table('users')
+            ->where('id', auth()->id())
+            ->update(['name' => $attributes['naam']]);
+
+        return redirect('/account');
+
     }
 }

@@ -23,7 +23,7 @@ class RegisterController extends Controller
             'adres' => 'required',
             'telefoon' => 'required',
             'postcode' => 'required',
-            'email' => 'required|email|max:255'
+            'email' => 'required|email|max:255' ##misschien nog |unique:users toevoegen
         ]);
 
         $usergegevens = [
