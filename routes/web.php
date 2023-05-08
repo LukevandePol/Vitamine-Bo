@@ -27,6 +27,7 @@ Route::get('account', function () {
 
 Route::post('updateEmail', [KlantAccountAanpassenController::class, 'updateEmail'])->middleware('auth');
 Route::post('updateNaam', [KlantAccountAanpassenController::class, 'updateNaam'])->middleware('auth');
+Route::post('updateTelefoon', [KlantAccountAanpassenController::class, 'updateTelefoon'])->middleware('auth');
 
 
 Route::get('registreren', [RegisterController::class, 'create'])->middleware('guest');
