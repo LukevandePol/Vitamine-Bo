@@ -14,7 +14,7 @@
                 <tr>
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
-                    <td>{{ $user->created_at }}</td>
+                    <td>{{ $user->created_at->format('Y-m-d') }}</td>
                     <td class="d-flex">
                         <form method="POST" action="{{ route('update.status', $user->id) }}">
                             @csrf
