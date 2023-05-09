@@ -6,6 +6,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Naam</th>
+                <th scope="col">Aangemaakt</th>
                 <th scope="col">Actie</th>
             </tr>
             </thead>
