@@ -11,9 +11,16 @@
             </thead>
             <tbody>
             @foreach($users as $user)
-                <tr>
+                <tr class="align-items-center">
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
+                    <td>
+                        <form method="POST" action="{{ route('update.status', $user->id) }}">
+                            @csrf
+
+                            <x-submit>Goedkeuren</x-submit>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
