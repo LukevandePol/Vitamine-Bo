@@ -3,7 +3,7 @@
         <form method="POST" action="/uitloggen">
             @csrf
 
-            <button type="submit">Log Out</button>
+            <x-submit>Uitloggen</x-submit>
         </form>
     @else
         <a href="/inloggen">Inloggen</a>
