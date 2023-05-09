@@ -18,4 +18,14 @@ class AdminController extends Controller
         return view('admin.goedkeuren', compact('users'));
 
     }
+
+    public function update($id)
+    {
+        $user = User::findOrFail($id);
+
+        $user->status = now();
+        $user->save();
+
+        return redirect()->back();
+    }
 }
