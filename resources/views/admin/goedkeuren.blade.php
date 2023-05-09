@@ -14,12 +14,18 @@
                 <tr>
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
-                    <td>
+                    <td>{{ $user->created_at }}</td>
+                    <td class="d-flex">
                         <form method="POST" action="{{ route('update.status', $user->id) }}">
                             @csrf
 
                             <x-submit class="btn btn-sm btn-success">
                                 <i class="fa-solid fa-check"></i>
+                            </x-submit>
+                        </form>
+                        <form action="#">
+                            <x-submit class="btn btn-sm btn-danger ms-3">
+                                <i class="fa-solid fa-xmark"></i>
                             </x-submit>
                         </form>
                     </td>
