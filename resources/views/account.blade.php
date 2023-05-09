@@ -3,7 +3,7 @@
     <a href="/">home</a>
 
     <p>{{$user}}</p>
-    <form action="/updateAccount" method="POST">
+    <form action="/updateUser" method="POST">
         @csrf
         <x-input label="E-mailadres:" type="email" name="email" :placeholder="$user->email"/>
         <x-input label="Naam" type="text" name="naam" :placeholder="$user->name"/>

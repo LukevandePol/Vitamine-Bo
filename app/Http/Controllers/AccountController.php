@@ -13,7 +13,7 @@ class AccountController extends Controller
         );
     }
 
-    public function updateAccount()
+    public function updateUser()
     {
         $attributes = request()->validate([
             'email' => ['required', 'email', 'max:255'],
