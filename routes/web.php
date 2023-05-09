@@ -32,4 +32,6 @@ Route::post('uitloggen', [SessionsController::class, 'destroy'])->middleware('au
 // Admin
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/admin/goedkeuren', [AdminController::class, 'approve'])->name('admin.approve');
+    Route::post('/admin/goedkeuren/{id}', [AdminController::class, 'update'])->name('update.status');
 });
