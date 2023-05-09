@@ -18,7 +18,9 @@
                         <form method="POST" action="{{ route('update.status', $user->id) }}">
                             @csrf
 
-                            <x-submit class="btn btn-sm btn-success">Goedkeuren</x-submit>
+                            <x-submit class="btn btn-sm btn-success">
+                                <i class="fa-solid fa-check"></i>
+                            </x-submit>
                         </form>
                     </td>
                 </tr>
