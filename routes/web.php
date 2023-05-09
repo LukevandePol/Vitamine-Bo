@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\KlantAccountAanpassenController;
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\KlantgegevensController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
@@ -20,15 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('account', function () {
-    return view('account');
-})->middleware('auth');
+Route::get('account', [AccountController::class, 'create'])->middleware('auth');
+Route::post('updateAccount', [AccountController::class, 'updateAccount'])->middleware('auth');
 
-
-Route::post('updateEmail', [KlantAccountAanpassenController::class, 'updateEmail'])->middleware('auth');
-Route::post('updateNaam', [KlantAccountAanpassenController::class, 'updateNaam'])->middleware('auth');
-Route::post('updateTelefoon', [KlantAccountAanpassenController::class, 'updateTelefoon'])->middleware('auth');
-
+Route::post('updateTelefoon', [KlantgegevensController::class, 'updateTelefoon'])->middleware('auth');
 
 Route::get('registreren', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('registreren', [RegisterController::class, 'store'])->middleware('guest');

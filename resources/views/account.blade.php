@@ -2,18 +2,11 @@
 
     <a href="/">home</a>
 
-    <form action="/updateEmail" method="POST">
+    <p>{{$user}}</p>
+    <form action="/updateAccount" method="POST">
         @csrf
-
-        <x-input label="E-mailadres:" type="email" name="email"/>
-
-        <x-submit>pas aan</x-submit>
-    </form>
-
-    <form action="/updateNaam" method="post">
-        @csrf
-
-        <x-input label="Naam" type="text" name="naam"></x-input>
+        <x-input label="E-mailadres:" type="email" name="email" :placeholder="$user->email"/>
+        <x-input label="Naam" type="text" name="naam" :placeholder="$user->name"/>
         <x-submit>pas aan</x-submit>
     </form>
 
