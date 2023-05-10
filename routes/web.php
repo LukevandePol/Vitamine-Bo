@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 
 Route::get('account', [AccountController::class, 'create'])->middleware('auth');
-Route::post('updateAccount', [AccountController::class, 'updateUser'])->middleware('auth');
+Route::post('updateUser', [AccountController::class, 'updateUser'])->middleware('auth');
 
 Route::post('updateTelefoon', [KlantgegevensController::class, 'updateTelefoon'])->middleware('auth');
 
