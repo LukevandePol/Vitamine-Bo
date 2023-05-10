@@ -38,16 +38,6 @@
     </form>
 
     @foreach($adressen as $adres)
-        <div>
-            <p>{{$adres->id}}</p>
-            <p>Postcode: 1234 ab</p>
-            <p>Adres: weg 12</p>
-            <p>Plaatsnaam: Dorp</p>
-
-            <a href="/AdresBewerken/{{$adres->id}}">
-                <button name="aanpassen" type="button">pas adres aan</button>
-            </a>
-            <button>verwijderen</button>
-        </div>
+        <x-adres :adres="$adres"></x-adres>
     @endforeach
 </x-layout>
