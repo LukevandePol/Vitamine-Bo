@@ -1,1 +1,1 @@
-<img src="/images/logo.webp" class="logo" alt="Logo">
+<img src="/images/logo.webp" class="logo" {{ $attributes }} alt="Logo">
