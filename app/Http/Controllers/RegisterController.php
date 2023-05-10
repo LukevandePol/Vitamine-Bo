@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Adres;
 use App\Models\Klantgegevens;
 use App\Models\User;
+use Illuminate\View\View;
 
 class RegisterController extends Controller
 {
-    public function create()
+    public function create(): view
     {
         return view('auth.create');
     }
@@ -16,13 +17,13 @@ class RegisterController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'name' => 'required|max:255',
-            'password' => 'required|min:8|max:255',
-            'kvknummer' => 'required|min:8|max:8',
-            'adres' => 'required',
-            'telefoon' => 'required',
-            'postcode' => 'required',
-            'email' => 'required|email|max:255'
+            'name' => ['required', 'max:255'],
+            'password' => ['required', 'min:8', 'max:255'],
+            'kvknummer' => ['required', 'min:8', 'max:8'],
+            'email' => ['required', 'email', 'max:255', 'unique:users'],
+            'telefoon' => ['required'],
+            'postcode' => ['required', 'min:6', 'max:7'],
+            'adres' => ['required'],
         ]);
 
         $usergegevens = [
