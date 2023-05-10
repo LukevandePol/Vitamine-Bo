@@ -22,8 +22,9 @@ class AdresController extends Controller
     {
 
         $attributes = request()->validate([
-            'postcode' => ['required', 'max:255'],
+            'postcode' => ['required', 'min:6', 'max:7'],
             'adres' => ['required', 'max:255'],
+            'plaatsnaam' => ['required']
         ]);
 
         DB::table('adres')
