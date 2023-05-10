@@ -1,12 +1,5 @@
 <x-layout title="- Home">
-    @auth
-        <form method="POST" action="/uitloggen">
-            @csrf
-
-            <x-submit>Uitloggen</x-submit>
-        </form>
-    @else
-        <a href="/inloggen">Inloggen</a>
-        <a href="/registreren">Registreren</a>
-    @endauth
+    <div class="container py-5">
+        <span class="h3">Welkom {{ ucwords(auth()->user()->name) }}</span>
+    </div>
 </x-layout>
