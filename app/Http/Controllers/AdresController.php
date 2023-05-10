@@ -31,7 +31,8 @@ class AdresController extends Controller
             ->where('id', $id)
             ->update([
                 'postcode' => $attributes['postcode'],
-                'adres' => $attributes['adres']
+                'adres' => $attributes['adres'],
+                'plaatsnaam' => $attributes['plaatsnaam'],
             ]);
 
         return redirect('/account');
