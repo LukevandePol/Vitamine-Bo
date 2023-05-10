@@ -8,8 +8,15 @@ class AccountController extends Controller
 {
     public function create()
     {
-        return view('account',
-            ['user' => auth()->user()],
+        $user = auth()->user();
+        $klantgegevens = $user->klantgegevens;
+        $adressen = $klantgegevens->adres;
+
+        return view('account', [
+                'user' => $user,
+                'klantgegevens' => $klantgegevens,
+                'adressen' => $adressen
+            ]
         );
     }
 
