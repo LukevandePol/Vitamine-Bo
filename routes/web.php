@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/component', function () {
+    return view('components');
+});
+
 Route::get('/', [SessionsController::class, 'index'])->middleware(['auth', 'status']);
 Route::get('/niet-goedgekeurd', function () {
     return view('niet-goedgekeurd');
