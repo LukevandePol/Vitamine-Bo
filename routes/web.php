@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\AdresController;
+use App\Http\Controllers\KlantgegevensController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
@@ -16,10 +19,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/component', function () {
+    return view('components');
+});
+
 Route::get('/', [SessionsController::class, 'index'])->middleware(['auth', 'status']);
 Route::get('/niet-goedgekeurd', function () {
     return view('niet-goedgekeurd');
 })->name('niet-goedgekeurd');
+
+Route::get('account', [AccountController::class, 'create'])->middleware('auth');
+Route::post('updateUser', [AccountController::class, 'updateUser'])->middleware('auth');
+
+Route::post('updateTelefoon', [KlantgegevensController::class, 'updateTelefoon'])->middleware('auth');
+
+Route::get('AdresBewerken/{id}', [AdresController::class, 'create'])->middleware('auth');
+Route::post('updateAdres/{id}', [AdresController::class, 'updateAdres'])->middleware('auth');
 
 Route::get('registreren', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('registreren', [RegisterController::class, 'store'])->middleware('guest');
