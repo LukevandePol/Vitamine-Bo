@@ -36,6 +36,10 @@
     color: rgb(99,190,235);
 }
 
+.bo-hoofdkleur-opacity {
+    background-color: #E5F4FB;
+}
+
 .bo-bijkleur-grijs {
     color: rgb(77,77,77);
 }
@@ -131,4 +135,12 @@ header {
     border: none;
     padding: 10px 20px;
     border-radius: 10px;
+}
+
+/**
+ * 07. Card with stripe
+ */
+.card-custom {
+    padding: 20px;
+    box-shadow: 0 5px 10px -3px rgba(0,0,0,0.3);
 }
