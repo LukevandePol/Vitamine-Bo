@@ -28,14 +28,16 @@ Route::get('/niet-goedgekeurd', function () {
     return view('niet-goedgekeurd');
 })->name('niet-goedgekeurd');
 
+// Routes voor het account aanpassen
 Route::get('account', [AccountController::class, 'create'])->middleware('auth');
 Route::post('updateUser', [AccountController::class, 'updateUser'])->middleware('auth');
-
+// Routes om het telefoonnummer aan te passen
 Route::post('updateTelefoon', [KlantgegevensController::class, 'updateTelefoon'])->middleware('auth');
 
+// Routes om een adres te bewerken / updaten
 Route::get('AdresBewerken/{id}', [AdresController::class, 'create'])->middleware('auth');
 Route::post('updateAdres/{id}', [AdresController::class, 'updateAdres'])->middleware('auth');
-
+// Routes om een adres toe te voegen en te verwijderen
 Route::get('AdresToevoegen', [AdresController::class, 'create2'])->middleware('auth');
 Route::post('createAdres', [AdresController::class, 'createAdres'])->middleware('auth');
 Route::post('deleteAdres/{id}', [AdresController::class, 'deleteAdres'])->middleware('auth');
