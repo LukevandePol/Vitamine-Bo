@@ -1,29 +1,23 @@
 <x-layout title="- Inloggen">
-    <main class="w-100">
-        <x-card>
-            <div class="center">
-                <x-logo/>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="https://picsum.photos/448/704" class="rounded shadow" alt="placeholder">
             </div>
-
-            <h1 class="h3 mb-3 fw-normal">Log in</h1>
-
-            <form method="POST" action="/inloggen">
-                @csrf
-
-                <x-input label="E-mailadres:" type="email" name="email"/>
-                <x-input label="Wachtwoord:" type="password" name="password"/>
-                <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" id="remember" name="remember">
-                    <label class="form-check-label" for="remember">
-                        Onthoud mij
-                    </label>
+            <div class="col-lg-6 my-auto">
+                <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                    <x-logo width="120"/>
+                    <h1 class="mt-5 h2">Inloggen</h1>
                 </div>
 
-                <div class="d-flex align-items-center justify-content-between">
-                    <x-submit>Inloggen</x-submit>
-                    <a href="registreren">Nog geen account? Registreer</a>
-                </div>
-            </form>
-        </x-card>
-    </main>
+                <form method="post" action="/inloggen">
+                    @csrf
+
+                    <x-input label="E-mailadres:" type="email" name="email"/>
+                    <x-input label="Wachtwoord:" type="password" name="password"/>
+                    <x-submit class="btn btn-primary w-100" id="submit">Inloggen</x-submit>
+                </form>
+            </div>
+        </div>
+    </div>
 </x-layout>
