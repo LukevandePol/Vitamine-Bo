@@ -29,6 +29,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/">Home</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/account">Account</a>
+                        </li>
                     @endauth
                     @can('isAdmin')
                         <li class="nav-item">
@@ -38,11 +41,6 @@
                             <a class="nav-link" href="/admin/goedkeuren">Goedkeuren</a>
                         </li>
                     @endcan
-                    @if('!isAdmin')
-                        <li class="nav-item">
-                            <a class="nav-link" href="/account">Account</a>
-                        </li>
-                    @endif
                 </ul>
                 <ul class="navbar-nav">
                     @auth
