@@ -3,4 +3,5 @@
         <x-cardstripe class="bg-white"/>
         <x-cardstripe class="bo-hoofdkleur-opacity"/>
     </div>
+    <x-carousel/>
 </x-layout>
