@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdresController;
 use App\Http\Controllers\KlantgegevensController;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +35,11 @@ Route::post('updateTelefoon', [KlantgegevensController::class, 'updateTelefoon']
 
 Route::get('AdresBewerken/{id}', [AdresController::class, 'create'])->middleware('auth');
 Route::post('updateAdres/{id}', [AdresController::class, 'updateAdres'])->middleware('auth');
+
+Route::get('AdresToevoegen', [AdresController::class, 'create2'])->middleware('auth');
+Route::post('createAdres', [AdresController::class, 'createAdres'])->middleware('auth');
+Route::post('deleteAdres/{id}', [AdresController::class, 'deleteAdres'])->middleware('auth');
+
 
 Route::get('registreren', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('registreren', [RegisterController::class, 'store'])->middleware('guest');

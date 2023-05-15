@@ -37,6 +37,8 @@
         <x-submit>pas aan</x-submit>
     </form>
 
+    <a href="/AdresToevoegen">Adres toevoegen</a>
+
     @foreach($adressen as $adres)
         <x-adres :adres="$adres"></x-adres>
     @endforeach
