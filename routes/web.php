@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdresController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KlantgegevensController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
@@ -28,7 +29,7 @@ Route::get('/niet-goedgekeurd', function () {
     return view('niet-goedgekeurd');
 })->name('niet-goedgekeurd');
 
-// Routes voor het account aanpassen
+// Routes voor de usergegevens aanpassen
 Route::get('account', [AccountController::class, 'create'])->middleware('auth');
 Route::post('updateUser', [AccountController::class, 'updateUser'])->middleware('auth');
 // Routes om het telefoonnummer aan te passen
@@ -42,6 +43,8 @@ Route::get('AdresToevoegen', [AdresController::class, 'create2'])->middleware('a
 Route::post('createAdres', [AdresController::class, 'createAdres'])->middleware('auth');
 Route::post('deleteAdres/{id}', [AdresController::class, 'deleteAdres'])->middleware('auth');
 
+// Routes voor het dashboard scherm
+Route::get('dashboard', [DashboardController::class, 'create'])->middleware('auth');
 
 Route::get('registreren', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('registreren', [RegisterController::class, 'store'])->middleware('guest');
