@@ -256,7 +256,7 @@ header {
     right: -22px;
 }
 .wrapper .carousel{
-    font-size: 0px;
+    font-size: 0;
     cursor: pointer;
     overflow: hidden;
     white-space: nowrap;
@@ -277,7 +277,7 @@ header {
     width: calc(100% / 3);
 }
 .carousel img:first-child{
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 @media screen and (max-width: 900px) {
