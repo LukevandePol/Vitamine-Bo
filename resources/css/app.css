@@ -65,8 +65,13 @@ body {
     background-color: rgb(246, 246, 246);
 }
 
-h1, h2, h3 {
+h1 {
     font-family: 'geovanaregular', cursive;
+    color: rgb(77, 77, 77);
+}
+
+h2, h3 {
+    font-family: 'avenir_nextultra_bold', sans-serif;
     color: rgb(77, 77, 77);
 }
 
@@ -106,11 +111,12 @@ main {
     height: 20vh;
     display: flex;
     align-items: center;
+    margin-bottom: 5vh;
 }
 
 .welkom-header {
     color: #ffffff;
-    padding-left: 10vw;
+
 }
 
 /**
@@ -120,6 +126,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.padding-left {
+    padding-left: 7vw;
 }
 
 /**
@@ -228,5 +238,5 @@ header {
  */
 .card-custom {
     padding: 20px;
-    box-shadow: 0 5px 10px -3px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
 }
