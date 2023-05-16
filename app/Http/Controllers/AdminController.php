@@ -16,7 +16,6 @@ class AdminController extends Controller
         $users = User::whereNull('status')->get();
 
         return view('admin.goedkeuren', compact('users'));
-
     }
 
     public function update($id)
@@ -26,6 +25,6 @@ class AdminController extends Controller
         $user->status = now();
         $user->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Account succesvol goedgekeurd!');
     }
 }
