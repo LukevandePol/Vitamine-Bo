@@ -7,7 +7,7 @@ const submitButton = document.querySelector('#submit')
 const tabTargets = document.querySelectorAll('.tab')
 const tabPanels = document.querySelectorAll('.tabpanel')
 
-let currentStep = 1
+let currentStep = 0
 
 nextButton.addEventListener('click', (event) => {
     event.preventDefault()
