@@ -21,23 +21,23 @@
                 <x-card>
                     aankomende levering
                 </x-card>
-                <x-a href="#" tekst="Bekijk je leveringen"/>
+                <x-a href="#">Bekijk je leveringen</x-a>
             </div>
             <div class="col-sm-6">
                 <x-card>
                     goed keuring aanpassing
                 </x-card>
-                <x-a href="#" tekst="Bekijk je levering"/>
+                <x-a href="#">Bekijk je levering</x-a>
 
                 <x-card>
                     facturen
                 </x-card>
-                <x-a href="#" tekst="Bekijk je facturen"/>
+                <x-a href="#">Bekijk je facturen</x-a>
 
                 <x-card>
                     gegevens
                 </x-card>
-                <x-a href="#" tekst="Beheer je gegevens"/>
+                <x-a href="#">Beheer je gegevens</x-a>
 
             </div>
         </div>
@@ -53,7 +53,7 @@
             <div class="col-12">
                 <h2>Recente bestellingen</h2>
             </div>
-            <x-a href="#" tekst="Bekijk al je bestellingen"/>
+            <x-a href="#">Bekijk al je bestellingen</x-a>
         </div>
     </div>
 </x-layout>
