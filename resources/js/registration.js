@@ -1,6 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-
-});
 const previousButton = document.querySelector('#prev')
 const nextButton = document.querySelector('#next')
 const submitButton = document.querySelector('#submit')
