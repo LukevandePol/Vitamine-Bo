@@ -105,6 +105,15 @@ main {
     color: rgba(255, 255, 255, 100);
 }
 
+a {
+    color: #63BEEB;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .welkom-banner {
     background-color: #63BEEB;
     width: 100vw;
