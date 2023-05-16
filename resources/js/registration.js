@@ -41,7 +41,7 @@ function updateStatusDisplay() {
         nextButton.classList.add('hidden')
         previousButton.classList.remove('hidden')
         submitButton.classList.remove('hidden')
-    } else if (currentStep == 0) {
+    } else if (currentStep === 0) {
         nextButton.classList.remove('hidden')
         previousButton.classList.add('hidden')
         submitButton.classList.add('hidden')
