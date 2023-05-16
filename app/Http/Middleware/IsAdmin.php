@@ -19,6 +19,6 @@ class IsAdmin
             return $next($request);
         }
 
-        return redirect('/');
+        return redirect('/')->with('error', 'U heeft geen rechten tot het dashboard voor administrators.');
     }
 }
