@@ -7,6 +7,7 @@
  * 04. Header
  * 05. Authenticatie
  * 06. Form
+ * 07. Card with stripe
  */
 
 
@@ -69,8 +70,8 @@ h1, h2, h3 {
     color: rgb(77, 77, 77);
 }
 
-p {
-    font-family: 'avenir_nextultra_light', sans-serif;
+* {
+    font-family: 'avenir_nextultra', sans-serif;
     color: rgb(77, 77, 77);
 }
 
@@ -97,6 +98,19 @@ main {
 .btn-primary:hover {
     background-color: rgba(99, 190, 235, .80);
     color: rgba(255, 255, 255, 100);
+}
+
+.welkom-banner {
+    background-color: #63BEEB;
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+}
+
+.welkom-header {
+    color: #ffffff;
+    padding-left: 10vw;
 }
 
 /**
