@@ -27,17 +27,17 @@
                 <x-card>
                     goed keuring aanpassing
                 </x-card>
-                <a href="#">Bekijk je levering</a>
+                <x-a href="#" tekst="Bekijk je levering"/>
 
                 <x-card>
                     facturen
                 </x-card>
-                <a href="#">Bekijk je facturen</a>
+                <x-a href="#" tekst="Bekijk je facturen"/>
 
                 <x-card>
                     gegevens
                 </x-card>
-                <a href="#">Beheer je gegevens</a>
+                <x-a href="#" tekst="Beheer je gegevens"/>
 
             </div>
         </div>
