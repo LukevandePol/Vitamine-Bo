@@ -62,7 +62,7 @@
 }
 
 body {
-    background-color: rgb(246, 246, 246);
+    background-color: #ffffff;
 }
 
 h1 {
@@ -114,13 +114,17 @@ a:hover {
     text-decoration: underline;
 }
 
+.anchor {
+    margin-top: 1vh;
+}
+
 .welkom-banner {
     background-color: #63BEEB;
     width: 100vw;
     height: 20vh;
     display: flex;
     align-items: center;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
 }
 
 .welkom-header {
@@ -247,5 +251,6 @@ header {
  */
 .card-custom {
     padding: 20px;
+    margin-top: 5vh;
     box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
 }
