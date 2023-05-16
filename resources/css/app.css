@@ -7,6 +7,7 @@
  * 04. Header
  * 05. Authenticatie
  * 06. Form
+ * 07. Card with stripe
  */
 
 
@@ -61,16 +62,21 @@
 }
 
 body {
-    background-color: rgb(246, 246, 246);
+    background-color: #ffffff;
 }
 
-h1, h2, h3 {
+h1 {
     font-family: 'geovanaregular', cursive;
     color: rgb(77, 77, 77);
 }
 
-p {
-    font-family: 'avenir_nextultra_light', sans-serif;
+h2, h3 {
+    font-family: 'avenir_nextultra_bold', sans-serif;
+    color: rgb(77, 77, 77);
+}
+
+* {
+    font-family: 'avenir_nextultra', sans-serif;
     color: rgb(77, 77, 77);
 }
 
@@ -99,6 +105,33 @@ main {
     color: rgba(255, 255, 255, 100);
 }
 
+a {
+    color: #63BEEB;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.anchor {
+    margin-top: 1vh;
+}
+
+.welkom-banner {
+    background-color: #63BEEB;
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+.welkom-header {
+    color: #ffffff;
+
+}
+
 /**
  * 03. Utilities
  */
@@ -106,6 +139,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.padding-left {
+    padding-left: 7vw;
 }
 
 /**
@@ -214,7 +251,8 @@ header {
  */
 .card-custom {
     padding: 20px;
-    box-shadow: 0 5px 10px -3px rgba(0,0,0,0.3);
+    margin-top: 5vh;
+    box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
 }
 
 /**
