@@ -427,7 +427,7 @@ header {
     width: 100%;
     height: 60px;
     line-height: 60px;
-    border-radius: 0px;
+    border-radius: 0;
     transition: all 0.5s ease;
 }
 .sidebar.open .profile #log_out{
