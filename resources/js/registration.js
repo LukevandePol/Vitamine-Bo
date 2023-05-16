@@ -1,13 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
-
-});
 const previousButton = document.querySelector('#prev')
 const nextButton = document.querySelector('#next')
 const submitButton = document.querySelector('#submit')
 const tabTargets = document.querySelectorAll('.tab')
 const tabPanels = document.querySelectorAll('.tabpanel')
 
-let currentStep = 1
+let currentStep = 0
 
 nextButton.addEventListener('click', (event) => {
     event.preventDefault()
@@ -41,7 +38,7 @@ function updateStatusDisplay() {
         nextButton.classList.add('hidden')
         previousButton.classList.remove('hidden')
         submitButton.classList.remove('hidden')
-    } else if (currentStep == 0) {
+    } else if (currentStep === 0) {
         nextButton.classList.remove('hidden')
         previousButton.classList.add('hidden')
         submitButton.classList.add('hidden')
