@@ -43,4 +43,8 @@
             </div>
         </div>
     </div>
+
+    @section('page-scripts')
+        @vite(['resources/js/registration.js'])
+    @endsection
 </x-layout>
