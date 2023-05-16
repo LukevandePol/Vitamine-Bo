@@ -18,7 +18,11 @@
     </head>
 
     <body class="antialiased">
-        @include('layout.navigation')
+    @include('layout.navigation')
+
+    <div class="container mt-5">
+        @include('components.alerts')
+    </div>
 
 {{ $slot }}
 
