@@ -12,6 +12,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/account">Account</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
                 @endauth
                 @can('isAdmin')
                     <li class="nav-item">
