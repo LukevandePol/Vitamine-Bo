@@ -1,7 +1,6 @@
 <x-layout>
-    <div class="container">
-        <x-cardstripe class="bg-white"/>
-        <x-cardstripe class="bo-hoofdkleur-opacity"/>
-    </div>
-    <x-sidebar/>
+
+        <x-sidebar/>
+
+
 </x-layout>
