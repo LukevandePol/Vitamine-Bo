@@ -59,16 +59,16 @@ class DatabaseSeeder extends Seeder
             'plaatsnaam' => 'Stadnaam'
         ]);
 
-        Adres::factory(5)->create();
-
         Klantgegevens::factory()->create([
             'kvkNummer' => 12345678,
             'telefoonnummer' => '0612345678',
+            'user_id' => 3,
             'bezorgAdres' => 1,
             'factuurAdres' => 2,
         ]);
 
         Klantgegevens::factory(5)->create();
+        Adres::factory(5)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

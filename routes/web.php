@@ -41,7 +41,7 @@ Route::post('updateAdres/{id}', [AdresController::class, 'updateAdres'])->middle
 // Routes om een adres toe te voegen en te verwijderen
 Route::get('AdresToevoegen', [AdresController::class, 'create2'])->middleware('auth');
 Route::post('createAdres', [AdresController::class, 'createAdres'])->middleware('auth');
-Route::post('deleteAdres/{id}', [AdresController::class, 'deleteAdres'])->middleware('auth');
+//Route::post('deleteAdres/{id}', [AdresController::class, 'deleteAdres'])->middleware('auth');
 
 // Routes voor het dashboard scherm
 Route::get('dashboard', [DashboardController::class, 'create'])->middleware('auth');
