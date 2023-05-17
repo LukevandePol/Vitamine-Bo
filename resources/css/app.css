@@ -63,6 +63,7 @@
 
 body {
     background-color: #ffffff;
+    /*font-size: 1.2rem;*/
 }
 
 h1 {
@@ -71,8 +72,10 @@ h1 {
 }
 
 h2, h3 {
-    font-family: 'avenir_nextultra_bold', sans-serif;
+    font-family: 'avenir_nextultra', sans-serif;
     color: rgb(77, 77, 77);
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 * {
