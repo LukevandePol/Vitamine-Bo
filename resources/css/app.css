@@ -221,12 +221,13 @@ header {
  * 08. Carousel
  */
 
-.wrapper{
+.wrapper {
     display: flex;
     max-width: 1200px;
     position: relative;
 }
-.wrapper i{
+
+.wrapper i {
     top: 50%;
     height: 44px;
     width: 44px;
@@ -240,54 +241,63 @@ header {
     transform: translateY(-50%);
     transition: transform 0.1s linear;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-
 }
-.wrapper i:active{
+
+.wrapper i:active {
     transform: translateY(-50%) scale(0.9);
 }
-.wrapper i:hover{
+
+.wrapper i:hover {
     background: #f2f2f2;
 }
-.wrapper i:first-child{
+
+.wrapper i#left {
     left: -22px;
     display: none;
+    z-index: 2; /* Add higher z-index */
 }
-.wrapper i:last-child{
+
+.wrapper i:last-child {
     right: -22px;
 }
-.wrapper .carousel{
+
+.wrapper .carousel {
     font-size: 0;
     cursor: pointer;
     overflow: hidden;
     white-space: nowrap;
     scroll-behavior: smooth;
 }
-.carousel.dragging{
+
+.carousel.dragging {
     cursor: grab;
     scroll-behavior: auto;
 }
-.carousel.dragging img{
+
+.carousel.dragging img {
     pointer-events: none;
 }
-.carousel img{
+
+.carousel img {
     height: 340px;
     object-fit: cover;
     user-select: none;
     margin-left: 14px;
     width: calc(100% / 3);
 }
-.carousel img:first-child{
+
+.carousel img:first-child {
     margin-left: 0;
 }
 
 @media screen and (max-width: 900px) {
-    .carousel img{
+    .carousel img {
         width: calc(100% / 2);
     }
 }
 
 @media screen and (max-width: 550px) {
-    .carousel img{
+    .carousel img {
         width: 100%;
     }
 }
