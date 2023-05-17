@@ -32,11 +32,11 @@ class ProductFactory extends Factory
             'flessenpost aardbei',
             'flessenpost sinaasappel'
         ];
-        $bestellings = Bestelling::all()->pluck('id')->toArray();
+//        $bestellings = Bestelling::all()->pluck('id')->toArray();
 
         return [
             'naam' => $this->faker->randomElement($product_namen),
-            'bestelling_id' => $this->faker->randomElement($bestellings)
+            'bestelling_id' => Bestelling::factory()
         ];
     }
 }

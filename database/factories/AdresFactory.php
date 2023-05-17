@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use App\Models\Adres;
-use App\Models\Klantgegevens;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,10 +17,11 @@ class AdresFactory extends Factory
      */
     public function definition(): array
     {
-        $klantgegevens = Klantgegevens::all()->pluck('id')->toArray();
+//        $klantgegevens = Klantgegevens::all()->pluck('id')->toArray();
 
         return [
             'postcode' => $this->faker->postcode,
+            'huisnummer' => $this->faker->numberBetween(1, 1300),
             'adres' => $this->faker->streetAddress,
             'plaatsnaam' => $this->faker->city,
         ];

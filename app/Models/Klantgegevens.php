@@ -13,7 +13,7 @@ class Klantgegevens extends Model
 
     protected $guarded = [];
 
-    public function user(): BelongsTo
+    public function User(): BelongsTo
     {
         return $this->belongsTo('App\Models\User');
     }
@@ -21,5 +21,10 @@ class Klantgegevens extends Model
     public function Adres(): HasMany
     {
         return $this->hasMany('App\Models\Adres');
+    }
+
+    public function Bestelling(): HasMany
+    {
+        return $this->hasMany('App\Models\Bestelling');
     }
 }

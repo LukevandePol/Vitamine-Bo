@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->String('naam');
+            $table->timestamps();
+            $table->string('naam');
+            $table->json('inhoud')->nullable();
             $table->foreignId('bestelling_id')->constrained();
         });
     }

@@ -21,10 +21,11 @@ return new class extends Migration
             $table->rememberToken();
             $table->enum('rol',
                 [
-                'administrator',
-                'klant',
-                'bo_medewerker'
-            ])->default('klant');
+                    'administrator',
+                    'klant',
+                    'bo_medewerker'
+                ])->default('klant');
+            $table->date('status')->nullable();
         });
     }
 

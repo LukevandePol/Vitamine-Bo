@@ -13,9 +13,19 @@ return new class extends Migration {
         Schema::create('adres', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->String('postcode');
-            $table->String('adres');
+            $table->string('postcode');
+            $table->string('huisnummer');
+            $table->string('adres')->nullable();
             $table->string('plaatsnaam')->nullable();
+            $table->string('gemeentenaam')->nullable();
+            $table->string('provincienaam')->nullable();
+            $table->enum('type',
+                [
+                    'bezorg',
+                    'factuur',
+                    'niet_gebruikt'
+                ])->default('bezorg');
+            $table->foreignId('klantgegevens_id')->constrained();
         });
     }
 

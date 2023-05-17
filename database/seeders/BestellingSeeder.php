@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Bestelling;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class BestellingSeeder extends Seeder
@@ -13,6 +12,6 @@ class BestellingSeeder extends Seeder
      */
     public function run(): void
     {
-//        Bestelling::factory(10)->create();
+        Bestelling::factory(10)->create();
     }
 }

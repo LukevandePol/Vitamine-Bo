@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->integer('kvkNummer');
-            $table->String('telefoonnummer');
+            $table->String('telefoonnummer')->nullable();
             $table->date('aanpassingBevestigdDatum')->nullable();
             $table->foreignId('user_id')->constrained();
         });
