@@ -21,12 +21,12 @@
                             @csrf
 
                             <x-submit class="btn btn-sm btn-success">
-                                <i class="fa-solid fa-check"></i>
+                                <i class="fa-solid fa-check text-white"></i>
                             </x-submit>
                         </form>
                         <form action="#">
                             <x-submit class="btn btn-sm btn-danger ms-3">
-                                <i class="fa-solid fa-xmark"></i>
+                                <i class="fa-solid fa-xmark text-white"></i>
                             </x-submit>
                         </form>
                     </td>
