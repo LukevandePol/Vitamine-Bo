@@ -4,7 +4,7 @@
         <table class="table mt-5">
             <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">ID</th>
                 <th scope="col">Naam</th>
                 <th scope="col">Aangemaakt</th>
                 <th scope="col">Actie</th>
