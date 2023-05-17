@@ -1,6 +1,6 @@
-<x-layout>
+<x-layout title="Components">
 
-        <x-sidebar/>
+    <x-sidebar/>
 
 
 </x-layout>
