@@ -1,4 +1,4 @@
-<x-layout :title="'- Account'">
+<x-layout title='Account'>
     <p>{{$user}}</p>
 
     <form action="/updateUser" method="POST">
