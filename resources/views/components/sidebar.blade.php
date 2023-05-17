@@ -1,6 +1,6 @@
 <div class="sidebar">
 
-    <img src="Logo.png" alt="Your Image" class="sidebar-image imagebox">
+    <img src="/images/logo.webp" alt="Your Image" class="sidebar-image imagebox">
 
     <ul class="nav-list">
         <li>
