@@ -1,12 +1,5 @@
-<x-layout :title="'- Account'">
-
-    <a href="/">home</a>
-
+<x-layout title='Account'>
     <p>{{$user}}</p>
-
-    <p>{{$klantgegevens}}</p>
-
-    <p>{{$adressen}}</p>
 
     <form action="/updateUser" method="POST">
         @csrf
@@ -37,9 +30,13 @@
         <x-submit>pas aan</x-submit>
     </form>
 
-    <a href="/AdresToevoegen">Adres toevoegen</a>
+    <x-adres :adres="$bezorgAdres"></x-adres>
 
-    @foreach($adressen as $adres)
-        <x-adres :adres="$adres"></x-adres>
-    @endforeach
+    @if($factuurAdres)
+        <x-adres :adres="$factuurAdres"></x-adres>
+    @else
+        {{--        <a href="/AdresToevoegen">Adres toevoegen</a>--}}
+        factuuradres is nu hetzelfde als het bezorgadres.
+        Voeg een factuuradres toe als het naar een ander adres moet.
+    @endif
 </x-layout>

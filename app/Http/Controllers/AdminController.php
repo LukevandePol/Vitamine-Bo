@@ -13,10 +13,10 @@ class AdminController extends Controller
 
     public function approve()
     {
-        $users = User::whereNull('status')->get();
+        $users = User::whereNull('status');
+        $users = $users->paginate(5);
 
         return view('admin.goedkeuren', compact('users'));
-
     }
 
     public function update($id)
@@ -26,6 +26,6 @@ class AdminController extends Controller
         $user->status = now();
         $user->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Account succesvol goedgekeurd!');
     }
 }

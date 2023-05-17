@@ -24,7 +24,6 @@ class AdresFactory extends Factory
             'postcode' => $this->faker->postcode,
             'adres' => $this->faker->streetAddress,
             'plaatsnaam' => $this->faker->city,
-            'klantgegevens_id' => $this->faker->randomElement($klantgegevens)
         ];
     }
 }

@@ -18,7 +18,7 @@ class Klantgegevens extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    public function adres(): HasMany
+    public function Adres(): HasMany
     {
         return $this->hasMany('App\Models\Adres');
     }

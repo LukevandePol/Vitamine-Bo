@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
              'email' => 'admin@example.com',
              'email_verified_at' => Now(),
              'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-             'rol' => 'administrator'
+             'rol' => 'administrator',
+             'status' => Now(),
          ]);
 
         User::factory()->create([
@@ -31,7 +32,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'medewerker@example.com',
             'email_verified_at' => Now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'rol' => 'bo_medewerker'
+            'rol' => 'bo_medewerker',
+            'status' => Now(),
         ]);
 
         User::factory()->create([
@@ -39,14 +41,35 @@ class DatabaseSeeder extends Seeder
             'email' => 'klant@example.com',
             'email_verified_at' => Now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'rol' => 'klant'
+            'rol' => 'klant',
+            'status' => Now(),
         ]);
 
         User::factory(10)->create();
 
-        Klantgegevens::factory(5)->create();
+        Adres::factory()->create([
+            'postcode' => '1234 AB',
+            'adres' => 'langenaamweg 12',
+            'plaatsnaam' => 'testdorp'
+        ]);
 
+        Adres::factory()->create([
+            'postcode' => '4567 CD',
+            'adres' => 'Straatnaam 345',
+            'plaatsnaam' => 'Stadnaam'
+        ]);
+
+        Klantgegevens::factory()->create([
+            'kvkNummer' => 12345678,
+            'telefoonnummer' => '0612345678',
+            'user_id' => 3,
+            'bezorgAdres' => 1,
+            'factuurAdres' => 2,
+        ]);
+
+        Klantgegevens::factory(5)->create();
         Adres::factory(5)->create();
+
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',

@@ -4,4 +4,9 @@
     {{--        <x-cardstripe class="bo-hoofdkleur-opacity"/>--}}
     {{--    </div>--}}
     <x-carousel/>
+
+<x-layout title="Components">
+
+    <x-sidebar/>
+    
 </x-layout>
