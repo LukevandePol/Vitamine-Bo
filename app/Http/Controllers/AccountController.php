@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Adres;
 use Illuminate\Support\Facades\DB;
 
 class AccountController extends Controller
@@ -10,12 +11,14 @@ class AccountController extends Controller
     {
         $user = auth()->user();
         $klantgegevens = $user->klantgegevens;
-        $adressen = $klantgegevens->adres;
+        $bezorgAdres = Adres::find($klantgegevens->bezorgAdres);
+        $factuurAdres = Adres::find($klantgegevens->factuurAdres);
 
         return view('account', [
                 'user' => $user,
                 'klantgegevens' => $klantgegevens,
-                'adressen' => $adressen
+                'factuurAdres' => $bezorgAdres,
+                'bezorgAdres' => $factuurAdres,
             ]
         );
     }
