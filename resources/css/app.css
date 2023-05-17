@@ -5,9 +5,9 @@
  * 02. Algemeen
  * 03. Utilities
  * 04. Header
- * 05. Authenticatie
- * 06. Form
- * 07. Card with stripe
+ * 05. Form
+ * 06. Cards
+ * 07. Sidebar
  */
 
 
@@ -87,11 +87,6 @@ main {
     align-items: center;
 }
 
-.auth-card .logo {
-    width: 82px;
-    height: 67px;
-}
-
 .btn {
     border: 0;
 }
@@ -120,16 +115,13 @@ a:hover {
 
 .welkom-banner {
     background-color: #63BEEB;
-    width: 100vw;
-    height: 20vh;
+    height: 200px;
     display: flex;
     align-items: center;
-    margin-bottom: 3vh;
 }
 
 .welkom-header {
     color: #ffffff;
-
 }
 
 /**
@@ -171,18 +163,9 @@ header {
     height: auto;
 }
 
-/**
- * 05. Authenticatie
- */
-.auth-card {
-    width: 25rem;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
 
 /**
- * 06. Form
+ * 05. Form
  */
 .form-label {
     border-radius: 10px;
@@ -247,10 +230,39 @@ header {
 }
 
 /**
- * 07. Card with stripe
+ * 06. Cards
  */
 .card-custom {
     padding: 20px;
     margin-top: 5vh;
     box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
+}
+
+.card-blank {
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card-blank .logo {
+    width: 82px;
+    height: 67px;
+}
+
+/**
+ * 07. Sidebar
+ */
+.sidebar-placeholder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 145px;
+    height: 100%;
+    background-color: #4d4d4d;
+}
+
+/**
+ * 08. Pagination
+ */
+.pagination {
+    width: 150px;
 }
