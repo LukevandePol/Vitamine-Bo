@@ -29,30 +29,41 @@ Route::get('/niet-goedgekeurd', function () {
     return view('niet-goedgekeurd');
 })->name('niet-goedgekeurd');
 
-// Routes voor de usergegevens aanpassen
-Route::get('account', [AccountController::class, 'create'])->middleware('auth');
-Route::post('updateUser', [AccountController::class, 'updateUser'])->middleware('auth');
-// Routes om het telefoonnummer aan te passen
-Route::post('updateTelefoon', [KlantgegevensController::class, 'updateTelefoon'])->middleware('auth');
+// Authenticatie
+Route::group(['middleware' => ['auth']], function () {
+    // Gebruikersgegevens
+    Route::get('account', [AccountController::class, 'create']);
+    Route::post('updateUser', [AccountController::class, 'updateUser']);
 
-// Routes om een adres te bewerken / updaten
-Route::get('AdresBewerken/{id}', [AdresController::class, 'create'])->middleware('auth');
-Route::post('updateAdres/{id}', [AdresController::class, 'updateAdres'])->middleware('auth');
-// Routes om een adres toe te voegen en te verwijderen
-Route::get('AdresToevoegen', [AdresController::class, 'create2'])->middleware('auth');
-Route::post('createAdres', [AdresController::class, 'createAdres'])->middleware('auth');
-Route::post('deleteAdres/{id}', [AdresController::class, 'deleteAdres'])->middleware('auth');
+    // Telefoonnummer
+    Route::post('updateTelefoon', [KlantgegevensController::class, 'updateTelefoon']);
 
-// Routes voor het dashboard scherm
-Route::get('dashboard', [DashboardController::class, 'create'])->middleware('auth');
+    // Adres bewerken
+    Route::get('AdresBewerken/{id}', [AdresController::class, 'create']);
+    Route::post('updateAdres/{id}', [AdresController::class, 'updateAdres']);
 
-Route::get('registreren', [RegisterController::class, 'create'])->middleware('guest');
-Route::post('registreren', [RegisterController::class, 'store'])->middleware('guest');
+    // Adres toevoegen/verwijderen
+    Route::get('AdresToevoegen', [AdresController::class, 'create2']);
+    Route::post('createAdres', [AdresController::class, 'createAdres']);
+    Route::post('deleteAdres/{id}', [AdresController::class, 'deleteAdres']);
 
-Route::get('inloggen', [SessionsController::class, 'create'])->middleware('guest')->name('inloggen');
-Route::post('inloggen', [SessionsController::class, 'store'])->middleware('guest');
+    // Klanten dashboard
+    Route::get('dashboard', [DashboardController::class, 'create']);
 
-Route::post('uitloggen', [SessionsController::class, 'destroy'])->middleware('auth');
+    // Uitloggen
+    Route::post('uitloggen', [SessionsController::class, 'destroy']);
+});
+
+// Gasten
+Route::group(['middleware' => ['guest']], function () {
+    // Registreren
+    Route::get('registreren', [RegisterController::class, 'create']);
+    Route::post('registreren', [RegisterController::class, 'store']);
+
+    // Inloggen
+    Route::get('inloggen', [SessionsController::class, 'create'])->name('inloggen');
+    Route::post('inloggen', [SessionsController::class, 'store']);
+});
 
 // Admin
 Route::group(['middleware' => ['auth', 'admin']], function () {
