@@ -20,6 +20,7 @@ class AdresSeeder extends Seeder
         foreach ($klant_ids as $klant_id) {
             Adres::factory()->create([
                 'klantgegevens_id' => $klant_id,
+                'type' => 'bezorg',
             ]);
         }
     }

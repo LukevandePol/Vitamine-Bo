@@ -23,7 +23,7 @@ class RegisterController extends Controller
             'email' => ['required', 'email', 'max:255', 'unique:users'],
             'telefoon' => ['required'],
             'postcode' => ['required', 'min:6', 'max:7'],
-            'adres' => ['required'],
+            'huisnummer' => ['required'],
         ]);
 
         $usergegevens = [
@@ -42,7 +42,7 @@ class RegisterController extends Controller
 
         $adresgegevens = [
             'postcode' => $attributes['postcode'],
-            'adres' => $attributes['adres'],
+            'huisnummer' => $attributes['huisnummer'],
             'klantgegevens_id' => $klantgegevens->id
         ];
         Adres::create($adresgegevens);

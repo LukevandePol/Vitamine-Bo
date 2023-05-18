@@ -24,7 +24,7 @@ return new class extends Migration {
                     'bezorg',
                     'factuur',
                     'niet_gebruikt'
-                ])->default('bezorg');
+                ])->default('niet_gebruikt');
             $table->foreignId('klantgegevens_id')->constrained();
         });
     }

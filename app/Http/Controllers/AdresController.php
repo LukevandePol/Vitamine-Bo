@@ -17,7 +17,7 @@ class AdresController extends Controller
         );
     }
 
-    public function create2()
+    public function createToevoegen()
     {
         return view('AdresToevoegen', [
                 'klantgegevens' => Auth::user()->klantgegevens
@@ -30,16 +30,16 @@ class AdresController extends Controller
 
         $attributes = request()->validate([
             'postcode' => ['required', 'min:6', 'max:7'],
-            'adres' => ['required', 'max:255'],
-            'plaatsnaam' => ['required'],
+            'huisnummer' => ['required', 'max:255'],
+//            'plaatsnaam' => ['required'],
             'klantgegevens_id' => ['required'],
         ]);
 
         DB::table('adres')->insert([
             'postcode' => $attributes['postcode'],
-            'adres' => $attributes['adres'],
-            'plaatsnaam' => $attributes['plaatsnaam'],
-            'klantgegevens_id' => $attributes['klantgegevens_id']
+            'huisnummer' => $attributes['huisnummer'],
+//            'plaatsnaam' => $attributes['plaatsnaam'],
+            'klantgegevens_id' => $attributes['klantgegevens_id'],
         ]);
 
 
@@ -51,7 +51,7 @@ class AdresController extends Controller
 
         $attributes = request()->validate([
             'postcode' => ['required', 'min:6', 'max:7'],
-            'adres' => ['required', 'max:255'],
+            'huisnummer' => ['required', 'max:255'],
             'plaatsnaam' => ['required']
         ]);
 
@@ -59,7 +59,7 @@ class AdresController extends Controller
             ->where('id', $id)
             ->update([
                 'postcode' => $attributes['postcode'],
-                'adres' => $attributes['adres'],
+                'huisnummer' => $attributes['huisnummer'],
                 'plaatsnaam' => $attributes['plaatsnaam'],
             ]);
 

@@ -30,13 +30,17 @@
         <x-submit>pas aan</x-submit>
     </form>
 
-    <x-adres :adres="$bezorgAdres"></x-adres>
+    <a href="/AdresToevoegen">Adres toevoegen</a>
 
-    @if($factuurAdres)
-        <x-adres :adres="$factuurAdres"></x-adres>
-    @else
-        {{--        <a href="/AdresToevoegen">Adres toevoegen</a>--}}
-        factuuradres is nu hetzelfde als het bezorgadres.
-        Voeg een factuuradres toe als het naar een ander adres moet.
-    @endif
+    @foreach($klantgegevens->adres as $adres)
+        <x-adres :adres="$adres"></x-adres>
+    @endforeach
+
+    {{--    @if($factuurAdres)--}}
+    {{--        <x-adres :adres="$factuurAdres"></x-adres>--}}
+    {{--    @else--}}
+    {{--        <a href="/AdresToevoegen">Adres toevoegen</a>--}}
+    factuuradres is nu hetzelfde als het bezorgadres.
+    Voeg een factuuradres toe als het naar een ander adres moet.
+    {{--    @endif--}}
 </x-layout>

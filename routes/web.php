@@ -43,7 +43,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('updateAdres/{id}', [AdresController::class, 'updateAdres']);
 
     // Adres toevoegen/verwijderen
-    Route::get('AdresToevoegen', [AdresController::class, 'create2']);
+    Route::get('AdresToevoegen', [AdresController::class, 'createToevoegen']);
     Route::post('createAdres', [AdresController::class, 'createAdres']);
     Route::post('deleteAdres/{id}', [AdresController::class, 'deleteAdres']);
 

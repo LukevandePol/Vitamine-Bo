@@ -1,4 +1,4 @@
-<x-layout title="Dashboard" header="Welkom {{ auth()->user()->name }}">
+<x-layout title="Dashboard" header="Welkom {{ $user->name}}">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -43,10 +43,10 @@
 
                 <x-cardstripe title="Gegevens">
                     <p>
-                        {{$user->name}} <br>
-                        {{$user->email}} <br><br>
-                        {{$bezorgAdres->adres}} <br>
-                        {{$bezorgAdres->postcode}} {{$bezorgAdres->plaatsnaam}}
+                        {{$user->name}}
+                        {{$user->email}}
+                        {{$adres->postcode}}
+                        {{$adres->huisnummer}}
                     </p>
                 </x-cardstripe>
                 <x-a href="/account">Beheer je gegevens</x-a>
