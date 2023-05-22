@@ -1,6 +1,6 @@
-@props(['title', 'header', 'beschrijving' => ''])
+@props(['title'])
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -17,17 +17,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="antialiased">
-@include('layout.sidebar')
-@isset($header)
-    <x-dashboard-header beschrijving="{{ $beschrijving }}">
-        {{ $header }}
-    </x-dashboard-header>
-@endisset
-
-<div class="container">
-    @include('components.alerts')
-</div>
+<body class="d-flex justify-content-center align-items-center vw-100 vh-100">
 
 {{ $slot }}
 
