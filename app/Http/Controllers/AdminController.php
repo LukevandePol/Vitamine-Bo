@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function approve()
     {
         $users = User::whereNull('status');
-        $users = $users->paginate(5);
+        $users = $users->paginate(20);
 
         return view('admin.goedkeuren', compact('users'));
     }
