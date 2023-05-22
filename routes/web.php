@@ -38,14 +38,19 @@ Route::group(['middleware' => ['auth']], function () {
     // Telefoonnummer
     Route::post('updateTelefoon', [KlantgegevensController::class, 'updateTelefoon']);
 
-    // Adres bewerken
+    //Adres instellen als bezorg- of factuuradres en adres verwijderen
+    //Knoppen staan op account scherm
+    Route::post('setBezorg/{id}', [AdresController::class, 'setBezorg']);
+    Route::post('setFactuur/{id}', [AdresController::class, 'setFactuur']);
+    Route::post('deleteAdres/{id}', [AdresController::class, 'deleteAdres']);
+
+    // Adres bewerken scherm ophalen en update form
     Route::get('AdresBewerken/{id}', [AdresController::class, 'create']);
     Route::post('updateAdres/{id}', [AdresController::class, 'updateAdres']);
 
-    // Adres toevoegen/verwijderen
-    Route::get('AdresToevoegen', [AdresController::class, 'create2']);
+    // Adres toevoegen scherm ophalen
+    Route::get('AdresToevoegen', [AdresController::class, 'createToevoegen']);
     Route::post('createAdres', [AdresController::class, 'createAdres']);
-    Route::post('deleteAdres/{id}', [AdresController::class, 'deleteAdres']);
 
     // Klanten dashboard
     Route::get('dashboard', [DashboardController::class, 'create']);

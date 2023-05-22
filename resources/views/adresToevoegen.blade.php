@@ -1,4 +1,4 @@
-<x-layout :title="'- Adres Toevoegen'">
+<x-layout title="Adres Toevoegen">
     {{$klantgegevens}}
 
     <form action="/createAdres/" method="post">
@@ -8,8 +8,8 @@
             name="postcode"
         />
         <x-input
-            label="Adres: "
-            name="adres"
+            label="Huisnummer: "
+            name="huisnummer"
         />
         <x-input
             label="Plaatsnaam"

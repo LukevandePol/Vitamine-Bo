@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
-    public $timestamps = false;
     use HasFactory;
 
     public function bestelling(): BelongsTo

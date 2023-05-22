@@ -30,7 +30,7 @@
                     </x-tabpanel>
 
                     <x-tabpanel id="adres" class="hidden">
-                        <x-input label="Adres:" name="adres"/>
+                        <x-input label="Huisnummer:" name="huisnummer"/>
                         <x-input label="Postcode:" name="postcode"/>
                     </x-tabpanel>
 

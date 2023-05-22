@@ -9,9 +9,9 @@
             value="{{$adres->postcode}}"
         />
         <x-input
-            label="Adres: "
-            name="adres"
-            value="{{$adres->adres}}"
+            label="Huisnummer: "
+            name="huisnummer"
+            value="{{$adres->huisnummer}}"
         />
         <x-input
             label="Plaatsnaam"

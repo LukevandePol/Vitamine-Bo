@@ -18,9 +18,9 @@ return new class extends Migration
             $table->integer('prijsInCenten');
             $table->date('bezorgDatum');
             $table->date('betaalDatum')->nullable();
-            $table->unsignedBigInteger('bezorgAdres')->references('id')->on('adres');
-            $table->unsignedBigInteger('factuurAdres')->references('id')->on('adres')->nullable();
-            $table->foreignId('user_id')->constrained();
+//            $table->unsignedBigInteger('bezorgAdres')->references('id')->on('adres');
+//            $table->unsignedBigInteger('factuurAdres')->references('id')->on('adres')->nullable();
+            $table->foreignId('klantgegevens_id')->constrained();
         });
     }
 
