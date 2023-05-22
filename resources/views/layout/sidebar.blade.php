@@ -1,11 +1,11 @@
 <div class="sidebar">
     <x-logo class="sidebar-image imagebox"/>
     <ul class="nav-list">
-        @auth
+        @cannot('isAdmin')
             <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">Dashboard</x-nav-link>
             <x-nav-link :href="route('account')" icon="fa-user" :active="request()->routeIs('account')">Account
             </x-nav-link>
-        @endauth
+        @endcannot
 
         @can('isAdmin')
             <x-nav-link :href="route('admin.index')" icon="fa-shield" :active="request()->routeIs('admin.index')">Admin
