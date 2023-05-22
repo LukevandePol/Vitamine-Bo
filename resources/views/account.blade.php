@@ -1,4 +1,4 @@
-<x-layout title='Account'>
+<x-layout title='Account' header="Account" beschrijving="Hier kunt u uw accountgegevens controleren en aanpassen">
     <div class="container">
         <div class="row">
             <div class="col-12">
