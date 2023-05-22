@@ -72,4 +72,36 @@ class AdresController extends Controller
 
         return redirect('/account');
     }
+
+    public function setBezorg($id)
+    {
+        $toekomstigBezorgadres =
+            Adres::find($id);
+
+        Adres::query()
+            ->where('klantgegevens_id', '=', $toekomstigBezorgadres->klantgegevens_id)
+            ->where('type', '=', 'bezorg')
+            ->update(['type' => 'niet_gebruikt']);
+
+        $toekomstigBezorgadres->type = 'bezorg';
+        $toekomstigBezorgadres->save();
+
+        return redirect('/account');
+    }
+
+    public function setFactuur($id)
+    {
+        $toekomstigFactuurgadres =
+            Adres::find($id);
+
+        Adres::query()
+            ->where('klantgegevens_id', '=', $toekomstigFactuurgadres->klantgegevens_id)
+            ->where('type', '=', 'factuur')
+            ->update(['type' => 'niet_gebruikt']);
+
+        $toekomstigFactuurgadres->type = 'factuur';
+        $toekomstigFactuurgadres->save();
+
+        return redirect('/account');
+    }
 }
