@@ -527,3 +527,14 @@ header {
         width: 100%;
     }
 }
+
+/**
+ * 010. Adresscard
+ */
+
+.small-card {
+    max-width: 500px;
+    margin-left: 200px;
+
+}
+
