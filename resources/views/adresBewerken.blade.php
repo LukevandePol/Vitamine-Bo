@@ -1,4 +1,4 @@
-<x-layout :title="'- Adres bewerken'">
+<x-layout title="Adres bewerken">
     {{$adres}}
 
     <form action="/updateAdres/{{$adres->id}}" method="post">
