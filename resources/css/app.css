@@ -7,7 +7,8 @@
  * 04. Header
  * 05. Form
  * 06. Cards
- * 07. Sidebar
+ * 08. Sidebar
+ * 09. Carousel
  */
 
 
@@ -30,9 +31,22 @@
     font-style: normal;
 }
 
+
 /**
  * 02. Algemeen
  */
+* {
+    font-family: 'avenir_nextultra', sans-serif;
+    color: rgb(77, 77, 77);
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .bo-hoofdkleur {
     color: rgb(99, 190, 235);
 }
@@ -78,16 +92,8 @@ h2, h3 {
     font-size: 1.5rem;
 }
 
-* {
-    font-family: 'avenir_nextultra', sans-serif;
-    color: rgb(77, 77, 77);
-}
-
-main {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+ul {
+    padding-left: 0;
 }
 
 .btn {
@@ -137,6 +143,7 @@ a:hover {
     color: #ffffff;
 }
 
+
 /**
  * 03. Utilities
  */
@@ -149,6 +156,7 @@ a:hover {
 .padding-left {
     padding-left: 7vw;
 }
+
 
 /**
  * 04. Header
@@ -242,6 +250,7 @@ header {
     display: none;
 }
 
+
 /**
  * 06. Cards
  */
@@ -262,32 +271,18 @@ header {
     height: 67px;
 }
 
-/**
- * 07. Sidebar
- */
-.sidebar-placeholder {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 145px;
-    height: 100%;
-    background-color: #4d4d4d;
-}
 
 /**
- * 08. Pagination
+ * 07. Pagination
  */
 .pagination {
     width: 150px;
 }
 
+
 /**
  * 08. sidebar
  */
-
-/* Google Font Link */
-
-
 .imagebox {
     text-align: center;
     margin-top: 40px;
@@ -306,12 +301,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-@media screen and (max-width: 1024px) {
-    .sidebar-image {
-        max-width: 100%;
-    }
 }
 
 .sidebar {
@@ -358,7 +347,7 @@ header {
     border-radius: 5px;
     align-items: center;
     text-decoration: none;
-    transition: all 0.4s ease;
+    transition: none;
     background: #f9f9f9;
 }
 
@@ -370,7 +359,7 @@ header {
     background-color: #4d4d4d;;
 }
 
-.sidebar li a.active .links_name {
+.sidebar li a.active .nav-link {
     color: #f9f9f9
 }
 
@@ -378,7 +367,7 @@ header {
     color: #63BEEB;
 }
 
-.sidebar li a .links_name {
+.sidebar li a .nav-link {
     color: #4D4D4D;
     font-size: 15px;
     font-weight: 400;
@@ -388,12 +377,12 @@ header {
     transition: 0.4s;
 }
 
-.sidebar.open li a .links_name {
+.sidebar.open li a .nav-link {
     opacity: 1;
     pointer-events: auto;
 }
 
-.sidebar li a:hover .links_name,
+.sidebar li a:hover .nav-link,
 .sidebar li a:hover i {
     transition: all 0.5s ease;
     color: #f9f9f9;
@@ -406,7 +395,7 @@ header {
     border-radius: 12px;
 }
 
-.sidebar li.profile {
+.sidebar li.logout {
     color: #4d4d4d;
     position: fixed;
     height: 60px;
@@ -422,25 +411,11 @@ header {
     align-items: center;
 }
 
-.sidebar.open li.profile {
+.sidebar.open li.logout {
     width: 250px;
 }
 
-.sidebar li .profile-details {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-
-.sidebar li img {
-    height: 45px;
-    width: 45px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-right: 10px;
-}
-
-.sidebar .profile #log_out {
+.sidebar .logout #log_out {
     position: absolute;
     top: 50%;
     right: 0;
@@ -457,62 +432,19 @@ header {
     align-items: center;
 }
 
-.sidebar.open .profile #log_out {
+.sidebar.open .logout #log_out {
     width: 50px;
     background: none;
 }
 
-.home-section {
-    position: relative;
-    background: #E4E9F7;
-    min-height: 100vh;
-    top: 0;
-    left: 78px;
-    width: calc(100% - 78px);
-    transition: all 0.5s ease;
-    z-index: 2;
-}
-
-.sidebar.open ~ .home-section {
-    left: 250px;
-    width: calc(100% - 250px);
-}
-
-.home-section .text {
-    display: inline-block;
-    color: #11101d;
-    font-size: 25px;
-    font-weight: 500;
-    margin: 18px;
-}
-
-.sidebar.expanded .sidebar-image {
-    max-width: 80%;
-}
-
-@media screen and (max-width: 480px) {
-    .sidebar.expanded .sidebar-image {
-        max-width: 60%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .sidebar.expanded .sidebar-image {
-        max-width: 60%;
-    }
-}
-
-.sidebar.open li.profile {
+.sidebar.open li.logout {
     width: 200px;
 
 }
 
-ul {
-    padding-left: 0;
-}
 
 /**
- * 08. Carousel
+ * 09. Carousel
  */
 
 .wrapper {

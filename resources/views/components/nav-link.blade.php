@@ -9,7 +9,7 @@
 <li>
     <a {{ $attributes->merge(['class' => $classes]) }}>
         <i class="fa-solid {{ $icon ?? 'fa-home' }}"></i>
-        <span class="links_name">
+        <span class="nav-link">
             {{ $slot }}
         </span>
     </a>

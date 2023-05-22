@@ -1,4 +1,4 @@
-<x-layout :title="'- Adres bewerken'">
+<x-layout title="Adres bewerken">
     <div class="container">
         <div class="row">
             <div class="col-12">

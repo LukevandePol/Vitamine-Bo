@@ -1,1 +1,1 @@
-<img src="/images/logo.webp" class="logo" {{ $attributes }} alt="Logo">
+<img src="/images/logo.webp" {{ $attributes->merge(['class' => 'logo']) }} alt="Logo">
