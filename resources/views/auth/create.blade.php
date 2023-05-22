@@ -1,4 +1,4 @@
-<x-layout title="- Registreren">
+<x-guest title="Registreren">
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-6">
@@ -34,12 +34,15 @@
                         <x-input label="Postcode:" name="postcode"/>
                     </x-tabpanel>
 
-                    <div class="pagination">
+                    <div class="auth-pagination">
                         <x-button class="btn-primary hidden" id="prev">Vorige</x-button>
                         <x-button class="btn-primary" id="next">Volgende</x-button>
                         <x-submit class="btn btn-primary hidden" id="submit">Registreren</x-submit>
                     </div>
                 </form>
+                <div class="d-flex justify-content-center mt-3">
+                    <a href="/inloggen">Heeft u al een account? Log hier in.</a>
+                </div>
             </div>
         </div>
     </div>
@@ -47,4 +50,4 @@
     @section('page-scripts')
         @vite(['resources/js/registration.js'])
     @endsection
-</x-layout>
+</x-guest>

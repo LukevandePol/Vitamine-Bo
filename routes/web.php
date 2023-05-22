@@ -32,7 +32,7 @@ Route::get('/niet-goedgekeurd', function () {
 // Authenticatie
 Route::group(['middleware' => ['auth']], function () {
     // Gebruikersgegevens
-    Route::get('account', [AccountController::class, 'create']);
+    Route::get('account', [AccountController::class, 'create'])->name('account');
     Route::post('updateUser', [AccountController::class, 'updateUser']);
 
     // Telefoonnummer
@@ -48,7 +48,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('deleteAdres/{id}', [AdresController::class, 'deleteAdres']);
 
     // Klanten dashboard
-    Route::get('dashboard', [DashboardController::class, 'create']);
+    Route::get('dashboard', [DashboardController::class, 'create'])->name('dashboard');
 
     // Uitloggen
     Route::post('uitloggen', [SessionsController::class, 'destroy']);
@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth']], function () {
 // Gasten
 Route::group(['middleware' => ['guest']], function () {
     // Registreren
-    Route::get('registreren', [RegisterController::class, 'create']);
+    Route::get('registreren', [RegisterController::class, 'create'])->name('registreren');
     Route::post('registreren', [RegisterController::class, 'store']);
 
     // Inloggen
