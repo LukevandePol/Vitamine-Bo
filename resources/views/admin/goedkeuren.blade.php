@@ -1,6 +1,5 @@
 <x-layout title="Goedkeuren" header="Goedkeuren"
           beschrijving="Hier vind je de lijst met accounts die nog niet zijn goedgekeurd.">
-    <div class="sidebar-placeholder"></div>
     <div class="container py-5">
         <x-card class="w-100">
             <h3>Accounts goedkeuren</h3>
