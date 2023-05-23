@@ -38,6 +38,7 @@ class AdresController extends Controller
         DB::table('adres')->insert([
             'postcode' => $attributes['postcode'],
             'huisnummer' => $attributes['huisnummer'],
+            'adres' => NationaalGeoregisterController::getData("9216VT")['straatnaam'],
 //            'plaatsnaam' => $attributes['plaatsnaam'],
             'klantgegevens_id' => $attributes['klantgegevens_id'],
         ]);
