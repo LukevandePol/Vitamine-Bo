@@ -528,11 +528,19 @@ header {
     }
 }
 
-.marginleft{
-    margin-left: 200px;
+/**
+ * 09. List of items
+ */
+.shadowimg {
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
-.icon-button{
+.scrollable-container {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.icon-button {
     background-color:#63BEEB;
     padding-top: 12px;
     padding-bottom: 12px;
@@ -541,10 +549,10 @@ header {
     border-radius: 8px;
     border: none;
 }
-.text-color{
+
+.text-color {
     color:#FFFFFF;
     margin-left: 6px;
-
 }
 
 /**
