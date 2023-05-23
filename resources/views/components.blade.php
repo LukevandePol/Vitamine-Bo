@@ -1,11 +1,10 @@
 <x-layout title="Components">
 
-  <x-fruitlijst/>
 
+<x-adresscard/>
   <x-sidebar/>
 
-  <x-buttonicon/>
-    
-  <x-carousel/>
+
+
 
 </x-layout>

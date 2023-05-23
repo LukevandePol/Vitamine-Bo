@@ -541,16 +541,32 @@ header {
 }
 
 .icon-button {
-    background-color:#63BEEB;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 18px;
-    padding-right: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #63BEEB;
+    padding: 12px 18px;
     border-radius: 8px;
     border: none;
+    height: 40px;
+    margin-left: auto;
 }
 
 .text-color {
     color:#FFFFFF;
     margin-left: 6px;
 }
+
+
+/**
+ * 010. Adresscard
+ */
+
+.small-card {
+    max-width: 500px;
+    margin-left: 200px;
+
+}
+
+
+
