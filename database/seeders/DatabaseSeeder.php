@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
 //            BestellingSeeder::class,
             ProductSeeder::class,
             AdresSeeder::class,
+            BeschikbareProductenSeeder::class,
         ]);
 
 
