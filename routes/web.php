@@ -53,6 +53,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('AdresToevoegen', [AdresController::class, 'createToevoegen']);
     Route::post('createAdres', [AdresController::class, 'createAdres']);
 
+    // Bestelling aanpassen
+    Route::get('BestellingAanpassen', [BestellingController::class, 'create'])->name('BestellingAanpassen');
     // Klanten dashboard
     Route::get('dashboard', [DashboardController::class, 'create'])->name('dashboard');
 
