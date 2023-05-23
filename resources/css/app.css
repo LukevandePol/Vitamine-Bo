@@ -528,6 +528,25 @@ header {
     }
 }
 
+.marginleft{
+    margin-left: 200px;
+}
+
+.icon-button{
+    background-color:#63BEEB;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 8px;
+    border: none;
+}
+.text-color{
+    color:#FFFFFF;
+    margin-left: 6px;
+
+}
+
 /**
  * 010. Adresscard
  */
