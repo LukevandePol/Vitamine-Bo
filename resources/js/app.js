@@ -19,9 +19,9 @@ sidebar.addEventListener("mouseleave", () => {
 // following are the code to change sidebar button(optional)
 function menuBtnChange() {
     if(sidebar.classList.contains("open")){
-        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
     }else {
-        closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+        closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
     }
 }
 
@@ -100,5 +100,33 @@ carousel.addEventListener("touchmove", dragging);
 
 document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("touchend", dragStop);
+
+window.onload = () => {
+    const plus = document.querySelector(".plus");
+    const minus = document.querySelector(".minus");
+    const num = document.querySelector(".num");
+    let a = 1;
+
+    plus.addEventListener("click", () => {
+        a++;
+        if (a < 10) {
+            num.innerText = "0" + a;
+        } else {
+            num.innerText = a;
+        }
+    });
+
+    minus.addEventListener("click", () => {
+        if (a > 1) {
+            a--;
+            if (a < 10) {
+                num.innerText = "0" + a;
+            } else {
+                num.innerText = a;
+            }
+        }
+    });
+};
+
 
 
