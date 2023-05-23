@@ -8,7 +8,7 @@
         </div>
         <div class="row">
             <div class="col-12 my-3">
-                <label for="Kvk">KvK-nummer:</label>
+                <label for="KvK">KvK-nummer:</label>
                 <input type="number" id="KvK" name="KvK" class="form-control" required>
             </div>
         </div>
