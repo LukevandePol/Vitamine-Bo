@@ -18,7 +18,8 @@ class BeschikbareProductenSeeder extends Seeder
                 'appel' => 4,
                 'banaan' => 8,
                 'kiwi' => 4,
-            ])
+            ]),
+            'zichtbaar' => true
         ]);
 
         BeschikbaarProduct::create([
@@ -28,7 +29,8 @@ class BeschikbareProductenSeeder extends Seeder
                 'banaan' => 6,
                 'kiwi' => 4,
                 'mandarijn' => 6,
-            ])
+            ]),
+            'zichtbaar' => true
         ]);
 
         BeschikbaarProduct::create([
@@ -38,7 +40,8 @@ class BeschikbareProductenSeeder extends Seeder
                 'banaan' => 8,
                 'kiwi' => 4,
                 'mandarijn' => 6,
-            ])
+            ]),
+            'zichtbaar' => true
         ]);
 
         BeschikbaarProduct::create([
@@ -48,19 +51,22 @@ class BeschikbareProductenSeeder extends Seeder
                 'banaan' => 10,
                 'kiwi' => 10,
                 'mandarijn' => 10,
-            ])
+            ]),
+            'zichtbaar' => true
         ]);
 
         BeschikbaarProduct::create([
             'naam' => 'Smootie',
             'smaak' => 'Banaan',
-            'volume' => '1 Liter'
+            'volume' => '1 Liter',
+            'zichtbaar' => true
         ]);
 
         BeschikbaarProduct::create([
             'naam' => 'Smootie',
             'smaak' => 'Aardbij',
-            'volume' => '1 Liter'
+            'volume' => '1 Liter',
+            'zichtbaar' => true
         ]);
     }
 }

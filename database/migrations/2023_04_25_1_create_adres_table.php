@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::create('adres', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('klantgegevens_id')->constrained();
             $table->timestamps();
             $table->string('postcode');
             $table->string('huisnummer');
@@ -25,7 +26,6 @@ return new class extends Migration {
                     'factuur',
                     'niet_gebruikt'
                 ])->default('niet_gebruikt');
-            $table->foreignId('klantgegevens_id')->constrained();
         });
     }
 

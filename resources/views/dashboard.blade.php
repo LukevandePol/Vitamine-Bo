@@ -10,10 +10,11 @@
         <div class="row">
             <div class="col-sm-6">
                 <x-cardstripe
-                    title="Aankomende Levering">
+                    title="Aankomende Levering"
+                    class="bo-hoofdkleur-opacity">
                     hallo
                 </x-cardstripe>
-                <x-a href="#">Bekijk je leveringen</x-a>
+                <x-a href="BestellingAanpassen">Bekijk je leveringen</x-a>
             </div>
 
             <div class="col-sm-6">

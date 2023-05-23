@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdresController;
+use App\Http\Controllers\BestellingController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KlantgegevensController;
 use App\Http\Controllers\RegisterController;
