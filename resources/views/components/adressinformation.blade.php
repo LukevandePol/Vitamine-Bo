@@ -30,8 +30,6 @@
                 <x-buttonicon class="mt-2"></x-buttonicon>
             </div>
         </div>
-
-
-</form>
+    </form>
 
 </x-card>
