@@ -1,5 +1,5 @@
 <div class="marginleft">
-    <button class="icon-button">
+    <button {{ $attributes->merge(['class' => 'icon-button']) }}>
   <span class="icon">
     <i class="far fa-edit" style="color: #ffffff;"></i>
   </span>
