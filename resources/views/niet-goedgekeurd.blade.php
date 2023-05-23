@@ -1,4 +1,4 @@
-<x-layout title="- Niet goedgekeurd">
+<x-layout title="Niet goedgekeurd">
     <main class="w-100">
         <x-card>
             <div class="center mb-5">
