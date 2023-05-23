@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('klantgegevens', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
             $table->integer('kvkNummer');
             $table->String('telefoonnummer')->nullable();
-            $table->date('aanpassingBevestigdDatum')->nullable();
-            $table->foreignId('user_id')->constrained();
+//            $table->date('aanpassingBevestigdDatum')->nullable();
         });
     }
 
