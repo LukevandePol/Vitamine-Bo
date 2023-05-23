@@ -564,9 +564,11 @@ header {
 
 .small-card {
     max-width: 500px;
-    margin-left: 200px;
 
 }
 
+.medium-card{
+    max-width: 900px;
+}
 
 

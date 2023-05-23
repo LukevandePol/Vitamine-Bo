@@ -5,8 +5,9 @@
   <x-buttonicon/>
 
   <x-adresscard/>
+        <x-adressinformation/>
     </div>
-<x-adresscard/>
+
   <x-sidebar/>
 
 
