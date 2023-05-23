@@ -28,4 +28,9 @@ class AdminController extends Controller
 
         return redirect()->back()->with('success', 'Account succesvol goedgekeurd!');
     }
+
+    public function product()
+    {
+        return view('admin.product');
+    }
 }

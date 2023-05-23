@@ -72,7 +72,13 @@ Route::group(['middleware' => ['guest']], function () {
 
 // Admin
 Route::group(['middleware' => ['auth', 'admin']], function () {
+    // Dashboard
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+    // Account goedkeuren
     Route::get('/admin/goedkeuren', [AdminController::class, 'approve'])->name('admin.approve');
     Route::post('/admin/goedkeuren/{id}', [AdminController::class, 'update'])->name('update.status');
+
+    // Producten toevoegen
+    Route::get('/admin/product', [AdminController::class, 'product'])->name('admin.product');
 });
