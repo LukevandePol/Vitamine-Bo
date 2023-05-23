@@ -569,4 +569,17 @@ header {
 }
 
 
+.custom-ul li {
+    clear: both;
+    margin-bottom: 4px;
+    margin-left:13px;
+}
+
+.custom-ul li span {
+    float: right;
+    margin-left: 10px;
+}
+.no-bottom-margin{
+    margin-bottom: 0;
+}
 
