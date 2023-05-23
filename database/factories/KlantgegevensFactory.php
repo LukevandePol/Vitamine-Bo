@@ -21,7 +21,7 @@ class KlantgegevensFactory extends Factory
         return [
             'kvkNummer' => $this->faker->NumberBetween(10000000, 99999999),
             'telefoonnummer' => $this->faker->phoneNumber(),
-            'aanpassingBevestigdDatum' => null,
+//            'aanpassingBevestigdDatum' => null,
             'user_id' => User::factory(),
         ];
     }

@@ -14,13 +14,13 @@ return new class extends Migration
 
         Schema::create('bestellings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('klantgegevens_id')->constrained();
             $table->timestamps();
             $table->integer('prijsInCenten');
+            $table->string('reden')->nullable();
+            $table->date('goedgekeurdDatum')->nullable();
             $table->date('bezorgDatum');
             $table->date('betaalDatum')->nullable();
-//            $table->unsignedBigInteger('bezorgAdres')->references('id')->on('adres');
-//            $table->unsignedBigInteger('factuurAdres')->references('id')->on('adres')->nullable();
-            $table->foreignId('klantgegevens_id')->constrained();
         });
     }
 
