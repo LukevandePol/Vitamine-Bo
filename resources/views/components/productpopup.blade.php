@@ -7,13 +7,14 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-6 d-flex align-items-center">
-                            <img src="images/Product1.png" class="product-image" alt="product">
+                        <div class="col-md-6">
+                            <img src="images/Product6.png" class="product-image" alt="product">
                         </div>
                         <div class="col-md-6">
                             <h3 class="bo-hoofdkleur">1x Krat (30 stuks)</h3>
                             <p><strong>€30,95</strong></p>
-                            <p></p>
+
+                            <p>Inhoud:</p>
                             <ul class="custom-ul stripe-top">
                                 <li>
                                     <span class="list-text">Appel</span>
@@ -40,7 +41,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <span class="list-text">Aardbei</span>
+                                    <span class="list-text">Mandarijn</span>
                                     <div class="wrapper">
                                         <span class="minus">-</span>
                                         <span class="num">1</span>
@@ -48,6 +49,7 @@
                                     </div>
                                 </li>
                             </ul>
+
                         </div>
                     </div>
                 </div>
