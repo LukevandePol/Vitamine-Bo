@@ -316,10 +316,6 @@ header {
     transition: width 0.5s ease;
 }
 
-.sidebar:hover {
-    width: 250px;
-}
-
 .sidebar i {
     color: #4D4D4D;
     height: 60px;
@@ -411,10 +407,6 @@ header {
     align-items: center;
 }
 
-.sidebar.open li.logout {
-    width: 250px;
-}
-
 .sidebar .logout #log_out {
     position: absolute;
     top: 50%;
@@ -438,8 +430,7 @@ header {
 }
 
 .sidebar.open li.logout {
-    width: 200px;
-
+    width: 225px;
 }
 
 

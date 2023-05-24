@@ -6,7 +6,7 @@ let closeBtn = document.querySelector("#btn");
 
 sidebar.addEventListener("mouseenter", () => {
     sidebar.classList.add("open");
-    sidebar.style.width = "200px";
+    sidebar.style.width = "225px";
     menuBtnChange(); // calling the function (optional)
 });
 
