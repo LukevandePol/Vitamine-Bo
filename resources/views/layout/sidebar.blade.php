@@ -14,14 +14,15 @@
             <x-nav-link :href="route('admin.index')" icon="fa-shield" :active="request()->routeIs('admin.index')">
                 Admin Panel
             </x-nav-link>
-            <x-nav-link :href="route('admin.approve')" icon="fa-check" :active="request()->routeIs('admin.approve')">
-                Account goedkeuren
-            </x-nav-link>
-            <x-nav-link :href="route('admin.product')" icon="fa-cart-shopping"
-                        :active="request()->routeIs('admin.product')">
-                Product toevoegen
-            </x-nav-link>
-        @endcan
+                <x-nav-link :href="route('admin.approve')" icon="fa-check"
+                            :active="request()->routeIs('admin.approve')">
+                    Klant goedkeuren
+                </x-nav-link>
+                <x-nav-link :href="route('admin.product')" icon="fa-cart-shopping"
+                            :active="request()->routeIs('admin.product')">
+                    Product beheer
+                </x-nav-link>
+            @endcan
 
         <li class="logout">
             <div>
