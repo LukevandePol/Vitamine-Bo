@@ -7,24 +7,47 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img src="images/Product1.png" class="img-fluid" alt="product">
+                        <div class="col-md-6 d-flex align-items-center">
+                            <img src="images/Product1.png" class="product-image" alt="product">
                         </div>
                         <div class="col-md-6">
                             <h3 class="bo-hoofdkleur">1x Krat (30 stuks)</h3>
-                            <p><strong>€prijs</strong></p>
-                            <p class="no-bottom-margin">Inhoud:</p>
-                            <ul class="custom-ul">
-                                <li><span>1</span>Appel</li>
-                                <li><span>10</span>Banaan</li>
-                                <li><span>5</span>Peer</li>
-                                <li><span>8</span>Aardbei</li>
+                            <p><strong>€30,95</strong></p>
+                            <p></p>
+                            <ul class="custom-ul stripe-top">
+                                <li>
+                                    <span class="list-text">Appel</span>
+                                    <div class="wrapper">
+                                        <span class="minus">-</span>
+                                        <span class="num">1</span>
+                                        <span class="plus">+</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="list-text">Banaan</span>
+                                    <div class="wrapper">
+                                        <span class="minus">-</span>
+                                        <span class="num">1</span>
+                                        <span class="plus">+</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="list-text">Peer</span>
+                                    <div class="wrapper">
+                                        <span class="minus">-</span>
+                                        <span class="num">1</span>
+                                        <span class="plus">+</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="list-text">Aardbei</span>
+                                    <div class="wrapper">
+                                        <span class="minus">-</span>
+                                        <span class="num">1</span>
+                                        <span class="plus">+</span>
+                                    </div>
+                                </li>
                             </ul>
-                            <div class="wrapper">
-                                <span class="minus">-</span>
-                                <span class="num">1</span>
-                                <span class="plus">+</span>
-                            </div>
                         </div>
                     </div>
                 </div>
