@@ -588,7 +588,7 @@ header {
 }
 
 .wrapper {
-    height: 80px; /* Adjust the height as desired */
+    height: 55px; /* Adjust the height as desired */
     width: 120px; /* Adjust the width as desired */
     display: flex;
     align-items: center;
@@ -602,7 +602,7 @@ header {
 .wrapper span {
     width: 100%;
     text-align: center;
-    font-size: 24px; /* Adjust the font size as desired */
+    font-size: 18px; /* Adjust the font size as desired */
     font-weight: 600;
     cursor: pointer;
     user-select: none;
@@ -616,11 +616,19 @@ header {
 }
 
 .product-image {
-    width: 100%;
+    width: 350px;
     height: auto;
 
 }
 
 .stripe-top{
     border-top: 1px solid #ddd;
+}
+
+.modal-trigger:hover {
+    cursor: pointer;
+}
+
+.custom-margin1{
+    padding:15px
 }

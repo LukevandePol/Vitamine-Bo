@@ -7,14 +7,14 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img src="images/Product6.png" class="product-image" alt="product">
+                        <div class="col-md-6 text-center d-flex align-items-center">
+                            <img src="images/fruitkist.jpeg" class="product-image custom-margin1" alt="product">
                         </div>
                         <div class="col-md-6">
                             <h3 class="bo-hoofdkleur">1x Krat (30 stuks)</h3>
                             <p><strong>€30,95</strong></p>
 
-                            <p>Inhoud:</p>
+                            <p>Dit is de standaard inhoud van het krat, voeg deze toe aan je bestelling of personaliseer het.</p>
                             <ul class="custom-ul stripe-top">
                                 <li>
                                     <span class="list-text">Appel</span>
@@ -55,7 +55,9 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <x-buttonicon></x-buttonicon>
+                <x-buttonicon class="modal-trigger" data-bs-toggle="modal" data-bs-target="#personalizeModal">
+                    Personaliseer</x-buttonicon>
+                <x-buttonicon data-bs-dismiss="modal" aria-label="Close">Toevoegen </x-buttonicon>
             </div>
         </div>
     </div>

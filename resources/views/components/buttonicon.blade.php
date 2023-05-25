@@ -3,6 +3,6 @@
   <span class="icon">
     <i class="far fa-edit" style="color: #ffffff;"></i>
   </span>
-        <span class="text text-color">Aanpassen</span>
+        <span class="text text-color">{{ $slot }}</span>
     </button>
 </div>
