@@ -19,16 +19,17 @@
 
 <body class="antialiased">
 @include('layout.sidebar')
+
 @isset($header)
     <x-dashboard-header beschrijving="{{ $beschrijving }}">
         {{ $header }}
     </x-dashboard-header>
 @endisset
 
-<div class="container">
+<div class="container padding-left py-5">
     @include('components.alerts')
-</div>
 
-{{ $slot }}
+    {{ $slot }}
+</div>
 
 @include('layout.footer')
