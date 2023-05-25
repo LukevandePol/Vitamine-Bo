@@ -10,6 +10,8 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function selecties(): BelongsToMany
     {
         return $this->belongsToMany(Selectie::class);

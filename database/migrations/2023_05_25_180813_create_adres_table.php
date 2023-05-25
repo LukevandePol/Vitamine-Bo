@@ -14,10 +14,12 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
-            $table->string('postcode', 7);
+            $table->string('postcode');
             $table->string('huisnummer');
-            $table->string('plaats');
-            $table->string('provincie');
+            $table->string('weergavenaam')->nullable();
+            $table->string('straatnaam')->nullable();
+            $table->string('woonplaatsnaam')->nullable();
+            $table->string('provincienaam')->nullable();
             $table->enum('voorkeur_type',
                 [
                     'bezorg',

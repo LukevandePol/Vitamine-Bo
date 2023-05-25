@@ -17,8 +17,8 @@ class AdresSeeder extends Seeder
             'user_id' => 3,
             'postcode' => '4811TV',
             'huisnummer' => '23',
-            'plaats' => 'Leeuwarden',
-            'provincie' => 'Friesland',
+            'woonplaatsnaam' => 'Leeuwarden',
+            'provincienaam' => 'Friesland',
             'voorkeur_type' => 'bezorg'
         ]);
 
@@ -26,8 +26,8 @@ class AdresSeeder extends Seeder
             'user_id' => 3,
             'postcode' => '8917DD',
             'huisnummer' => '10',
-            'plaats' => 'Leeuwarden',
-            'provincie' => 'Friesland',
+            'woonplaatsnaam' => 'Leeuwarden',
+            'provincienaam' => 'Friesland',
             'voorkeur_type' => 'factuur'
         ]);
     }
