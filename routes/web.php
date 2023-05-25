@@ -55,6 +55,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Bestelling aanpassen
     Route::get('BestellingAanpassen', [BestellingController::class, 'create'])->name('BestellingAanpassen');
+
     // Klanten dashboard
     Route::get('dashboard', [DashboardController::class, 'create'])->name('dashboard');
 
