@@ -7,6 +7,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Naam</th>
+                <th scope="col">E-mailadres</th>
                 <th scope="col">Aangemaakt</th>
                 <th scope="col">Actie</th>
             </tr>
@@ -16,6 +17,7 @@
                 <tr>
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
                     <td>{{ $user->created_at->format('Y-m-d') }}</td>
                     <td class="d-flex">
                         <form method="POST" action="{{ route('update.status', $user->id) }}">
