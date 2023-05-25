@@ -27,4 +27,10 @@ class Bestelling extends Model
         return $this->hasMany(Adres::class);
     }
 
+    public function Bezorgdatums(): BelongsToMany
+    {
+        return $this->belongsToMany(Bezorgdatum::class);
+    }
+
+
 }

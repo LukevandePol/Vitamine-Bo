@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
             ProductSelectieSeeder::class,
             BestellingSelectieSeeder::class,
+            BezorgdatumSeeder::class,
+            BestellingBezorgdataSeeder::class,
         ]);
 
     }
