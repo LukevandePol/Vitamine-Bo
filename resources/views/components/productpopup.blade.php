@@ -8,7 +8,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6 text-center d-flex align-items-center">
-                            <img src="images/fruitkist.jpeg" class="product-image custom-margin1" alt="product">
+                            <img src="images/fruitkistbo.png" class="product-image custom-margin1" alt="product">
                         </div>
                         <div class="col-md-6">
                             <h3 class="bo-hoofdkleur">1x Krat (30 stuks)</h3>
