@@ -13,15 +13,23 @@ class AdresSeeder extends Seeder
      */
     public function run(): void
     {
-        $klant_ids = Klantgegevens::all()->pluck('id')->toArray();
-//        $klantgegevens = DB::table('klantgegevens')->get();
-//        $piet = $klantgegevens->pluck('id');
 
-        foreach ($klant_ids as $klant_id) {
-            Adres::factory()->create([
-                'klantgegevens_id' => $klant_id,
-                'type' => 'bezorg',
-            ]);
-        }
+        adres::create([
+            'user_id' => 3,
+            'postcode' => '4811TV',
+            'huisnummer' => '23',
+            'plaats' => 'Leeuwarden',
+            'provincie' => 'Friesland',
+            'voorkeur_type' => 'bezorg'
+        ]);
+
+        adres::create([
+            'user_id' => 3,
+            'postcode' => '8917DD',
+            'huisnummer' => '10',
+            'plaats' => 'Leeuwarden',
+            'provincie' => 'Friesland',
+            'voorkeur_type' => 'factuur'
+        ]);
     }
 }

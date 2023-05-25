@@ -10,15 +10,10 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('beschikbaar_products', function (Blueprint $table) {
+        Schema::create('selecties', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('naam');
-            $table->json('inhoud')->nullable();
-            $table->string('afbeelding_pad')->nullable();
-            $table->boolean('zichtbaar')->nullable();
-            $table->string('smaak')->nullable();
-            $table->string('volume')->nullable();
         });
     }
 
@@ -27,6 +22,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('beschikbaar_products');
+        Schema::dropIfExists('selecties');
     }
 };

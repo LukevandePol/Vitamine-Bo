@@ -12,7 +12,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
+        User::create([
             'name' => 'Test admin',
             'email' => 'admin@example.com',
             'email_verified_at' => Now(),
@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             'status' => Now(),
         ]);
 
-        User::factory()->create([
+        User::create([
             'name' => 'Test medewerker',
             'email' => 'medewerker@example.com',
             'email_verified_at' => Now(),
@@ -29,16 +29,16 @@ class UserSeeder extends Seeder
             'rol' => 'bo_medewerker',
             'status' => Now(),
         ]);
-//
-//        User::factory()->create([
-//            'name' => 'Test klant',
-//            'email' => 'klant@example.com',
-//            'email_verified_at' => Now(),
-//            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-//            'rol' => 'klant',
-//            'status' => Now(),
-//        ]);
 
-        User::factory(20)->create();
+        User::create([
+            'name' => 'Test klant',
+            'email' => 'klant@example.com',
+            'email_verified_at' => Now(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'rol' => 'klant',
+            'status' => Now(),
+        ]);
+
+//        User::factory(20)->create();
     }
 }

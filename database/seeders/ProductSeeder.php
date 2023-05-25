@@ -12,8 +12,10 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        Product::factory()
-            ->count(500)
-            ->create();
+        Product::create([
+            'naam' => 'appel',
+            'type' => 'fruit',
+            'zichtbaar' => true,
+        ]);
     }
 }
