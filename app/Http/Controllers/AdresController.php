@@ -31,15 +31,19 @@ class AdresController extends Controller
         $attributes = request()->validate([
             'postcode' => ['required', 'min:6', 'max:7'],
             'huisnummer' => ['required', 'max:255'],
-//            'plaatsnaam' => ['required'],
             'klantgegevens_id' => ['required'],
         ]);
 
-        DB::table('adres')->insert([
+        $georegisterData = NationaalGeoregisterController::getData($attributes['postcode']);
+
+
+        Adres::create([
             'postcode' => $attributes['postcode'],
             'huisnummer' => $attributes['huisnummer'],
-            'adres' => NationaalGeoregisterController::getData("9216VT")['straatnaam'],
-//            'plaatsnaam' => $attributes['plaatsnaam'],
+            'adres' => $georegisterData['straatnaam'],
+            'provincienaam' => $georegisterData['provincienaam'],
+            'plaatsnaam' => $georegisterData['woonplaatsnaam'],
+            'gemeentenaam' => $georegisterData['gemeentenaam'],
             'klantgegevens_id' => $attributes['klantgegevens_id'],
         ]);
 
@@ -53,15 +57,20 @@ class AdresController extends Controller
         $attributes = request()->validate([
             'postcode' => ['required', 'min:6', 'max:7'],
             'huisnummer' => ['required', 'max:255'],
-            'plaatsnaam' => ['required']
         ]);
+
+        $georegisterData = NationaalGeoregisterController::getData($attributes['postcode']);
+
 
         DB::table('adres')
             ->where('id', $id)
             ->update([
                 'postcode' => $attributes['postcode'],
                 'huisnummer' => $attributes['huisnummer'],
-                'plaatsnaam' => $attributes['plaatsnaam'],
+                'adres' => $georegisterData['straatnaam'],
+                'provincienaam' => $georegisterData['provincienaam'],
+                'plaatsnaam' => $georegisterData['woonplaatsnaam'],
+                'gemeentenaam' => $georegisterData['gemeentenaam'],
             ]);
 
         return redirect('/account');

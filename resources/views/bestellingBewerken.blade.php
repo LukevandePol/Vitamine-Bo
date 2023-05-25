@@ -21,23 +21,32 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-6">
-                <x-cardstripe
-                    title="Huidige bestelling voor {{$bestelling->bezorgDatum}}"
-                    class="bo-hoofdkleur-opacity">
-                    @foreach($bestelling->product as $product)
-                        <div style="border: 1px red solid">
-                            <p>id :{{$product->id}}</p>
-                            <p>naam : {{$product->naam}}</p>
-                            {{--                            @if($product->inhoud != null)--}}
-                            @foreach(json_decode($product->inhoud) as $fruit)
-                                <p>fruit: {{$fruit}}</p>
-                            @endforeach
-                            {{--                            @endif--}}
-                        </div>
-                    @endforeach
-                </x-cardstripe>
-            </div>
+            @if($bestelling != null)
+                <div class="col-sm-6">
+                    <x-cardstripe
+                        title="Huidige bestelling voor {{$bestelling->bezorgDatum}}"
+                        class="bo-hoofdkleur-opacity">
+                        @foreach($bestelling->product as $product)
+                            <div style="border: 1px red solid">
+                                <p>id :{{$product->id}}</p>
+                                <p>naam : {{$product->naam}}</p>
+                                @foreach(json_decode($product->inhoud) as $fruit)
+                                    <p>fruit: {{$fruit}}</p>
+                                @endforeach
+                            </div>
+                        @endforeach
+                    </x-cardstripe>
+                </div>
+            @else
+                <div class="col-sm-6">
+                    <x-cardstripe
+                        title="Nieuwe bestelling"
+                        class="bo-hoofdkleur-opacity"
+                    >
+                        Maak een nieuwe bestelling aan
+                    </x-cardstripe>
+                </div>
+            @endif
 
             <div class="col-sm-6">
                 @foreach($beschikbareProducten as $product)

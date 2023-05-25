@@ -14,10 +14,6 @@
                         label="Huisnummer: "
                         name="huisnummer"
                     />
-                    <x-input
-                        label="Plaatsnaam"
-                        name="plaatsnaam"
-                    />
                     <input
                         type="hidden"
                         name="klantgegevens_id"

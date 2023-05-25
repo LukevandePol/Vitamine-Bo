@@ -25,27 +25,45 @@ class RegisterController extends Controller
             'postcode' => ['required', 'min:6', 'max:7'],
             'huisnummer' => ['required'],
         ]);
-
-        $usergegevens = [
+//
+//        $usergegevens = [
+//            'name' => $attributes['name'],
+//            'password' => bcrypt($attributes['password']),
+//            'email' => $attributes['email']
+//        ];
+        $user = User::create([
             'name' => $attributes['name'],
             'password' => bcrypt($attributes['password']),
             'email' => $attributes['email']
-        ];
-        $user = User::create($usergegevens); // !
+        ]);
 
-        $klantgegevens = [
+//        $klantgegevens = ;
+        $klantgegevens = Klantgegevens::create([
             'kvkNummer' => $attributes['kvknummer'],
             'telefoonnummer' => $attributes['telefoon'],
             'user_id' => $user->id
-        ];
-        $klantgegevens = Klantgegevens::create($klantgegevens);
+        ]);
+//
+//        $adresgegevens = [
+//            'postcode' => $attributes['postcode'],
+//            'huisnummer' => $attributes['huisnummer'],
+//            'klantgegevens_id' => $klantgegevens->id
+//        ];
 
-        $adresgegevens = [
+
+        $georegisterData = NationaalGeoregisterController::getData($attributes['postcode']);
+
+
+        Adres::create([
             'postcode' => $attributes['postcode'],
             'huisnummer' => $attributes['huisnummer'],
-            'klantgegevens_id' => $klantgegevens->id
-        ];
-        Adres::create($adresgegevens);
+            'adres' => $georegisterData['straatnaam'],
+            'provincienaam' => $georegisterData['provincienaam'],
+            'plaatsnaam' => $georegisterData['woonplaatsnaam'],
+            'gemeentenaam' => $georegisterData['gemeentenaam'],
+            'klantgegevens_id' => $klantgegevens->id,
+            'type' => 'bezorg'
+        ]);
 
         auth()->login($user);
 
