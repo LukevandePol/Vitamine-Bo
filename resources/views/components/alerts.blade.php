@@ -1,5 +1,5 @@
 @if($message = Session::get('success'))
-    <div class="alert alert-success alert-dismissible fade show d-flex justify-content-between align-items-center"
+    <div class="alert alert-success alert-dismissible fade show d-flex justify-content-between align-items-center mt-5"
          role="alert">
         {{ $message }}
         <button type="button" class="btn" data-bs-dismiss="alert" aria-label="Close">
@@ -9,7 +9,7 @@
 @endif
 
 @if($message = Session::get('error'))
-    <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-between align-items-center"
+    <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-between align-items-center mt-5"
          role="alert">
         {{ $message }}
         <button type="button" class="btn" data-bs-dismiss="alert" aria-label="Close">
@@ -19,7 +19,7 @@
 @endif
 
 @if($message = Session::get('warning'))
-    <div class="alert alert-warning alert-dismissible fade show d-flex justify-content-between align-items-center"
+    <div class="alert alert-warning alert-dismissible fade show d-flex justify-content-between align-items-center mt-5"
          role="alert">
         {{ $message }}
         <button type="button" class="btn" data-bs-dismiss="alert" aria-label="Close">
@@ -29,7 +29,7 @@
 @endif
 
 @if($message = Session::get('info'))
-    <div class="alert alert-info alert-dismissible fade show d-flex justify-content-between align-items-center"
+    <div class="alert alert-info alert-dismissible fade show d-flex justify-content-between align-items-center mt-5"
          role="alert">
         {{ $message }}
         <button type="button" class="btn" data-bs-dismiss="alert" aria-label="Close">
