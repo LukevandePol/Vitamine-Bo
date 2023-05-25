@@ -530,3 +530,65 @@ header {
 
 
 
+
+.no-bottom-margin{
+    margin-bottom: 0;
+}
+
+
+.custom-ul li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-ul li .list-text {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.wrapper {
+    height: 55px; /* Adjust the height as desired */
+    width: 120px; /* Adjust the width as desired */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent; /* Set the background to transparent */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove box shadow */
+}
+
+
+.wrapper span {
+    width: 100%;
+    text-align: center;
+    font-size: 18px; /* Adjust the font size as desired */
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+
+.wrapper span.num {
+    font-size: 20px; /* Adjust the font size as desired */
+    border-right: 2px solid rgba(0,0,0,0.2);
+    border-left: 2px solid rgba(0,0,0,0.2);
+    pointer-events: none;
+}
+
+.product-image {
+    width: 360px;
+    height: 370px;
+
+}
+
+.stripe-top{
+    border-top: 1px solid #ddd;
+}
+
+.modal-trigger:hover {
+    cursor: pointer;
+}
+
+.custom-margin1{
+    padding:15px
+}

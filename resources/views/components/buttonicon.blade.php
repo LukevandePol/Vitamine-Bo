@@ -2,5 +2,5 @@
   <span class="icon">
     <i class="far {{ $icon ?? 'fa-edit' }}"></i>
   </span>
-    <span class="text text-color">Aanpassen</span>
+  <span class="text text-color">{{ $slot }}</span>
 </button>
