@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdresController;
+use App\Http\Controllers\BeschikbaarProductController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KlantgegevensController;
 use App\Http\Controllers\RegisterController;
@@ -72,7 +73,14 @@ Route::group(['middleware' => ['guest']], function () {
 
 // Admin
 Route::group(['middleware' => ['auth', 'admin']], function () {
+    // Dashboard
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+    // Account goedkeuren
     Route::get('/admin/goedkeuren', [AdminController::class, 'approve'])->name('admin.approve');
     Route::post('/admin/goedkeuren/{id}', [AdminController::class, 'update'])->name('update.status');
+
+    // Producten toevoegen
+    Route::get('/admin/product', [BeschikbaarProductController::class, 'create'])->name('admin.product');
+    Route::post('admin/product', [BeschikbaarProductController::class, 'store']);
 });
