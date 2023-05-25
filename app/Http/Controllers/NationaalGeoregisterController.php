@@ -19,7 +19,6 @@ class NationaalGeoregisterController extends Controller
         ]);
 
         $data = json_decode($response->getBody(), true);
-        dump($data);
 
         if (!empty($data['response']['docs'])) {
             $locations = $data['response']['docs'];

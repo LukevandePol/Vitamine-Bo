@@ -31,22 +31,21 @@ class AdresController extends Controller
         $attributes = request()->validate([
             'postcode' => ['required', 'min:6', 'max:7'],
             'huisnummer' => ['required', 'max:255'],
-            'klantgegevens_id' => ['required'],
+            'user_id' => ['required'],
         ]);
 
         $georegisterData = NationaalGeoregisterController::getData($attributes['postcode']);
 
-
         Adres::create([
             'postcode' => $attributes['postcode'],
             'huisnummer' => $attributes['huisnummer'],
-            'adres' => $georegisterData['straatnaam'],
+            'weergavenaam' => $georegisterData['weergavenaam'],
+            'straatnaam' => $georegisterData['straatnaam'],
+            'woonplaatsnaam' => $georegisterData['woonplaatsnaam'],
             'provincienaam' => $georegisterData['provincienaam'],
-            'plaatsnaam' => $georegisterData['woonplaatsnaam'],
-            'gemeentenaam' => $georegisterData['gemeentenaam'],
-            'klantgegevens_id' => $attributes['klantgegevens_id'],
+            'user_id' => $attributes['user_id'],
+            'voorkeur_type' => 'niet_voorkeur'
         ]);
-
 
         return redirect('/account');
     }
@@ -61,16 +60,15 @@ class AdresController extends Controller
 
         $georegisterData = NationaalGeoregisterController::getData($attributes['postcode']);
 
-
         DB::table('adres')
             ->where('id', $id)
             ->update([
                 'postcode' => $attributes['postcode'],
                 'huisnummer' => $attributes['huisnummer'],
-                'adres' => $georegisterData['straatnaam'],
+                'weergavenaam' => $georegisterData['weergavenaam'],
+                'straatnaam' => $georegisterData['straatnaam'],
+                'woonplaatsnaam' => $georegisterData['woonplaatsnaam'],
                 'provincienaam' => $georegisterData['provincienaam'],
-                'plaatsnaam' => $georegisterData['woonplaatsnaam'],
-                'gemeentenaam' => $georegisterData['gemeentenaam'],
             ]);
 
         return redirect('/account');
