@@ -3,20 +3,22 @@
         <table class="table table-striped mt-5">
             <thead>
             <tr>
+                <th scope="col">ID</th>
                 <th scope="col">Naam</th>
+                <th scope="col">Type</th>
                 <th scope="col">Inhoud</th>
-                <th scope="col">Smaak</th>
-                <th scope="col">Volume</th>
-                <th scope="col">Acties</th>
+                <th scope="col">Afbeelding</th>
+                <th scope="col">Actie</th>
             </tr>
             </thead>
             <tbody>
             @foreach($products as $product)
                 <tr>
+                    <td>{{ $product->id }}</td>
                     <td>{{ $product->naam }}</td>
+                    <td>Kist</td>
                     <td>{{ $product->inhoud }}</td>
-                    <td>{{ $product->smaak }}</td>
-                    <td>{{ $product->volume }}</td>
+                    <td>{{ $product->afbeelding }}</td>
                     <td>Buttons</td>
                 </tr>
             @endforeach
