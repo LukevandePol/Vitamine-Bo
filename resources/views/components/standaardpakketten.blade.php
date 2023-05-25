@@ -1,4 +1,4 @@
-<div class="container scrollable-container">
+<div class="container">
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6 my-2">
             <img src="images/Product2.png"
