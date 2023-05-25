@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Adres;
-use App\Models\Klantgegevens;
 use App\Models\User;
 use Illuminate\View\View;
 

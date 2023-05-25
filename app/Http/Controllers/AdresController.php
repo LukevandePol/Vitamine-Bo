@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Adres;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AdresController extends Controller
@@ -19,10 +18,7 @@ class AdresController extends Controller
 
     public function createToevoegen()
     {
-        return view('AdresToevoegen', [
-                'klantgegevens' => Auth::user()->klantgegevens
-            ]
-        );
+        return view('AdresToevoegen');
     }
 
     public function createAdres()
