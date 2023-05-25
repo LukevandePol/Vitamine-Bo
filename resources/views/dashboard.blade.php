@@ -45,8 +45,8 @@
                 <x-cardstripe title="Gegevens">
                     <p class="m-0">Naam: {{$user->name}}</p>
                     <p class="m-0">Email: {{$user->email}}</p>
-                    <p class="m-0">Postcode: {{$adres->postcode}}</p>
-                    <p class="m-0">Huisnummer: {{$adres->huisnummer}}</p>
+                    <p class="m-0">Postcode: {{$bezorgadres->weergavenaam}}</p>
+                    <p class="m-0">Huisnummer: {{$bezorgadres->huisnummer}}</p>
 
                 </x-cardstripe>
                 <x-a href="/account">Beheer je gegevens</x-a>
