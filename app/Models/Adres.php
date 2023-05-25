@@ -14,4 +14,10 @@ class Adres extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function bestelling(): BelongsTo
+    {
+        return $this->belongsTo(Bestelling::class);
+    }
+
 }

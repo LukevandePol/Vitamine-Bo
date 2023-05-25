@@ -14,8 +14,8 @@ class BestellingSeeder extends Seeder
     {
         Bestelling::create([
             'user_id' => 3,
-//            'bezorgadres_id' => 1,
-//            'factuuradres_id' => 2,
+            'bezorgadres_id' => 1,
+            'factuuradres_id' => 2,
         ]);
     }
 }

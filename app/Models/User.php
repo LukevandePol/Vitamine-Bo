@@ -44,4 +44,9 @@ class User extends Authenticatable
         return $this->hasMany(Bestelling::class);
     }
 
+    public function adres(): HasMany
+    {
+        return $this->hasMany(Adres::class);
+    }
+
 }

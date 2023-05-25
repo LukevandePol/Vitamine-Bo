@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Adres;
-use App\Models\Klantgegevens;
 use Illuminate\Database\Seeder;
 
 class AdresSeeder extends Seeder

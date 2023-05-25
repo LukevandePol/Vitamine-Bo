@@ -10,15 +10,20 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('bestellings', function (Blueprint $table) {
+        Schema::create('adres', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
-            $table->integer('prijs_in_centen')->nullable();
-            $table->string('reden')->nullable();
-            $table->dateTimeTz('controle_datum')->nullable();
-            $table->dateTimeTz('betaal_datum')->nullable();
-
+            $table->string('postcode', 7);
+            $table->string('huisnummer');
+            $table->string('plaats');
+            $table->string('provincie');
+            $table->enum('voorkeur_type',
+                [
+                    'bezorg',
+                    'factuur',
+                    'niet_voorkeur'
+                ])->default('niet_voorkeur');
         });
     }
 
@@ -27,6 +32,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('bestellings');
+        Schema::dropIfExists('adres');
     }
 };
