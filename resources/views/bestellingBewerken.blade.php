@@ -24,16 +24,19 @@
             @if($bestelling != null)
                 <div class="col-sm-6">
                     <x-cardstripe
-                        title="Huidige bestelling voor {{$bestelling->bezorgDatum}}"
+                        title="Huidige bestelling voor"
                         class="bo-hoofdkleur-opacity">
-                        @foreach($bestelling->product as $product)
-                            <div style="border: 1px red solid">
-                                <p>id :{{$product->id}}</p>
-                                <p>naam : {{$product->naam}}</p>
-                                @foreach(json_decode($product->inhoud) as $fruit)
-                                    <p>fruit: {{$fruit}}</p>
-                                @endforeach
-                            </div>
+                        @foreach($bestelling->selecties as $selectie)
+                            <p>{{$selectie->naam}}</p>
+                            @if($selectie->products != null)
+                                <ul>
+                                    @foreach($selectie->products as $product)
+                                        <li>
+                                            <p>{{$product->naam}}</p>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
                         @endforeach
                     </x-cardstripe>
                 </div>
@@ -49,9 +52,9 @@
             @endif
 
             <div class="col-sm-6">
-                @foreach($beschikbareProducten as $product)
-                    <p>{{$product->naam}} {{$product->smaak}}</p>
-                @endforeach
+                {{--                @foreach($beschikbareProducten as $product)--}}
+                {{--                    <p>{{$product->naam}} {{$product->smaak}}</p>--}}
+                {{--                @endforeach--}}
             </div>
         </div>
 

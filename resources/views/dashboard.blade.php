@@ -43,8 +43,8 @@
                 <x-a href="#">Bekijk je facturen</x-a>
 
                 <x-cardstripe title="Gegevens">
-                    <p class="m-0">Naam: {{$user->name}}</p>
-                    <p class="m-0">Email: {{$user->email}}</p>
+                    <p class="m-0">Naam: {{auth()->user()->name}}</p>
+                    <p class="m-0">Email: {{auth()->user()->email}}</p>
                     <p class="m-0">Postcode: {{$bezorgadres->weergavenaam}}</p>
                     <p class="m-0">Huisnummer: {{$bezorgadres->huisnummer}}</p>
 

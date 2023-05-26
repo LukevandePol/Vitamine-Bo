@@ -9,18 +9,16 @@ class BestellingController extends Controller
 {
     public function create()
     {
-        //->where('zichtbaar', '=', 'true');
         $user = auth()->user();
-        $klantgegevens = $user->klantgegevens;
 
-        $bestelling = Bestelling::orderBy('bezorgDatum', 'desc')
-            ->where('klantgegevens_id', '=', $klantgegevens->id)
+        $laatsteBestelling = Bestelling::where('user_id', '=', $user->id)
+            ->latest()
             ->first();
 
-        $beschikbareProducten = BeschikbaarProduct::all();
+        //wat als een klant nog geen bestelling heeft?
         return view('bestellingBewerken', [
-            'beschikbareProducten' => $beschikbareProducten,
-            'bestelling' => $bestelling,
-        ]);
+                'bestelling' => $laatsteBestelling,
+            ]
+        );
     }
 }
