@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BeschikbaarProduct;
 use App\Models\Bestelling;
 
 class BestellingController extends Controller
