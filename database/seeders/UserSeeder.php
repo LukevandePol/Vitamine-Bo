@@ -39,6 +39,6 @@ class UserSeeder extends Seeder
             'status' => Now(),
         ]);
 
-//        User::factory(20)->create();
+        User::factory(20)->klanten()->create();
     }
 }

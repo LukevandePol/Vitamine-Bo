@@ -26,7 +26,7 @@ class SessionsController extends Controller
         if (auth()->attempt($attributes)) {
             session()->regenerate();
 
-            return redirect('/dashboard');
+            return redirect('/');
         }
 
         throw ValidationException::withMessages([
