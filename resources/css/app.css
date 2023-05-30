@@ -283,17 +283,19 @@ header {
  * 08. sidebar
  */
 .imagebox {
-    text-align: center;
     margin-top: 40px;
     margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.sidebar-image {
-    width: 40%;
+.sidebar-logo {
+    width: 80px;
     height: auto;
 }
 
-.sidebar.open .sidebar-image {
+.sidebar.open .sidebar-logo {
     max-width: 40%;
     margin: 30px auto 40px; /* Adjust margin values to move the image down */
 }
