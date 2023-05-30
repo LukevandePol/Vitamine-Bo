@@ -51,3 +51,7 @@
         <i id="right" class="fa-solid fa-angle-right"></i>
     </div>
 </div>
+
+@section('page-scripts')
+    @vite(['resources/js/carousel.js'])
+@endsection
