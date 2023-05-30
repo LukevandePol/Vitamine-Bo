@@ -23,12 +23,15 @@
                         <form method="POST" action="{{ route('update.status', $user->id) }}">
                             @csrf
 
-                            <x-submit class="btn btn-sm btn-success">
+                            <x-submit class="btn btn-sm btn-success" onclick="confirmApprove()">
                                 <i class="fa-solid fa-check text-white"></i>
                             </x-submit>
                         </form>
-                        <form action="#">
-                            <x-submit class="btn btn-sm btn-danger ms-3">
+                        <form method="POST" action="{{ route('account.destroy', $user->id) }}">
+                            @csrf
+                            @method('DELETE')
+
+                            <x-submit class="btn btn-sm btn-danger ms-3" onclick="confirmDelete()">
                                 <i class="fa-solid fa-xmark text-white"></i>
                             </x-submit>
                         </form>
@@ -42,4 +45,29 @@
             {{ $users->links('pagination::default') }}
         </div>
     </x-card>
+
+    @section('page-scripts')
+        <script>
+            // Confirm deletion of an account
+            function confirmDelete() {
+                let confirmNo = confirm('Weet je zeker dat je dit account wilt verwijderen?');
+
+                if (!confirmNo) {
+                    event.preventDefault();
+                }
+                return confirmNo;
+            }
+
+            // Confirm approving of an account
+            function confirmApprove() {
+                let confirmYes = confirm('Weet je zeker dat je dit account wilt goedkeuren?');
+
+                if (!confirmYes) {
+                    event.preventDefault();
+                }
+
+                return confirmYes;
+            }
+        </script>
+    @endsection
 </x-layout>

@@ -83,6 +83,8 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     // Account goedkeuren
     Route::get('/admin/goedkeuren', [AdminController::class, 'approve'])->name('admin.approve');
     Route::post('/admin/goedkeuren/{id}', [AdminController::class, 'update'])->name('update.status');
+    Route::delete('/admin/goedkeuren/{id}', [AdminController::class, 'destroy'])->name('account.destroy');
+
 
     // Producten toevoegen
     Route::get('/admin/product', [ProductController::class, 'create'])->name('admin.product');
