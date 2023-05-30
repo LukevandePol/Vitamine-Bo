@@ -68,6 +68,7 @@
                                     <span class="plus">+</span>
                                 </div>
                                 </li>
+                            </ul>
                         </div>
 
                         <div class="col-md-6">
