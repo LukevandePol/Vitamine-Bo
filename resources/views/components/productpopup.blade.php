@@ -55,9 +55,14 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <x-buttonicon class="modal-trigger" data-bs-toggle="modal" data-bs-target="#personalizeModal">
-                    Personaliseer</x-buttonicon>
-                <x-buttonicon data-bs-dismiss="modal" aria-label="Close">Toevoegen </x-buttonicon>
+                <div class="d-flex">
+                    <x-buttonicon class="modal-trigger me-2" data-bs-toggle="modal" data-bs-target="#personalizeModal">
+                        Personaliseer
+                    </x-buttonicon>
+                    <x-buttonicon class="ml-2" data-bs-dismiss="modal" aria-label="Close">
+                        Toevoegen
+                    </x-buttonicon>
+                </div>
             </div>
         </div>
     </div>
