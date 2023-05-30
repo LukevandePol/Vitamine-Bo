@@ -26,7 +26,11 @@ class SessionsController extends Controller
         if (auth()->attempt($attributes)) {
             session()->regenerate();
 
-            return redirect('/');
+            if (auth()->user()->rol == 'administrator' or auth()->user()->rol == 'bo_medewerker') {
+                return redirect('/admin');
+            } else {
+                return redirect('/dashboard');
+            }
         }
 
         throw ValidationException::withMessages([
