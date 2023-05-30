@@ -13,7 +13,12 @@ class SelectieSeeder extends Seeder
     public function run(): void
     {
         Selectie::create([
-            'naam' => 'krat'
+            'naam' => 'Krat'
         ]);
+
+        Selectie::create([
+            'naam' => 'Mand'
+        ]);
+
     }
 }

@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->string('inhoud')->nullable();
             $table->string('smaak')->nullable();
             $table->string('afbeelding_pad')->nullable();
-            $table->boolean('zichtbaar')->default(false);
+            $table->boolean('is_zichtbaar')->default(false);
         });
     }
 

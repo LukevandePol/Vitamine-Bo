@@ -27,5 +27,12 @@ class BestellingSelectieSeeder extends Seeder
                     ]);
             }
         }
+
+        DB::table('bestelling_selectie')
+            ->insert([
+                'selectie_id' => 2,
+                'aantal' => 1
+            ]);
+
     }
 }
