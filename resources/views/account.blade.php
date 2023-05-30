@@ -2,63 +2,58 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <x-card>
+                <x-cardstripe
+                    title="Accountgegevens">
                     <form action="/updateUser" method="POST">
                         @csrf
                         <x-input
-                            label="E-mailadres:"
+                            label="E-mailadres"
                             type="email"
                             name="email"
                             value="{{auth()->user()->email}}"
                         />
                         <x-input
-                            label="Naam:"
+                            label="Naam"
                             type="text"
                             name="naam"
                             value="{{auth()->user()->name}}"
                         />
                         <x-input
-                            label="Telefoonnummer:"
+                            label="Telefoonnummer"
                             type="text"
                             name="telefoon"
                             value="{{auth()->user()->telefoon}}"
                         />
                         <x-input
-                            label="KVK nummer:"
+                            label="KVK nummer"
                             type="text"
                             name="kvk_nummer"
                             value="{{auth()->user()->kvk_nummer}}"
                         />
-                        <x-submit>pas aan</x-submit>
+                        <x-buttonicon class="mt-4">Aanpassen</x-buttonicon>
                     </form>
-                </x-card>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <a href="/AdresToevoegen">Adres toevoegen</a>
+                </x-cardstripe>
             </div>
         </div>
 
-        <div class="row">
+        <div class="d-flex justify-content-between mt-5">
             @foreach($adressen as $adres)
                 @if($adres->voorkeur_type == 'bezorg')
-                    <div class="col-6">
-                        <x-cardstripe title="Bezorgadres">
-                            <x-adres :adres="$adres"></x-adres>
-                        </x-cardstripe>
-                    </div>
+                    <x-adres :adres="$adres"></x-adres>
                 @elseif($adres->voorkeur_type == 'factuur')
-                    <div class="col-6">
-                        <x-cardstripe title="Factuuradres">
-                            <x-adres :adres="$adres"></x-adres>
-                        </x-cardstripe>
-                    </div>
-                @elseif($adres->voorkeur_type == 'niet_voorkeur')
-                    <h2>Overige Adres</h2>
                     <x-adres :adres="$adres"></x-adres>
                 @endif
             @endforeach
+            @if(count($adressen) < 2)
+                <x-card class="small-card">
+                    <h3>Bezorgadres is factuuradres</h3>
+                    <p>
+                        Uw factuuradres is nu hetzelfde als het bezorgadres.
+                        Wilt u een ander factuuradres? Dan moet u deze toevoegen.
+                    </p>
+                    <x-a href="/AdresToevoegen">Adres toevoegen</x-a>
+                </x-card>
+            @endif
         </div>
 
     </div>

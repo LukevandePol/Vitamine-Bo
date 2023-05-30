@@ -23,7 +23,6 @@ class AdresController extends Controller
 
     public function createAdres()
     {
-
         $attributes = request()->validate([
             'postcode' => ['required', 'min:6', 'max:7'],
             'huisnummer' => ['required', 'max:255'],
@@ -32,16 +31,31 @@ class AdresController extends Controller
 
         $georegisterData = NationaalGeoregisterController::getData($attributes['postcode']);
 
-        Adres::create([
+        $adres = [
             'postcode' => $attributes['postcode'],
             'huisnummer' => $attributes['huisnummer'],
-            'weergavenaam' => $georegisterData['weergavenaam'],
-            'straatnaam' => $georegisterData['straatnaam'],
-            'woonplaatsnaam' => $georegisterData['woonplaatsnaam'],
-            'provincienaam' => $georegisterData['provincienaam'],
+            'weergavenaam' => null,
+            'straatnaam' => null,
+            'woonplaatsnaam' => null,
+            'provincienaam' => null,
             'user_id' => $attributes['user_id'],
-            'voorkeur_type' => 'niet_voorkeur'
-        ]);
+            'voorkeur_type' => 'factuur'
+        ];
+
+        if ($georegisterData['weergavenaam'] !== null) {
+            $adres['weergavenaam'] = $georegisterData['weergavenaam'];
+        }
+        if ($georegisterData['straatnaam'] !== null) {
+            $adres['straatnaam'] = $georegisterData['straatnaam'];
+        }
+        if ($georegisterData['woonplaatsnaam'] !== null) {
+            $adres['woonplaatsnaam'] = $georegisterData['woonplaatsnaam'];
+        }
+        if ($georegisterData['provincienaam'] !== null) {
+            $adres['provincienaam'] = $georegisterData['provincienaam'];
+        }
+
+        Adres::create($adres);
 
         return redirect('/account');
     }

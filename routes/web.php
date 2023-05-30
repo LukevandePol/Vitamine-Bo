@@ -5,7 +5,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdresController;
 use App\Http\Controllers\BestellingController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\KlantgegevensController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
@@ -36,9 +35,6 @@ Route::group(['middleware' => ['auth']], function () {
     // Gebruikersgegevens
     Route::get('account', [AccountController::class, 'create'])->name('account');
     Route::post('updateUser', [AccountController::class, 'updateUser']);
-
-    // Telefoonnummer
-    Route::post('updateTelefoon', [KlantgegevensController::class, 'updateTelefoon']);
 
     //Adres instellen als bezorg- of factuuradres en adres verwijderen
     //Knoppen staan op account scherm
@@ -84,7 +80,6 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/goedkeuren', [AdminController::class, 'approve'])->name('admin.approve');
     Route::post('/admin/goedkeuren/{id}', [AdminController::class, 'update'])->name('update.status');
     Route::delete('/admin/goedkeuren/{id}', [AdminController::class, 'destroy'])->name('account.destroy');
-
 
     // Producten toevoegen
     Route::get('/admin/product', [ProductController::class, 'create'])->name('admin.product');
