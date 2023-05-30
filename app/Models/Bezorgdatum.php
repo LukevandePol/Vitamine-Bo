@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Product extends Model
+class Bezorgdatum extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
-    public function selecties(): BelongsToMany
+    public function bestellings(): BelongsToMany
     {
-        return $this->belongsToMany(Selectie::class);
+        return $this->belongsToMany(Bestelling::class);
     }
 }

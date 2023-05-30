@@ -2,7 +2,6 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                {{$klantgegevens}}
 
                 <form action="/createAdres/" method="post">
                     @csrf
@@ -14,14 +13,10 @@
                         label="Huisnummer: "
                         name="huisnummer"
                     />
-                    <x-input
-                        label="Plaatsnaam"
-                        name="plaatsnaam"
-                    />
                     <input
                         type="hidden"
-                        name="klantgegevens_id"
-                        value="{{$klantgegevens->id}}"
+                        name="user_id"
+                        value="{{auth()->user()->id}}"
                     />
                     <x-submit>pas aan</x-submit>
                 </form>

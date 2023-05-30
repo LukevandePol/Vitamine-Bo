@@ -32,9 +32,19 @@ class UserFactory extends Factory
      */
     public function unverified(): static
     {
-        return $this->state(fn (array $attributes) => [
+        return $this->state(fn(array $attributes) => [
             'email_verified_at' => null,
         ]);
+    }
+
+    public function klanten(): Factory
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'kvk_nummer' => strval(fake()->numberBetween(10000000, 99999999)),
+                'telefoon' => fake()->phoneNumber()
+            ];
+        });
     }
 
 }

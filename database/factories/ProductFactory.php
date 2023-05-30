@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\BeschikbaarProduct;
 use App\Models\Bestelling;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -18,25 +19,15 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
-        $product_namen = [
-            'krat',
-            'mandje',
-            'vierkante bak',
-            'houten kist',
-            'brievenbus flessenpost',
-            'duo brievenbus flessenpost',
-            'flessenpost meloen',
-            'flessenpost perzik',
-            'flessenpost spinazie',
-            'flessenpost bosvruchten',
-            'flessenpost aardbei',
-            'flessenpost sinaasappel'
-        ];
-//        $bestellings = Bestelling::all()->pluck('id')->toArray();
+
+        $beschikbare_producten = BeschikbaarProduct::all();
+
+        $product_namen = $beschikbare_producten->pluck('naam');
+        $product_inhoud = $beschikbare_producten->pluck('inhoud');
 
         return [
             'naam' => $this->faker->randomElement($product_namen),
-            'bestelling_id' => Bestelling::factory()
+            'bestelling_id' => Bestelling::factory($product_inhoud)
         ];
     }
 }

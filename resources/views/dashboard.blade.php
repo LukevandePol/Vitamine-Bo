@@ -10,10 +10,11 @@
         <div class="row">
             <div class="col-sm-6">
                 <x-cardstripe
-                    title="Aankomende Levering">
+                    title="Aankomende Levering"
+                    class="bo-hoofdkleur-opacity">
                     hallo
                 </x-cardstripe>
-                <x-a href="#">Bekijk je leveringen</x-a>
+                <x-a href="BestellingAanpassen">Bekijk je leveringen</x-a>
             </div>
 
             <div class="col-sm-6">
@@ -42,10 +43,10 @@
                 <x-a href="#">Bekijk je facturen</x-a>
 
                 <x-cardstripe title="Gegevens">
-                    <p class="m-0">Naam: {{$user->name}}</p>
-                    <p class="m-0">Email: {{$user->email}}</p>
-                    <p class="m-0">Postcode: {{$adres->postcode}}</p>
-                    <p class="m-0">Huisnummer: {{$adres->huisnummer}}</p>
+                    <p class="m-0">Naam: {{auth()->user()->name}}</p>
+                    <p class="m-0">Email: {{auth()->user()->email}}</p>
+                    <p class="m-0">Postcode: {{$bezorgadres->weergavenaam}}</p>
+                    <p class="m-0">Huisnummer: {{$bezorgadres->huisnummer}}</p>
 
                 </x-cardstripe>
                 <x-a href="/account">Beheer je gegevens</x-a>

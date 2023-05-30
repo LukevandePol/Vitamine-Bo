@@ -10,15 +10,15 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('beschikbaar_products', function (Blueprint $table) {
+        Schema::create('bestellings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
-            $table->string('naam');
-            $table->json('inhoud')->nullable();
-            $table->string('afbeelding_pad')->nullable();
-            $table->boolean('zichtbaar')->nullable();
-            $table->string('smaak')->nullable();
-            $table->string('volume')->nullable();
+            $table->integer('prijs_in_centen')->nullable();
+            $table->string('reden')->nullable();
+            $table->dateTimeTz('controle_datum')->nullable();
+            $table->dateTimeTz('betaal_datum')->nullable();
+
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('beschikbaar_products');
+        Schema::dropIfExists('bestellings');
     }
 };

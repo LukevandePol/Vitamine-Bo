@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -15,8 +14,11 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('naam');
-            $table->json('inhoud')->nullable();
-            $table->foreignId('bestelling_id')->constrained();
+            $table->string('type');
+            $table->string('inhoud')->nullable();
+            $table->string('smaak')->nullable();
+            $table->string('afbeelding_pad')->nullable();
+            $table->boolean('is_zichtbaar')->default(false);
         });
     }
 

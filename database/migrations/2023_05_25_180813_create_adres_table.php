@@ -12,20 +12,20 @@ return new class extends Migration {
     {
         Schema::create('adres', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
             $table->string('postcode');
             $table->string('huisnummer');
-            $table->string('adres')->nullable();
-            $table->string('plaatsnaam')->nullable();
-            $table->string('gemeentenaam')->nullable();
+            $table->string('weergavenaam')->nullable();
+            $table->string('straatnaam')->nullable();
+            $table->string('woonplaatsnaam')->nullable();
             $table->string('provincienaam')->nullable();
-            $table->enum('type',
+            $table->enum('voorkeur_type',
                 [
                     'bezorg',
                     'factuur',
-                    'niet_gebruikt'
-                ])->default('niet_gebruikt');
-            $table->foreignId('klantgegevens_id')->constrained();
+                    'niet_voorkeur'
+                ])->default('niet_voorkeur');
         });
     }
 
