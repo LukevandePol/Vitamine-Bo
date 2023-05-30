@@ -3,8 +3,10 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdresController;
+use App\Http\Controllers\BestellingController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KlantgegevensController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
@@ -83,6 +85,6 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::post('/admin/goedkeuren/{id}', [AdminController::class, 'update'])->name('update.status');
 
     // Producten toevoegen
-    Route::get('/admin/product', [BeschikbaarProductController::class, 'create'])->name('admin.product');
-    Route::post('admin/product', [BeschikbaarProductController::class, 'store']);
+    Route::get('/admin/product', [ProductController::class, 'create'])->name('admin.product');
+    Route::post('admin/product', [ProductController::class, 'store']);
 });
