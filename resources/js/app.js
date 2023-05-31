@@ -102,7 +102,7 @@ function menuBtnChange() {
 // carousel.addEventListener("touchend", dragStop);
 
 
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
     const wrappers = document.querySelectorAll(".wrapper");
     const totalCounter = document.querySelector("#total-counter");
     const minusButtons = document.querySelectorAll(".minus");
@@ -110,6 +110,12 @@ window.onload = () => {
     const numSpans = document.querySelectorAll(".num");
     let totalCount = 0;
 
+    // Loop to calculate initial total count
+    numSpans.forEach((num) => {
+        totalCount += parseInt(num.innerText);
+    });
+
+    // Update count and total counter for each wrapper
     wrappers.forEach((wrapper, index) => {
         const minus = minusButtons[index];
         const plus = plusButtons[index];
@@ -146,4 +152,4 @@ window.onload = () => {
 
     // Initialize the total count
     updateTotal();
-};
+});

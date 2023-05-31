@@ -15,40 +15,40 @@
                             <p><strong>€30,95</strong></p>
 
                             <p>Dit is de standaard inhoud van het krat, voeg deze toe aan je bestelling of personaliseer het.</p>
-                            <ul class="custom-ul stripe-top">
-                                <li>
-                                    <span class="list-text">Appel</span>
-                                    <div class="wrapper">
-                                        <span class="minus">-</span>
-                                        <span class="num">1</span>
-                                        <span class="plus">+</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="list-text">Banaan</span>
-                                    <div class="wrapper">
-                                        <span class="minus">-</span>
-                                        <span class="num">1</span>
-                                        <span class="plus">+</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="list-text">Peer</span>
-                                    <div class="wrapper">
-                                        <span class="minus">-</span>
-                                        <span class="num">1</span>
-                                        <span class="plus">+</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="list-text">Mandarijn</span>
-                                    <div class="wrapper">
-                                        <span class="minus">-</span>
-                                        <span class="num">1</span>
-                                        <span class="plus">+</span>
-                                    </div>
-                                </li>
-                            </ul>
+                                <ul class="custom-ul stripe-top">
+                                    <li>
+                                        <span class="list-text">Appel</span>
+                                        <div class="wrapper">
+
+                                            <span class="num2">8</span>
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="list-text">Peer</span>
+                                        <div class="wrapper">
+
+                                            <span class="num2">8</span>
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="list-text">Banaan</span>
+                                        <div class="wrapper">
+
+                                            <span class="num2">8</span>
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="list-text">Kiwi</span>
+                                        <div class="wrapper">
+
+                                            <span class="num2">6</span>
+
+                                        </div>
+                                    </li>
+                                </ul>
 
                         </div>
                     </div>
