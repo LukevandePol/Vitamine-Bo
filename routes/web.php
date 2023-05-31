@@ -3,9 +3,9 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdresController;
-use App\Http\Controllers\BeschikbaarProductController;
+use App\Http\Controllers\BestellingController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\KlantgegevensController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
@@ -36,9 +36,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('account', [AccountController::class, 'create'])->name('account');
     Route::post('updateUser', [AccountController::class, 'updateUser']);
 
-    // Telefoonnummer
-    Route::post('updateTelefoon', [KlantgegevensController::class, 'updateTelefoon']);
-
     //Adres instellen als bezorg- of factuuradres en adres verwijderen
     //Knoppen staan op account scherm
     Route::post('setBezorg/{id}', [AdresController::class, 'setBezorg']);
@@ -52,6 +49,9 @@ Route::group(['middleware' => ['auth']], function () {
     // Adres toevoegen scherm ophalen
     Route::get('AdresToevoegen', [AdresController::class, 'createToevoegen']);
     Route::post('createAdres', [AdresController::class, 'createAdres']);
+
+    // Bestelling aanpassen
+    Route::get('BestellingAanpassen', [BestellingController::class, 'create'])->name('BestellingAanpassen');
 
     // Klanten dashboard
     Route::get('dashboard', [DashboardController::class, 'create'])->name('dashboard');
@@ -79,8 +79,9 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     // Account goedkeuren
     Route::get('/admin/goedkeuren', [AdminController::class, 'approve'])->name('admin.approve');
     Route::post('/admin/goedkeuren/{id}', [AdminController::class, 'update'])->name('update.status');
+    Route::delete('/admin/goedkeuren/{id}', [AdminController::class, 'destroy'])->name('account.destroy');
 
     // Producten toevoegen
-    Route::get('/admin/product', [BeschikbaarProductController::class, 'create'])->name('admin.product');
-    Route::post('admin/product', [BeschikbaarProductController::class, 'store']);
+    Route::get('/admin/product', [ProductController::class, 'create'])->name('admin.product');
+    Route::post('admin/product', [ProductController::class, 'store']);
 });

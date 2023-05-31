@@ -9,17 +9,14 @@ class DashboardController extends Controller
     public function create()
     {
         $user = auth()->user();
-        $klantgegevens_id = $user->klantgegevens->id;
 
-        $bezorgadres = Adres::query()
-            ->where('klantgegevens_id', '=', $klantgegevens_id)
-            ->where('type', '=', 'bezorg')
-            ->get()
-            ->get(0);
+        $bezorgadres = Adres::where('user_id', auth()->user()->id)
+            ->where('voorkeur_type', 'bezorg')
+            ->first();
 
         return view('dashboard', [
             'user' => $user,
-            'adres' => $bezorgadres,
+            'bezorgadres' => $bezorgadres,
         ]);
     }
 }

@@ -67,3 +67,7 @@
         </div>
     </div>
 </div>
+
+@section('page-scripts')
+    @vite(['resources/js/teller.js'])
+@endsection

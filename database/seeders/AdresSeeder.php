@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Adres;
-use App\Models\Klantgegevens;
 use Illuminate\Database\Seeder;
 
 class AdresSeeder extends Seeder
@@ -13,15 +12,23 @@ class AdresSeeder extends Seeder
      */
     public function run(): void
     {
-        $klant_ids = Klantgegevens::all()->pluck('id')->toArray();
-//        $klantgegevens = DB::table('klantgegevens')->get();
-//        $piet = $klantgegevens->pluck('id');
 
-        foreach ($klant_ids as $klant_id) {
-            Adres::factory()->create([
-                'klantgegevens_id' => $klant_id,
-                'type' => 'bezorg',
-            ]);
-        }
+        adres::create([
+            'user_id' => 3,
+            'postcode' => '4811TV',
+            'huisnummer' => '23',
+            'woonplaatsnaam' => 'Leeuwarden',
+            'provincienaam' => 'Friesland',
+            'voorkeur_type' => 'bezorg'
+        ]);
+
+        adres::create([
+            'user_id' => 3,
+            'postcode' => '8917DD',
+            'huisnummer' => '10',
+            'woonplaatsnaam' => 'Leeuwarden',
+            'provincienaam' => 'Friesland',
+            'voorkeur_type' => 'factuur'
+        ]);
     }
 }

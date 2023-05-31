@@ -16,7 +16,7 @@
                 <tr>
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->naam }}</td>
-                    <td>Kist</td>
+                    <td>{{ $product->type }}</td>
                     <td>{{ $product->inhoud }}</td>
                     <td>{{ $product->afbeelding }}</td>
                     <td>Buttons</td>
@@ -32,7 +32,8 @@
 
             <x-input label="Naam:" name="naam"/>
             <x-input label="Smaak:" name="smaak"/>
-            <x-input label="Volume:" name="volume"/>
+            <x-input label="Type:" name="type"/>
+            <x-input label="Inhoud:" name="inhoud"/>
 
             <x-submit>Aanmaken</x-submit>
         </form>
