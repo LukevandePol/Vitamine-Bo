@@ -20,21 +20,34 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->created_at->format('Y-m-d') }}</td>
                     <td class="d-flex">
-                        <form method="POST" action="{{ route('update.status', $user->id) }}">
-                            @csrf
+                        <x-button class="btn btn-sm btn-success ms-3" data-bs-toggle="modal"
+                                  data-bs-target="#approveModal">
+                            <i class="fa-solid fa-check text-white"></i>
+                        </x-button>
+                        <x-modal id="approveModal" title="Weet je het zeker?"
+                                 description="Weet je zeker dat je dit account wilt goedkeuren?">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleren</button>
+                            <form method="POST" action="{{ route('account.approve', $user->id) }}">
+                                @csrf
 
-                            <x-submit class="btn btn-sm btn-success" onclick="confirmApprove()">
-                                <i class="fa-solid fa-check text-white"></i>
-                            </x-submit>
-                        </form>
-                        <form method="POST" action="{{ route('account.destroy', $user->id) }}">
-                            @csrf
-                            @method('DELETE')
+                                <x-submit class="btn btn-primary">Bevestigen</x-submit>
+                            </form>
+                        </x-modal>
 
-                            <x-submit class="btn btn-sm btn-danger ms-3" onclick="confirmDelete()">
-                                <i class="fa-solid fa-xmark text-white"></i>
-                            </x-submit>
-                        </form>
+                        <x-button class="btn btn-sm btn-danger ms-3" data-bs-toggle="modal"
+                                  data-bs-target="#deleteModal">
+                            <i class="fa-solid fa-xmark text-white"></i>
+                        </x-button>
+                        <x-modal id="deleteModal" title="Weet je het zeker?"
+                                 description="Weet je zeker dat je dit account wilt verwijderen? Deze actie kan niet meer ongedaan gemaakt worden.">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleren</button>
+                            <form method="POST" action="{{ route('account.destroy', $user->id) }}">
+                                @csrf
+                                @method('DELETE')
+
+                                <x-submit class="btn btn-primary">Bevestigen</x-submit>
+                            </form>
+                        </x-modal>
                     </td>
                 </tr>
             @endforeach
@@ -46,18 +59,9 @@
         </div>
     </x-card>
 
+
     @section('page-scripts')
         <script>
-            // Confirm deletion of an account
-            function confirmDelete() {
-                let confirmNo = confirm('Weet je zeker dat je dit account wilt verwijderen?');
-
-                if (!confirmNo) {
-                    event.preventDefault();
-                }
-                return confirmNo;
-            }
-
             // Confirm approving of an account
             function confirmApprove() {
                 let confirmYes = confirm('Weet je zeker dat je dit account wilt goedkeuren?');
