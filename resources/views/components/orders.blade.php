@@ -143,7 +143,7 @@
         </table>
     </div>
 
-    </div>
+
 </x-card>
 @section('page-scripts')
     @vite(['resources/js/paginationorder.js'])
