@@ -3,8 +3,9 @@
     <div class="form-group">
         <div class="row">
             <div class="col">
-                <select class="form-control text-left year-selection" name="state" id="maxRows">
-                    <option value="" disabled selected>Selecteer jaar <i class="fa-arrow-down"></i></option>
+                <select class="form-control text-left year-selection" name="state" id="maxRows"
+                label="year">
+                    <option value="" disabled selected>Selecteer jaar </option>
                     <option value="0">Alle Jaren</option>
                     <option value="2023">2023</option>
                     <option value="2022">2022</option>
@@ -14,7 +15,7 @@
             </div>
             <div class="col">
                 <select class="form-control text-left status-selection" id="statusFilter">
-                    <option value="" disabled selected>Selecteer status <i class="fa-arrow-down"></i></option>
+                    <option value="" disabled selected>Selecteer status </option>
                     <option value="in-behandeling">In behandeling</option>
                     <option value="goedgekeurd">Goedgekeurd</option>
                     <option value="afgekeurd">Afgekeurd</option>
