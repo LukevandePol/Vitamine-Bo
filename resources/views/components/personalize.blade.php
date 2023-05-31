@@ -124,7 +124,9 @@
                                             <span class="plus">+</span>
                                         </div>
                                     </li>
-                                    <p class="no-bottom-margin"><strong>Seizoensfruit</strong></p>
+                                    <p class="no-bottom-margin">
+                                        <strong>Seizoensfruit</strong>
+                                    </p>
                                     <li>
                                         <span class="list-text">Perzik</span>
                                         <div class="wrapper">
@@ -200,3 +202,8 @@
         </div>
     </div>
 </div>
+
+
+@section('page-scripts')
+    @vite(['resources/js/teller.js'])
+@endsection
