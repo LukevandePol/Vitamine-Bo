@@ -536,10 +536,18 @@ a:hover {
     margin-bottom: 0;
 }
 
+.custom-ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-top: none; /* Remove the top border */
+}
 
 .custom-ul li {
     display: flex;
     align-items: center;
+    border-bottom: none; /* Remove the border between items */
+
 }
 
 .custom-ul li .list-text {
@@ -653,4 +661,8 @@ a:hover {
 
 .totaal-counter {
     margin-bottom: 0;
+}
+
+.custom-button {
+    font-style: normal;
 }
