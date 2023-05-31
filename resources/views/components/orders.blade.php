@@ -3,8 +3,7 @@
     <div class="form-group">
         <div class="row">
             <div class="col">
-                <select class="form-control text-left year-selection" name="state" id="maxRows"
-                label="year">
+                <select class="form-control text-left year-selection" name="state" id="maxRows">
                     <option value="" disabled selected>Selecteer jaar </option>
                     <option value="0">Alle Jaren</option>
                     <option value="2023">2023</option>
