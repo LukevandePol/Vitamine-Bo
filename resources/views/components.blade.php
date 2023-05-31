@@ -1,11 +1,12 @@
 <x-layout title="Components">
 
 
-<x-adresscard/>
-  <x-sidebar/>
 
+  <x-sidebar/>
+<x-orders/>
 <x-fruitlijst/>
     <x-productpopup/>
 <x-personalize/>
+
 
 </x-layout>
