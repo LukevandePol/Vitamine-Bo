@@ -1,4 +1,4 @@
-<x-layout title="Dashboard" header="Welkom {{ $user->name}}">
+<x-layout title="Dashboard" header="Welkom {{ $user->name }}">
     <div class="container">
         <div class="row">
             <div class="col-12">

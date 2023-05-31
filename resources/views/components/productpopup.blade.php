@@ -56,9 +56,14 @@
             </div>
             <div class="modal-footer">
                 <x-buttonicon class="modal-trigger" data-bs-toggle="modal" data-bs-target="#personalizeModal">
-                    Personaliseer</x-buttonicon>
-                <x-buttonicon data-bs-dismiss="modal" aria-label="Close">Toevoegen </x-buttonicon>
+                    Personaliseer
+                </x-buttonicon>
+                <x-buttonicon data-bs-dismiss="modal" aria-label="Close">Toevoegen</x-buttonicon>
             </div>
         </div>
     </div>
 </div>
+
+@section('page-scripts')
+    @vite(['resources/js/teller.js'])
+@endsection
