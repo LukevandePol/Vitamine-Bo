@@ -520,3 +520,137 @@ a:hover {
     color: #FFFFFF;
     margin-left: 6px;
 }
+
+
+/**
+ * 010. Adresscard
+ */
+
+.small-card {
+    max-width: 500px;
+    margin-left: 200px;
+
+}
+
+.no-bottom-margin{
+    margin-bottom: 0;
+}
+
+
+.custom-ul li {
+    display: flex;
+    align-items: center;
+}
+
+.custom-ul li .list-text {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.wrapper {
+    height: 55px; /* Adjust the height as desired */
+    width: 110px; /* Adjust the width as desired */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent; /* Set the background to transparent */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove box shadow */
+}
+
+.wrapper span {
+    width: 100%;
+    text-align: center;
+    font-size: 18px; /* Adjust the font size as desired */
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+
+.wrapper span.num {
+    font-size: 20px; /* Adjust the font size as desired */
+    pointer-events: none;
+    margin: 0 2px; /* Adjust the margin as desired */
+}
+
+.wrapper span.num2 {
+    font-size: 20px; /* Adjust the font size as desired */
+    pointer-events: none;
+    margin: 0 2px; /* Adjust the margin as desired */
+}
+
+.wrapper span.minus,
+.wrapper span.plus {
+    margin: 0 2px; /* Adjust the margin as desired */
+}
+
+.product-image {
+    width: 360px;
+    height: 370px;
+}
+
+
+.modal-trigger:hover {
+    cursor: pointer;
+}
+
+.custom-margin1{
+    padding:15px
+}
+
+.total-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image-kist{
+    width: 220px;
+
+}
+
+.smaller-image {
+    max-width: 80%;
+}
+
+.scrollable-container2 {
+    height: 220px;
+    overflow-y: scroll;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    position: relative; /* Add position relative */
+}
+
+/* Add custom scrollbar styles */
+.scrollable-container2::-webkit-scrollbar {
+    width: 6px; /* Adjust width as desired */
+    background-color: #f1f1f1; /* Set background color */
+    margin-left: 10px; /* Add desired margin to push it to the right */
+
+}
+
+.scrollable-container2::-webkit-scrollbar-thumb {
+    background-color: #888; /* Set thumb color */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.scrollable-container2::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Set thumb color on hover */
+}
+
+.totaal-counter {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.personalize-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.personalize-text {
+    margin-bottom: 0;
+}
+
+.totaal-counter {
+    margin-bottom: 0;
+}
