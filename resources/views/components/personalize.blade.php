@@ -125,7 +125,9 @@
                                             <span class="plus">+</span>
                                         </div>
                                     </li>
-                                    <p class="no-bottom-margin"><strong>Seizoensfruit</strong></p>
+                                    <li>
+                                        <p class="no-bottom-margin fw-bold">Seizoensfruit</p>
+                                    </li>
                                     <li>
                                         <span class="list-text">Perzik</span>
                                         <div class="teller">
