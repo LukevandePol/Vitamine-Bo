@@ -27,7 +27,7 @@
                         <x-modal id="approveModal" title="Weet je het zeker?"
                                  description="Weet je zeker dat je dit account wilt goedkeuren?">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleren</button>
-                            <form method="POST" action="{{ route('account.approve', $user->id) }}">
+                            <form method="POST" action="/admin/goedkeuren">
                                 @csrf
 
                                 <x-submit class="btn btn-primary">Bevestigen</x-submit>
@@ -41,7 +41,7 @@
                         <x-modal id="deleteModal" title="Weet je het zeker?"
                                  description="Weet je zeker dat je dit account wilt verwijderen? Deze actie kan niet meer ongedaan gemaakt worden.">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleren</button>
-                            <form method="POST" action="{{ route('account.destroy', $user->id) }}">
+                            <form method="POST" action="/admin/goedkeuren">
                                 @csrf
                                 @method('DELETE')
 
