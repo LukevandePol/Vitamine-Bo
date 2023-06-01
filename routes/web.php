@@ -84,4 +84,10 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     // Producten toevoegen
     Route::get('/admin/product', [ProductController::class, 'create'])->name('admin.product');
     Route::post('admin/product', [ProductController::class, 'store']);
+
+    Route::post('/fruitToevoegen', [ProductController::class, 'fruitToevoegen']);
+    Route::post('/groenteToevoegen', [ProductController::class, 'groenteToevoegen']);
+    Route::post('/flesToevoegen', [ProductController::class, 'flesToevoegen']);
+    Route::post('/verpakkingToevoegen', [ProductController::class, 'verpakkingToevoegen']);
+
 });

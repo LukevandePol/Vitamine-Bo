@@ -6,6 +6,5 @@
 
 <x-fruitlijst/>
     <x-productpopup/>
-<x-personalize/>
 
 </x-layout>

@@ -3,22 +3,18 @@
         <table class="table table-striped mt-5">
             <thead>
             <tr>
-                <th scope="col">ID</th>
                 <th scope="col">Naam</th>
                 <th scope="col">Type</th>
                 <th scope="col">Inhoud</th>
-                <th scope="col">Afbeelding</th>
                 <th scope="col">Actie</th>
             </tr>
             </thead>
             <tbody>
             @foreach($products as $product)
                 <tr>
-                    <td>{{ $product->id }}</td>
                     <td>{{ $product->naam }}</td>
                     <td>{{ $product->type }}</td>
                     <td>{{ $product->inhoud }}</td>
-                    <td>{{ $product->afbeelding }}</td>
                     <td>Buttons</td>
                 </tr>
             @endforeach
@@ -29,13 +25,15 @@
     <x-card class="mt-5">
         <form method="POST" action="/admin/product">
             @csrf
-
-            <x-input label="Naam:" name="naam"/>
-            <x-input label="Smaak:" name="smaak"/>
-            <x-input label="Type:" name="type"/>
-            <x-input label="Inhoud:" name="inhoud"/>
-
-            <x-submit>Aanmaken</x-submit>
+            <label for="type">Kies het type product</label>
+            <select name="type" id="type">
+                <option value="">--Please choose an option--</option>
+                <option value="fruit">Fruit</option>
+                <option value="groente">Groente</option>
+                <option value="fles">Fles</option>
+                <option value="verpakking">Verpakking</option>
+            </select>
+            <x-submit>Toevoegen</x-submit>
         </form>
     </x-card>
 </x-layout>

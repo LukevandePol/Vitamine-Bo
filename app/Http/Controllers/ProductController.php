@@ -19,21 +19,104 @@ class ProductController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'naam' => ['required', 'max:255'],
-            'smaak' => ['max:255'],
-            'type' => ['required', 'max:255'],
-            'inhoud' => ['max:255'],
+            'type' => ['required'],
         ]);
 
-        $productdata = [
-            'naam' => $attributes['naam'],
-            'smaak' => $attributes['smaak'],
-            'inhoud' => $attributes['inhoud']
-        ];
-
-        Product::create($attributes);
-
+        switch ($attributes['type']) {
+            case 'fruit':
+                return view('admin.fruit-toevoegen');
+            case 'groente':
+                return view('admin.groente-toevoegen');
+            case 'fles':
+                return view('admin.fles-toevoegen');
+            case 'verpakking':
+                return view('admin.verpakking-toevoegen');
+        }
         return back()->with('success', 'Product toegevoegd!');
+    }
+
+    public function fruitToevoegen()
+    {
+        try {
+            $attributes = request()->validate([
+                'naam' => ['required', 'max:255'],
+                'afbeelding' => []
+            ]);
+            try {
+                Product::create([
+                    'naam' => $attributes['naam'],
+                    'type' => 'fruit'
+                ]);
+                return back()->with('success', 'Product Toegevoegd!');
+            } catch (\Exception $e) {
+                return back()->with('error', 'Product bestaat al!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', 'Oeps, er ging iets mis');
+        }
+    }
+
+    public function groenteToevoegen()
+    {
+        try {
+            $attributes = request()->validate([
+                'naam' => ['required', 'max:255'],
+                'afbeelding' => []
+            ]);
+
+            try {
+                Product::create([
+                    'naam' => $attributes['naam'],
+                    'type' => 'groente'
+                ]);
+                return back()->with('success', 'Product Toegevoegd!');
+            } catch (\Exception $e) {
+                return back()->with('error', 'Product bestaat al!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', 'Oeps, er ging iets mis');
+        }
+    }
+
+    public function flesToevoegen()
+    {
+        try {
+            $attributes = request()->validate([
+                'naam' => ['required', 'max:255'],
+                'afbeelding' => [],
+                'inhoud' => ['required', 'max:255'],
+            ]);
+            try {
+                Product::create([
+                    'naam' => $attributes['naam'],
+                    'type' => 'fles',
+                    'inhoud' => $attributes['inhoud'],
+                ]);
+                return back()->with('success', 'Product Toegevoegd!');
+            } catch (\Exception $e) {
+                return back()->with('error', 'Product bestaat al!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', 'Oeps, er ging iets mis');
+        }
+    }
+
+    public function verpakkingToevoegen()
+    {
+        try {
+            $attributes = request()->validate([
+                'naam' => 'required',
+                ''
+            ]);
+            try {
+                //maak product en selectie en productselectie
+                return back()->with('success', 'Product toegevoegd!');
+            } catch (\Exception $e) {
+                return back()->with('error', 'Product bestaat al!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', 'Oeps, er ging iets mis!');
+        }
     }
 
     /**
