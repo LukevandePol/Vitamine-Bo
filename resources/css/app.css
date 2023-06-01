@@ -156,6 +156,12 @@ a:hover {
     padding-left: 15vw;
 }
 
+@media screen and (max-width: 3072px) {
+    .padding-left {
+        padding-left: 7vw
+    }
+}
+
 
 /**
  * 04. Form
