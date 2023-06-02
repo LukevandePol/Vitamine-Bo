@@ -89,5 +89,5 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::post('/groenteToevoegen', [ProductController::class, 'groenteToevoegen']);
     Route::post('/flesToevoegen', [ProductController::class, 'flesToevoegen']);
     Route::post('/verpakkingToevoegen', [ProductController::class, 'verpakkingToevoegen']);
-
+    Route::post('/verpakkingInhoudToevoegen', [ProductController::class, 'verpakkingInhoudToevoegen']);
 });

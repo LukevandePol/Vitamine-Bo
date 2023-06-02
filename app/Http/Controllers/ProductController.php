@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Selectie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -105,17 +107,52 @@ class ProductController extends Controller
     {
         try {
             $attributes = request()->validate([
-                'naam' => 'required',
-                ''
+                'naam' => ['required', 'max:255'],
+                'afbeelding' => []
             ]);
+
             try {
-                //maak product en selectie en productselectie
-                return back()->with('success', 'Product toegevoegd!');
+                $product = Product::create([
+                    'naam' => $attributes['naam'],
+                    'type' => 'verpakking'
+                ]);
+
+                $selectie = Selectie::create([
+                    'product_id' => $product->id
+                ]);
+
+                return view('admin.verpakking-inhoud-toevoegen', [
+                    'selectie_id' => $selectie->id
+                ]);
             } catch (\Exception $e) {
                 return back()->with('error', 'Product bestaat al!');
             }
         } catch (\Exception $e) {
             return back()->with('error', 'Oeps, er ging iets mis!');
+        }
+    }
+
+    public function verpakkingInhoudToevoegen()
+    {
+        try {
+            $attributes = request()->validate([
+                'selectie_id' => ['required'],
+                'product_id' => ['required'],
+                'aantal' => ['required', 'min:1']
+            ]);
+            DB::table('product_selectie')->insert([
+                'product_id' => $attributes['product_id'],
+                'selectie_id' => $attributes['selectie_id'],
+                'aantal' => $attributes['aantal']
+            ]);
+            return view('admin.verpakking-inhoud-toevoegen', [
+                'selectie_id' => $attributes['selectie_id']
+            ]);
+
+        } catch (\Exception $e) {
+//            return back()->with('error', 'Oeps, Er ging iets mis!');
+            return redirect('/');
+
         }
     }
 
