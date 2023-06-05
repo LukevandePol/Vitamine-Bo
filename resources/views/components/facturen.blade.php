@@ -58,7 +58,7 @@
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
             <td><i class="fa-solid fa-download"></i></td>
-        </tr data-year="2023">
+        </tr>
         <tr data-year="2023">
             <td>Januari</td>
             <td>19200005</td>
