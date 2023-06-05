@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const invoiceTable = document.getElementById('invoiceTable');
     const yearDropdown = document.getElementById('yearDropdown');
+    const yearDropdownMenu = document.getElementById('yearDropdownMenu');
     const yearDropdownMenuItems = document.querySelectorAll('[id^="yearDropdownMenu-"]');
 
     yearDropdownMenuItems.forEach(function(item) {
@@ -18,6 +19,24 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // Populate the dropdown menu with the available years
+    const years = Array.from(invoiceTable.getElementsByTagName('tr')).map(row => row.getAttribute('data-year'));
+    const uniqueYears = [...new Set(years)]; // Get unique years
+
+    uniqueYears.forEach(function(year) {
+        const menuItem = document.createElement('a');
+        menuItem.classList.add('dropdown-item');
+        menuItem.href = '#';
+        menuItem.setAttribute('data-value', year);
+        menuItem.id = 'yearDropdownMenu-' + year;
+        menuItem.textContent = year;
+
+        yearDropdownMenu.appendChild(menuItem);
+    });
+
+    // Set the default year filter to 2023
+    setYearFilter(2023);
 });
 
 function setYearFilter(year) {
@@ -25,7 +44,7 @@ function setYearFilter(year) {
     const selectedYear = document.querySelector('#selectedYear');
 
     // Set the selected year in the dropdown button
-    selectedYear.textContent = year;
+    dropdownButton.textContent = year;
 
     // Add the 'active' class to the selected year dropdown item
     const dropdownItems = document.querySelectorAll('.dropdown-item');
@@ -33,6 +52,10 @@ function setYearFilter(year) {
         item.classList.remove('active');
         if (item.getAttribute('data-value') === year.toString()) {
             item.classList.add('active');
+        }
+        // Remove 'active' class from the year 2023 dropdown item
+        if (item.getAttribute('data-value') === '2023') {
+            item.classList.remove('active');
         }
     });
 
@@ -50,4 +73,3 @@ function setYearFilter(year) {
 
 // Set the default year filter to 2023
 setYearFilter(2023);
-
