@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AccountDeleted;
 use App\Models\Adres;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class AccountController extends Controller
 {
@@ -52,7 +54,9 @@ class AccountController extends Controller
 
     public function destroyAccount($id)
     {
-        User::findOrFail($id)->delete();
+        $user = User::findOrFail($id)->delete();
+
+        Mail::to($user->email)->send(new AccountDeleted());
 
         return redirect()->back()->with('success', 'Account is succesvol verwijderd.');
     }
