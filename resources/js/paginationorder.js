@@ -14,14 +14,14 @@ function filterOrders() {
     });
 }
 
-// Set the default value to 2023
+// Datum naar 2023
 document.getElementById("yearDropdownMenu").setAttribute("data-selected", "2023");
 document.getElementById("yearDropdown").textContent = "2023";
 
-// Filter the orders on page load
+// Filteren bij laden
 filterOrders();
 
-// Listen for dropdown item clicks
+//Dropdown menu knoppen
 document.querySelectorAll("#yearDropdownMenu .dropdown-item").forEach((item) => {
     item.addEventListener("click", function (e) {
         e.preventDefault();
@@ -36,11 +36,11 @@ document.querySelectorAll("#yearDropdownMenu .dropdown-item").forEach((item) => 
 });
 
 
-// Set the default value to 2023
+//default 2023
 document.getElementById("maxRows").value = "2023";
 
 // Filter the orders on page load
 filterOrders();
 
-// Listen for changes in the year selection
+// Veranderingen
 document.getElementById("maxRows").addEventListener("change", filterOrders);
