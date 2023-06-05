@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AccountDeleted;
 use App\Models\Adres;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class AccountController extends Controller
 {
@@ -39,4 +42,22 @@ class AccountController extends Controller
         return redirect('/account');
     }
 
+    public function approveAccount($id)
+    {
+        $user = User::findOrFail($id);
+
+        $user->status = now();
+        $user->save();
+
+        return redirect()->back()->with('success', 'Account succesvol goedgekeurd!');
+    }
+
+    public function destroyAccount($id)
+    {
+        $user = User::findOrFail($id)->delete();
+
+        Mail::to($user->email)->send(new AccountDeleted());
+
+        return redirect()->back()->with('success', 'Account is succesvol verwijderd.');
+    }
 }
