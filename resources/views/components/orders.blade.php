@@ -1,32 +1,19 @@
 <x-card>
     <p><strong>Recente Bestellingen</strong></p>
     <div class="form-group">
-        <div class="row">
-            <div class="col">
-                <select class="form-control text-left year-selection" name="state" id="maxRows">
-                    <option value="" disabled selected>Selecteer jaar </option>
-                    <option value="0">Alle Jaren</option>
-                    <option value="2023">2023</option>
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
-                    <option value="2020">2020</option>
-                </select>
-            </div>
-            <div class="col">
-                <select class="form-control text-left status-selection" id="statusFilter">
-                    <option value="" disabled selected>Selecteer status </option>
-                    <option value="in-behandeling">In behandeling</option>
-                    <option value="goedgekeurd">Goedgekeurd</option>
-                    <option value="afgekeurd">Afgekeurd</option>
-                </select>
-            </div>
-        </div>
+        <label for="yearFilter">Filter op jaar:</label>
+        <select class="form-control" id="yearFilter">
+            <option value="0">Alle jaren</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+        </select>
     </div>
 
-
     <div class="table-responsive">
-        <table class="table table-striped table-sm">
-            <tbody>
+        <table class="table table-striped table-sm" id="orderTable">
+            <tbody id="orderTableBody">
             <tr>
                 <td>Bam</td>
                 <td>Jeverweg 18, 9723 JE Groningen</td>
@@ -81,7 +68,7 @@
                 <td>Jeverweg 18, 9723 JE Groningen</td>
                 <td>20 Oktober, 2022</td>
                 <td>€178,00</td>
-                <td class="goedgekeurd bullet-point">• Goedgekeurd</td>
+                <td class="afgekeurd bullet-point">• Afgekeurd</td>
             </tr>
             <tr>
                 <td>Bam</td>
@@ -137,10 +124,17 @@
                 <td>Jeverweg 18, 9723 JE Groningen</td>
                 <td>20 Februari, 2022</td>
                 <td>€178,00</td>
-                <td class="goedgekeurd bullet-point">• Goedgekeurd</td>
+                <td class="afgekeurd bullet-point">• Afgekeurd</td>
             </tr>
             </tbody>
         </table>
+    </div>
+    <div class="row">
+        <div class="page-container">
+            <div class="rowIndication" id="rowIndication"></div>
+            <div class="pagination"></div>
+            <div class="pagination-numbers"></div>
+        </div>
     </div>
 
 

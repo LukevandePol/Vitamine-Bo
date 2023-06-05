@@ -1,42 +1,95 @@
+// Global variables
+const tableRows = Array.from(document.querySelectorAll('#orderTableBody tr'));
+let rowsPerPage = 12;
+let currentPage = 0;
 
-document.addEventListener('DOMContentLoaded', function() {
-    const selectElement = document.getElementById('maxRows');
-    const rows = document.querySelectorAll('table.table tbody tr');
+function filterOrders() {
+    const selectedYear = document.getElementById("yearFilter").value;
 
-    selectElement.addEventListener('change', function() {
-        const selectedYear = this.value;
-        for (let i = 0; i < rows.length; i++) {
-            const orderYear = rows[i].querySelector('td:nth-child(3)').textContent.split(',')[1].trim();
-            if (selectedYear === '0' || orderYear === selectedYear) {
-                rows[i].style.display = '';
-            } else {
-                rows[i].style.display = 'none';
-            }
-        }
-    });
-});
-document.addEventListener('DOMContentLoaded', () => {
-    const statusFilter = document.getElementById('statusFilter');
-    const rows = document.querySelectorAll('tr');
+    tableRows.forEach((row) => {
+        const dateString = row.cells[2].textContent;
+        const year = dateString.match(/\d{4}/)[0];
 
-    statusFilter.addEventListener('input', () => {
-        const selectedStatus = statusFilter.value;
-
-        if (selectedStatus === '') {
-            // Show all rows if no status is selected
-            rows.forEach((row) => {
-                row.style.display = 'table-row';
-            });
+        if (selectedYear === "0" || year === selectedYear) {
+            row.style.display = "";
         } else {
-            // Hide rows that do not match the selected status
-            rows.forEach((row) => {
-                const statusCell = row.querySelector('.bullet-point');
-                if (statusCell && statusCell.classList.contains(selectedStatus)) {
-                    row.style.display = 'table-row';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
+            row.style.display = "none";
         }
     });
-});
+
+    currentPage = 0;
+    showRows();
+    updatePagination();
+}
+
+// Function to show rows based on the current page
+function showRows() {
+    const startIndex = currentPage * rowsPerPage;
+    const endIndex = startIndex + rowsPerPage;
+
+    tableRows.forEach((row, index) => {
+        if (index >= startIndex && index < endIndex) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+
+    // Update the row indication
+    const rowIndication = document.getElementById('rowIndication');
+    rowIndication.textContent = `Ziet ${startIndex + 1} tot ${Math.min(endIndex, tableRows.length)} van de ${tableRows.length}`;
+}
+
+// Function to update the pagination links
+function updatePagination() {
+    const totalPages = Math.ceil(tableRows.length / rowsPerPage);
+
+    const pagination = document.querySelector('.pagination');
+    pagination.innerHTML = '';
+
+    // Create and append the previous link
+    const prevLink = createPaginationLink('&#8592;', currentPage > 0, currentPage - 1);
+    pagination.appendChild(prevLink);
+
+    // Create and append page links
+    for (let i = 0; i < totalPages; i++) {
+        const pageLink = createPaginationLink(i + 1, currentPage !== i, i);
+        pagination.appendChild(pageLink);
+    }
+
+    // Create and append the next link
+    const nextLink = createPaginationLink('&#8594;', currentPage < totalPages - 1, currentPage + 1);
+    pagination.appendChild(nextLink);
+}
+
+// Function to create a pagination link
+function createPaginationLink(label, enabled, pageIndex) {
+    const link = document.createElement('a');
+    link.innerHTML = label;
+    link.href = '#';
+
+    if (enabled) {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            currentPage = pageIndex;
+            showRows();
+            updatePagination();
+        });
+    } else {
+        link.classList.add('disabled');
+    }
+
+    if (currentPage === pageIndex) {
+        link.classList.add('active');
+    }
+
+    return link;
+}
+
+// Initial function calls
+showRows();
+updatePagination();
+
+// Attach event listener to the filter select element
+const yearFilterSelect = document.getElementById('yearFilter');
+yearFilterSelect.addEventListener('change', filterOrders);
