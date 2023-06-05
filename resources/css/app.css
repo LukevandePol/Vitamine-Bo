@@ -699,38 +699,11 @@ a:hover {
 .form-control-spacing {
     margin-right: 10px;
 }
-.page-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.rowIndication {
-    margin-left: 15px;
-}
 
-.pagination {
-    margin-left: auto;
-    width: auto;
+.jaar-dropdown-container {
+    padding: 0 1.05rem; /* Adjust the padding value as needed */
 }
-
-.pagination a {
-    margin: 0 5px;
-    padding: 5px 10px;
-    color: gray; /* Default color for non-active links */
-    text-decoration: none;
-}
-
-.pagination a.active {
-    color: blue;
-    text-decoration: underline;
-}
-
-.pagination a.disabled {
-    color: gray;
-    pointer-events: none;
-}
-
 
 
 

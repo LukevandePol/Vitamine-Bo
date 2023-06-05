@@ -1,10 +1,6 @@
-// Global variables
-const tableRows = Array.from(document.querySelectorAll('#orderTableBody tr'));
-let rowsPerPage = 12;
-let currentPage = 0;
-
 function filterOrders() {
-    const selectedYear = document.getElementById("yearFilter").value;
+    const selectedYear = document.getElementById("yearDropdownMenu").getAttribute("data-selected");
+    const tableRows = document.querySelectorAll("#myTable tbody tr");
 
     tableRows.forEach((row) => {
         const dateString = row.cells[2].textContent;
@@ -16,80 +12,35 @@ function filterOrders() {
             row.style.display = "none";
         }
     });
-
-    currentPage = 0;
-    showRows();
-    updatePagination();
 }
 
-// Function to show rows based on the current page
-function showRows() {
-    const startIndex = currentPage * rowsPerPage;
-    const endIndex = startIndex + rowsPerPage;
+// Set the default value to 2023
+document.getElementById("yearDropdownMenu").setAttribute("data-selected", "2023");
+document.getElementById("yearDropdown").textContent = "2023";
 
-    tableRows.forEach((row, index) => {
-        if (index >= startIndex && index < endIndex) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
-        }
+// Filter the orders on page load
+filterOrders();
+
+// Listen for dropdown item clicks
+document.querySelectorAll("#yearDropdownMenu .dropdown-item").forEach((item) => {
+    item.addEventListener("click", function (e) {
+        e.preventDefault();
+        const selectedValue = this.getAttribute("data-value");
+        const selectedText = this.textContent;
+
+        document.getElementById("yearDropdownMenu").setAttribute("data-selected", selectedValue);
+        document.getElementById("yearDropdown").textContent = selectedText;
+
+        filterOrders();
     });
+});
 
-    // Update the row indication
-    const rowIndication = document.getElementById('rowIndication');
-    rowIndication.textContent = `Ziet ${startIndex + 1} tot ${Math.min(endIndex, tableRows.length)} van de ${tableRows.length}`;
-}
 
-// Function to update the pagination links
-function updatePagination() {
-    const totalPages = Math.ceil(tableRows.length / rowsPerPage);
+// Set the default value to 2023
+document.getElementById("maxRows").value = "2023";
 
-    const pagination = document.querySelector('.pagination');
-    pagination.innerHTML = '';
+// Filter the orders on page load
+filterOrders();
 
-    // Create and append the previous link
-    const prevLink = createPaginationLink('&#8592;', currentPage > 0, currentPage - 1);
-    pagination.appendChild(prevLink);
-
-    // Create and append page links
-    for (let i = 0; i < totalPages; i++) {
-        const pageLink = createPaginationLink(i + 1, currentPage !== i, i);
-        pagination.appendChild(pageLink);
-    }
-
-    // Create and append the next link
-    const nextLink = createPaginationLink('&#8594;', currentPage < totalPages - 1, currentPage + 1);
-    pagination.appendChild(nextLink);
-}
-
-// Function to create a pagination link
-function createPaginationLink(label, enabled, pageIndex) {
-    const link = document.createElement('a');
-    link.innerHTML = label;
-    link.href = '#';
-
-    if (enabled) {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            currentPage = pageIndex;
-            showRows();
-            updatePagination();
-        });
-    } else {
-        link.classList.add('disabled');
-    }
-
-    if (currentPage === pageIndex) {
-        link.classList.add('active');
-    }
-
-    return link;
-}
-
-// Initial function calls
-showRows();
-updatePagination();
-
-// Attach event listener to the filter select element
-const yearFilterSelect = document.getElementById('yearFilter');
-yearFilterSelect.addEventListener('change', filterOrders);
+// Listen for changes in the year selection
+document.getElementById("maxRows").addEventListener("change", filterOrders);
