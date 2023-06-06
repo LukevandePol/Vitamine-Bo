@@ -5,7 +5,6 @@
         <table class="table table-striped mt-5">
             <thead>
             <tr>
-                <th scope="col">ID</th>
                 <th scope="col">Naam</th>
                 <th scope="col">E-mailadres</th>
                 <th scope="col">Aangemaakt</th>
@@ -15,7 +14,6 @@
             <tbody>
             @foreach($users as $user)
                 <tr>
-                    <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->created_at->format('Y-m-d') }}</td>
