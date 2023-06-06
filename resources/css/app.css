@@ -655,4 +655,49 @@ a:hover {
     margin-bottom: 0;
 }
 
+/**
+ * 09. Orders
+ */
+.table td,
+.table th {
+    padding: 15px;
+    vertical-align: top;
+    border: none; /* Remove the border on top of cells */
+}
+
+.goedgekeurd {
+    color: #88D375;
+}
+
+.in-behandeling {
+    color: #63BEEB;
+}
+
+.afgekeurd {
+    color: red;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > td.goedgekeurd {
+    color: #88D375;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > td.in-behandeling{
+    color: #63BEEB;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > td.afgekeurd{
+    color: red;
+}
+
+.year-selection{
+    width: 150px;
+}
+.status-selection{
+    width: 170px;
+}
+
+.jaar-dropdown-container {
+    padding: 0 1.00rem; /* Adjust the padding value as needed */
+}
+
 
