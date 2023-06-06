@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     const invoiceTable = document.getElementById('invoiceTable');
-    const yearDropdown = document.getElementById('yearDropdown');
     const yearDropdownMenu = document.getElementById('yearDropdownMenu');
     const yearDropdownMenuItems = document.querySelectorAll('[id^="yearDropdownMenu-"]');
 
