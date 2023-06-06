@@ -9,14 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
 
             const selectedYear = event.target.getAttribute('data-value');
-
-            Array.from(invoiceTable.getElementsByTagName('tr')).forEach(function(row) {
-                if (row.getAttribute('data-year') === selectedYear) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
+            setYearFilter(selectedYear);
         });
     });
 
@@ -52,10 +45,6 @@ function setYearFilter(year) {
         item.classList.remove('active');
         if (item.getAttribute('data-value') === year.toString()) {
             item.classList.add('active');
-        }
-        // Remove 'active' class from the year 2023 dropdown item
-        if (item.getAttribute('data-value') === '2023') {
-            item.classList.remove('active');
         }
     });
 

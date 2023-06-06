@@ -36,35 +36,35 @@
             <td>19200009</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2023">
             <td>April</td>
             <td>19200008</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2023">
             <td>Maart</td>
             <td>19200007</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2023">
             <td>Februari</td>
             <td>19200006</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2023">
             <td>Januari</td>
             <td>19200005</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2022">
             <td>December</td>
@@ -78,84 +78,84 @@
             <td>19200003</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2022">
             <td>Oktober</td>
             <td>19200002</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2022">
             <td>September</td>
             <td>19200001</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2022">
             <td>Augustus</td>
             <td>19200000</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2022">
             <td>Juli</td>
             <td>19200099</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2022">
             <td>Juni</td>
             <td>19200098</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2022">
             <td>Mei</td>
             <td>19200097</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2022">
             <td>April</td>
             <td>19200096</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2022">
             <td>Maart</td>
             <td>19200095</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2022">
             <td>Februari</td>
             <td>19200094</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2022">
             <td>Januari</td>
             <td>192000093</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         <tr data-year="2021">
             <td>December</td>
             <td>192000092</td>
             <td>Vitamine Bo B.V.</td>
             <td><i class="fa-solid fa-check"></i></td>
-            <td><i class="fa-solid fa-download"></i></td>
+            <td><i class="fa-solid fa-file-arrow-down"></i></td>
         </tr>
         </tbody>
     </table>
