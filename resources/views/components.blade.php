@@ -1,6 +1,6 @@
 <x-layout title="Components">
 
-
+    <x-facturen/>
 <x-adresscard/>
   <x-sidebar/>
 
