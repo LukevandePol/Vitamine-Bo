@@ -27,7 +27,7 @@ class DeleteAccountNotification extends Mailable
 
     public function build()
     {
-        return $this->subject('Account Deletion Notification')
+        return $this->subject('Vitamine Bo - Account afgekeurd')
             ->markdown('emails.account-deleted', [
                 'user' => $this->user,
                 'reason' => $this->reason,
@@ -41,7 +41,7 @@ class DeleteAccountNotification extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Delete Account Notification',
+            subject: 'Vitamine Bo - Account afgekeurd',
         );
     }
 
