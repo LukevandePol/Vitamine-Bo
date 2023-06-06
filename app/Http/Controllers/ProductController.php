@@ -5,10 +5,27 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Selectie;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $products = Product::all();
+
+        return view('admin.product', compact('products'));
+    }
+
+    public function createProductBewerken($id)
+    {
+        $product = Product::find($id);
+        return view('admin.product-bewerken', [
+            'product' => $product
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -47,7 +64,8 @@ class ProductController extends Controller
             try {
                 Product::create([
                     'naam' => $attributes['naam'],
-                    'type' => 'fruit'
+                    'type' => 'fruit',
+                    'is_zichtbaar' => true,
                 ]);
                 return back()->with('success', 'Product Toegevoegd!');
             } catch (\Exception $e) {
@@ -69,7 +87,8 @@ class ProductController extends Controller
             try {
                 Product::create([
                     'naam' => $attributes['naam'],
-                    'type' => 'groente'
+                    'type' => 'groente',
+                    'is_zichtbaar' => true,
                 ]);
                 return back()->with('success', 'Product Toegevoegd!');
             } catch (\Exception $e) {
@@ -93,6 +112,7 @@ class ProductController extends Controller
                     'naam' => $attributes['naam'],
                     'type' => 'fles',
                     'inhoud' => $attributes['inhoud'],
+                    'is_zichtbaar' => true,
                 ]);
                 return back()->with('success', 'Product Toegevoegd!');
             } catch (\Exception $e) {
@@ -114,60 +134,25 @@ class ProductController extends Controller
             try {
                 $product = Product::create([
                     'naam' => $attributes['naam'],
-                    'type' => 'verpakking'
+                    'type' => 'verpakking',
+                    'is_zichtbaar' => true,
                 ]);
 
                 $selectie = Selectie::create([
                     'product_id' => $product->id
                 ]);
 
-                return view('admin.verpakking-inhoud-toevoegen', [
-                    'selectie_id' => $selectie->id
+                return view('admin.product-inhoud', [
+                    'selectie' => $selectie
                 ]);
+
+
             } catch (\Exception $e) {
                 return back()->with('error', 'Product bestaat al!');
             }
         } catch (\Exception $e) {
             return back()->with('error', 'Oeps, er ging iets mis!');
         }
-    }
-
-    public function verpakkingInhoudToevoegen()
-    {
-        try {
-            $attributes = request()->validate([
-                'selectie_id' => ['required'],
-                'product_id' => ['required'],
-                'aantal' => ['required', 'min:1']
-            ]);
-            DB::table('product_selectie')->insert([
-                'product_id' => $attributes['product_id'],
-                'selectie_id' => $attributes['selectie_id'],
-                'aantal' => $attributes['aantal']
-            ]);
-            return view('admin.verpakking-inhoud-toevoegen', [
-                'selectie_id' => $attributes['selectie_id']
-            ]);
-
-        } catch (\Exception $e) {
-//            return back()->with('error', 'Oeps, Er ging iets mis!');
-            return redirect('/');
-
-        }
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-//Request $request
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        $products = Product::all();
-
-        return view('admin.product', compact('products'));
     }
 
     /**

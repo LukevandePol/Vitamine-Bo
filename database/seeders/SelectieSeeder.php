@@ -14,12 +14,15 @@ class SelectieSeeder extends Seeder
     {
         Selectie::create([
             'product_id' => 1,
-
         ]);
-
         Selectie::create([
-            'naam' => 'Mand'
+            'product_id' => 2,
         ]);
-
+        Selectie::create([
+            'product_id' => 3,
+        ]);
+        Selectie::create([
+            'product_id' => 4,
+        ]);
     }
 }

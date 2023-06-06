@@ -15,7 +15,11 @@
                     <td>{{ $product->naam }}</td>
                     <td>{{ $product->type }}</td>
                     <td>{{ $product->inhoud }}</td>
-                    <td>Buttons</td>
+                    @if($product->type == 'verpakking')
+                        <td>
+                            <x-a href="/admin/productInhoudBewerken/{{$product->id}}">bewerken</x-a>
+                        </td>
+                    @endif
                 </tr>
             @endforeach
             </tbody>
