@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function setYearFilter(year) {
     const dropdownButton = document.querySelector('#yearDropdown');
-    const selectedYear = document.querySelector('#selectedYear');
 
     // Set the selected year in the dropdown button
     dropdownButton.textContent = year;
