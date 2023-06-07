@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdresController;
 use App\Http\Controllers\BestellingController;
+use App\Http\Controllers\BestellingInhoudController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductInhoudController;
@@ -51,11 +52,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('AdresToevoegen', [AdresController::class, 'createToevoegen']);
     Route::post('createAdres', [AdresController::class, 'createAdres']);
 
-    // Bestelling aanpassen
-    Route::get('BestellingAanpassen', [BestellingController::class, 'create'])->name('BestellingAanpassen');
-
     // Klanten dashboard
     Route::get('dashboard', [DashboardController::class, 'create'])->name('dashboard');
+
+    // Bestelling aanpassen
+    Route::get('BestellingAanpassen', [BestellingController::class, 'create'])->name('BestellingAanpassen');
+    Route::post('/toevoegenAanBestelling', [BestellingInhoudController::class, 'standaardToevoegenAanBestelling']);
 
     // Uitloggen
     Route::post('uitloggen', [SessionsController::class, 'destroy']);
@@ -86,14 +88,17 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/product', [ProductController::class, 'create'])->name('admin.product');
     Route::post('/admin/product', [ProductController::class, 'store']);
 
+    //producten toevoegen aan de products tabel
     Route::post('/fruitToevoegen', [ProductController::class, 'fruitToevoegen']);
     Route::post('/groenteToevoegen', [ProductController::class, 'groenteToevoegen']);
     Route::post('/flesToevoegen', [ProductController::class, 'flesToevoegen']);
     Route::post('/verpakkingToevoegen', [ProductController::class, 'verpakkingToevoegen']);
 
+    //product bewerken in de product tabel
     Route::get('/admin/productBewerken/{id}', [ProductController::class, 'createProductBewerken']);
     Route::post('/admin/productBewerken/{id}', [ProductController::class, 'updateProduct']);
 
+    //verpakkings inhoud bewerken in de selectie en product_selectie tabel
     Route::get('/admin/productInhoudBewerken/{id}', [ProductInhoudController::class, 'createProductInhoud']);
     Route::post('/verpakkingInhoudToevoegen', [ProductInhoudController::class, 'verpakkingInhoudToevoegen']);
     Route::post('/deleteVerpakkingInhoud', [ProductInhoudController::class, 'deleteVerpakkingInhoud']);

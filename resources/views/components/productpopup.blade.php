@@ -28,9 +28,9 @@
                             <p></p>
                             @if($inhoud !== null and $producten !== null)
                                 <ul class="custom-ul stripe-top">
-                                    @foreach($producten as $product)
+                                    @foreach($producten as $p)
                                         <li>
-                                            <span class="list-text">{{$product->naam}}</span>
+                                            <span class="list-text">{{$p->naam}}</span>
                                             <div class="wrapper">
                                                 <span class="num2">{{$inhoud[$loop->index]->aantal}}</span>
                                             </div>
@@ -46,12 +46,23 @@
 
             <div class="modal-footer">
                 <div class="d-flex">
-                    <x-buttonicon class="modal-trigger me-2" data-bs-toggle="modal" data-bs-target="#personalizeModal">
-                        Personaliseer
-                    </x-buttonicon>
-                    <x-buttonicon class="ml-2" data-bs-dismiss="modal" aria-label="Close">
-                        Toevoegen
-                    </x-buttonicon>
+                    @if($product->type == 'verpakking')
+                        <x-buttonicon class="modal-trigger me-2" data-bs-toggle="modal"
+                                      data-bs-target="#personalizeModal">
+                            Personaliseer
+                        </x-buttonicon>
+                    @endif
+                    <form action="/toevoegenAanBestelling/" method="post">
+                        @csrf
+                        <input
+                            name="product_id"
+                            type="hidden"
+                            value="{{$inhoud}}"
+                        >
+                        <x-buttonicon class="ml-2" data-bs-dismiss="modal" aria-label="Close">
+                            Toevoegen
+                        </x-buttonicon>
+                    </form>
                 </div>
             </div>
 
@@ -59,4 +70,4 @@
     </div>
 </div>
 
-{{--<x-personalize/>--}}
+<x-personalize/>

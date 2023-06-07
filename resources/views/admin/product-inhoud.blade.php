@@ -10,7 +10,7 @@
                         <form action="/deleteVerpakkingInhoud" method="post">
                             @csrf
                             <input name="product_id" value="{{$product->id}}" type="hidden">
-                            <input name="selectie_id" value="{{$selectie[0]->id}}" type="hidden">
+                            <input name="selectie_id" value="{{$selectie->id}}" type="hidden">
                             <x-submit>Verwijder</x-submit>
                         </form>
                     </div>
@@ -22,7 +22,7 @@
     @foreach(\App\Models\Product::all()->where('type', '=', 'fruit') as $product)
         <form action="/verpakkingInhoudToevoegen" method="post">
             @csrf
-            <x-input type="hidden" name="selectie_id" value="{{$selectie[0]->id}}"/>
+            <x-input type="hidden" name="selectie_id" value="{{$selectie->id}}"/>
             <x-input type="hidden" name="product_id" value="{{$product->id}}"/>
             <p>{{$product->naam}}</p>
             <x-input name="aantal" label="aantal"/>

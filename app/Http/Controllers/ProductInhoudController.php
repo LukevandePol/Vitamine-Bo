@@ -18,7 +18,7 @@ class ProductInhoudController extends Controller
             ->get();
 
         return view('admin.product-inhoud', [
-            'selectie' => $selectie,
+            'selectie' => $selectie[0],
             'inhoud' => $inhoud,
         ]);
     }
@@ -40,7 +40,7 @@ class ProductInhoudController extends Controller
                     ],
                     ['aantal' => $attributes['aantal']]
                 );
-            return back()->with('success', 'Product Toegevoegd');
+            return back()->with('success', 'Inhoud aangepast');
         } catch (\Exception $e) {
             return back()->with('error', 'Oeps! Er ging iets mis');
         }

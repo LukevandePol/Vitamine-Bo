@@ -8,6 +8,5 @@
          data-bs-target="#{{$product->id}}">
 
     <x-productpopup :product="$product"/>
-    {{--    <x-personalize/>--}}
 </div>
 

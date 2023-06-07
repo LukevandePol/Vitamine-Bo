@@ -142,11 +142,7 @@ class ProductController extends Controller
                     'product_id' => $product->id
                 ]);
 
-                return view('admin.product-inhoud', [
-                    'selectie' => $selectie
-                ]);
-
-
+                return redirect('/admin/productInhoudBewerken/' . $product->id);
             } catch (\Exception $e) {
                 return back()->with('error', 'Product bestaat al!');
             }
