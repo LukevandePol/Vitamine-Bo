@@ -43,18 +43,15 @@
                         title="Nieuwe bestelling"
                         class="bo-hoofdkleur-opacity"
                     >
-                        Maak een nieuwe bestelling aan
+                        U heeft nog geen bestelling. Voeg elementen rechts toe om een bestelling te maken.
                     </x-cardstripe>
                 </div>
             @endif
 
-            <div class="col-sm-6">
+            <div class="col-sm-6 scrollable-container d-flex flex-wrap">
                 @foreach($selecteerbareProducten as $product)
                     @if($product->is_zichtbaar)
-                        <div style="border: 1px red solid">
-                            <p>{{$product->naam}}</p>
-                            <p>{{$product->afbeelding_pad}}</p>
-                        </div>
+                        <x-productitem :product="$product"/>
                     @endif
                 @endforeach
             </div>

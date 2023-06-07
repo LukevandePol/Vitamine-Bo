@@ -517,7 +517,7 @@ a:hover {
 
 .small-card {
     max-width: 500px;
-    margin-left: 200px;
+    /*margin-left: 200px;*/
 }
 
 .no-bottom-margin {
