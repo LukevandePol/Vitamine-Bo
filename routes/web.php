@@ -53,7 +53,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('createAdres', [AdresController::class, 'createAdres']);
 
     // Klanten dashboard
-    Route::get('dashboard', [DashboardController::class, 'create'])->name('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'create'])->name('klant-dashboard');
 
     // Bestelling aanpassen
     Route::get('BestellingAanpassen', [BestellingController::class, 'create'])->name('BestellingAanpassen');
@@ -77,12 +77,12 @@ Route::group(['middleware' => ['guest']], function () {
 // Admin
 Route::group(['middleware' => ['auth', 'admin']], function () {
     // Dashboard
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin-dashboard');
 
     // Account goedkeuren
-    Route::get('/admin/goedkeuren', [AdminController::class, 'approve'])->name('admin.approve');
-    Route::post('/admin/goedkeuren/{id}', [AdminController::class, 'update'])->name('update.status');
-    Route::delete('/admin/goedkeuren/{id}', [AdminController::class, 'destroy'])->name('account.destroy');
+    Route::get('/admin/goedkeuren', [AdminController::class, 'approve'])->name('account-goedkeuren');
+    Route::post('/admin/goedkeuren/{id}', [AccountController::class, 'approveAccount'])->name('goedkeuren');
+    Route::delete('/admin/goedkeuren/{id}', [AccountController::class, 'destroyAccount'])->name('afkeuren');
 
     // Producten toevoegen
     Route::get('/admin/product', [ProductController::class, 'create'])->name('admin.product');
