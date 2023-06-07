@@ -98,7 +98,6 @@
                         <span class="item-name">Appels</span>
                         <span class="item-number-all">4</span>
 
-                        </span>
                     </div>
                 </li>
                 <li>
@@ -106,7 +105,6 @@
                         <span class="item-name">Peren</span>
                         <span class="item-number-all">2</span>
 
-                        </span>
                     </div>
                 </li>
             </ul>
