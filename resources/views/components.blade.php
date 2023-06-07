@@ -1,5 +1,4 @@
 <x-layout title="Components">
-    <div>
     <x-cardstripe title="Huidige bestelling voor: 8 Mei" class="bo-hoofdkleur-opacity long-version">
         <div class="margin-total-list">
             <div class="item-row">
@@ -35,26 +34,26 @@
                     <div class="item-row mb-1">
                         <span class="item-name">Appels</span>
                         <span class="item-number">
-                            <div class="icon-container">
-                               <i class="fa-solid fa-plus"></i>
-                             <span class="number">2</span>
-                            <i class="fa-solid fa-minus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            </div>
-                        </span>
+              <div class="icon-container">
+                <i class="fa-solid fa-plus"></i>
+                <span class="number">2</span>
+                <i class="fa-solid fa-minus"></i>
+                <i class="fa-solid fa-trash-can"></i>
+              </div>
+            </span>
                     </div>
                 </li>
                 <li>
                     <div class="item-row">
                         <span class="item-name">Peren</span>
                         <span class="item-number">
-                        <div class="icon-container">
-                            <i class="fa-solid fa-plus"></i>
-                             <span class="number">4</span>
-                            <i class="fa-solid fa-minus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            </div>
-                        </span>
+              <div class="icon-container">
+                <i class="fa-solid fa-plus"></i>
+                <span class="number">4</span>
+                <i class="fa-solid fa-minus"></i>
+                <i class="fa-solid fa-trash-can"></i>
+              </div>
+            </span>
                     </div>
                 </li>
             </ul>
@@ -63,9 +62,9 @@
             </div>
         </div>
     </x-cardstripe>
-    </div>
+</x-layout>
 
-<div>
+<x-layout title="Components">
     <x-cardstripe title="Huidige bestelling voor: 8 Mei" class="bo-hoofdkleur-opacity long-version">
         <div class="margin-total-list">
             <div class="item-row">
@@ -97,18 +96,15 @@
                     <div class="item-row mb-1">
                         <span class="item-name">Appels</span>
                         <span class="item-number-all">4</span>
-
                     </div>
                 </li>
                 <li>
                     <div class="item-row">
                         <span class="item-name">Peren</span>
                         <span class="item-number-all">2</span>
-
                     </div>
                 </li>
             </ul>
         </div>
     </x-cardstripe>
-    </div>
 </x-layout>
