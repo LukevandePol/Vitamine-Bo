@@ -8,9 +8,6 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <p class="mb-0">{{ $description }}</p>
-            </div>
-            <div class="modal-footer">
                 {{ $slot }}
             </div>
         </div>

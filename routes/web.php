@@ -6,6 +6,7 @@ use App\Http\Controllers\AdresController;
 use App\Http\Controllers\BestellingController;
 use App\Http\Controllers\BestellingInhoudController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductInhoudController;
 use App\Http\Controllers\RegisterController;
@@ -84,7 +85,14 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::post('/admin/goedkeuren/{id}', [AccountController::class, 'approveAccount'])->name('goedkeuren');
     Route::delete('/admin/goedkeuren/{id}', [AccountController::class, 'destroyAccount'])->name('afkeuren');
 
+    // Veelgestelde vragen toevoegen/aanpassen
+    Route::get('/admin/faq', [FaqController::class, 'create'])->name('veelgestelde-vragen');
+    Route::post('/admin/faq', [FaqController::class, 'store']);
+
     // Producten toevoegen
+    Route::get('/admin/product', [ProductController::class, 'create'])->name('product-overzicht');
+    Route::post('admin/product', [ProductController::class, 'store']);
+  
     Route::get('/admin/product', [ProductController::class, 'create'])->name('admin.product');
     Route::post('/admin/product', [ProductController::class, 'store']);
 
