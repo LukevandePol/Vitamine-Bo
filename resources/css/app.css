@@ -787,3 +787,23 @@ a:hover {
 .card-containerproduc{
     width: 550px;
 }
+
+.text-container p {
+    display: inline;
+    margin-right: 10px;
+}
+
+
+.smallest-button{
+    font-size: 12px;
+    background-color: #63BEEB;
+    color:#FFFFFF;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.smallest-button:hover{
+    background-color: #a1d8f3;
+    color: #FFFFFF;
+}
