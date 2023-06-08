@@ -20,13 +20,20 @@
     </div>
 
     @foreach(\App\Models\Product::all()->where('type', '=', 'fruit') as $product)
-        <form action="/verpakkingInhoudToevoegen" method="post">
-            @csrf
-            <x-input type="hidden" name="selectie_id" value="{{$selectie->id}}"/>
-            <x-input type="hidden" name="product_id" value="{{$product->id}}"/>
-            <p>{{$product->naam}}</p>
-            <x-input name="aantal" label="aantal"/>
-            <x-submit>toevoegen</x-submit>
-        </form>
+        <div class="mb-3">
+            <x-cardstripe :title="$product->naam" class="font-stylecard">
+                <form action="/verpakkingInhoudToevoegen" method="post">
+                    @csrf
+                    <x-input type="hidden" name="selectie_id" :value="$selectie->id" />
+                    <x-input type="hidden" name="product_id" :value="$product->id" />
+                    <div class="form-length">
+                        <x-input name="aantal" label="aantal" />
+                    </div>
+                    <x-submit class="small-button">Toevoegen</x-submit>
+                </form>
+            </x-cardstripe>
+        </div>
     @endforeach
+
+
 </x-layout>

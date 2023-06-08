@@ -221,7 +221,7 @@ a:hover {
  */
 .card-custom {
     padding: 20px;
-    margin-top: 5vh;
+    margin-top: 1vh;
     box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
 }
 
@@ -747,4 +747,33 @@ a:hover {
 .accordion-body {
     padding: 0;
     margin-top: 5px;
+}
+
+.form-length{
+    width: 200px;
+}
+
+.font-stylecard{
+    background-color:#FFFFFF;
+}
+.font-stylecard h2 {
+    font-size: 1.2rem; /* Adjust the font size as needed */
+}
+
+.small-button{
+    font-size: 15px;
+    background-color: #63BEEB;
+    color:#FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.small-button hover{
+    font-size: 15px;
+    background-color: #63BEEB;
+    color:#FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
 }
