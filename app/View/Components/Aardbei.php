@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Faq;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,8 @@ class Aardbei extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.aardbei');
+        $faqs = Faq::all();
+
+        return view('components.aardbei', compact('faqs'));
     }
 }

@@ -4,7 +4,7 @@
     </button>
     <div class="dropup-content">
         <div class="accordion accordion-flush" id="faq">
-            @foreach(\App\Models\Faq::all() as $faq)
+            @foreach($faqs as $faq)
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-link collapsed" type="button" data-bs-toggle="collapse"
