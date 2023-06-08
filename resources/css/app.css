@@ -143,9 +143,9 @@ a:hover {
     padding-left: 15vw;
 }
 
-@media screen and (max-width: 3072px) {
+@media screen and (min-width: 1800px) {
     .padding-left {
-        padding-left: 7vw
+        padding-left: 7vw;
     }
 }
 
@@ -520,7 +520,7 @@ a:hover {
 
 .small-card {
     max-width: 500px;
-    margin-left: 200px;
+    /*margin-left: 200px;*/
 }
 
 .no-bottom-margin {

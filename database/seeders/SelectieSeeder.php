@@ -13,12 +13,16 @@ class SelectieSeeder extends Seeder
     public function run(): void
     {
         Selectie::create([
-            'naam' => 'Krat'
+            'product_id' => 1,
         ]);
-
         Selectie::create([
-            'naam' => 'Mand'
+            'product_id' => 2,
         ]);
-
+        Selectie::create([
+            'product_id' => 3,
+        ]);
+        Selectie::create([
+            'product_id' => 4,
+        ]);
     }
 }

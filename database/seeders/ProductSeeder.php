@@ -16,28 +16,28 @@ class ProductSeeder extends Seeder
         Product::create([
             'naam' => 'Mand',
             'type' => 'verpakking',
-            'afbeelding_pad' => '/mand',
+            'afbeelding_pad' => 'images/producten/Vitamine-Bo-Mand.png',
             'is_zichtbaar' => true,
         ]);
 
         Product::create([
             'naam' => 'Robuuste Bak',
             'type' => 'verpakking',
-            'afbeelding_pad' => '/bak',
+            'afbeelding_pad' => 'images/producten/Vitamine-Bo-Robuuste-Bak.png',
             'is_zichtbaar' => true,
         ]);
 
         Product::create([
             'naam' => 'Grote Schaal',
             'type' => 'verpakking',
-            'afbeelding_pad' => '/schaal',
+            'afbeelding_pad' => 'images/producten/Vitamine-Bo-Grote-Schaal.png',
             'is_zichtbaar' => true,
         ]);
 
         Product::create([
             'naam' => 'Houten Kist',
             'type' => 'verpakking',
-            'afbeelding_pad' => '/krat',
+            'afbeelding_pad' => 'images/producten/Vitamine-Bo-Houten-Kist.png',
             'is_zichtbaar' => true,
         ]);
 
