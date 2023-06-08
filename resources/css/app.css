@@ -769,11 +769,21 @@ a:hover {
     border-radius: 8px;
 }
 
-.small-button hover{
-    font-size: 15px;
-    background-color: #63BEEB;
-    color:#FFFFFF;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
+.small-button:hover{
+    background-color: #a1d8f3;
+    color: #FFFFFF;
+}
+
+.card-containerproduct {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.card-containerproduc{
+    width: 550px;
 }

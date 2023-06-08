@@ -19,21 +19,24 @@
         </div>
     </div>
 
-    @foreach(\App\Models\Product::all()->where('type', '=', 'fruit') as $product)
-        <div class="mb-3">
-            <x-cardstripe :title="$product->naam" class="font-stylecard">
-                <form action="/verpakkingInhoudToevoegen" method="post">
-                    @csrf
-                    <x-input type="hidden" name="selectie_id" :value="$selectie->id" />
-                    <x-input type="hidden" name="product_id" :value="$product->id" />
-                    <div class="form-length">
-                        <x-input name="aantal" label="aantal" />
-                    </div>
-                    <x-submit class="small-button">Toevoegen</x-submit>
-                </form>
-            </x-cardstripe>
-        </div>
-    @endforeach
+    <div class="card-containerproduc">
+        @foreach(\App\Models\Product::all()->where('type', '=', 'fruit') as $product)
+            <div class="mb-3">
+                <x-cardstripe :title="$product->naam" class="font-stylecard">
+                    <form action="/verpakkingInhoudToevoegen" method="post">
+                        @csrf
+                        <x-input type="hidden" name="selectie_id" :value="$selectie->id" />
+                        <x-input type="hidden" name="product_id" :value="$product->id" />
+                        <div class="form-length">
+                            <x-input name="aantal" label="aantal" />
+                        </div>
+                        <x-submit class="small-button">Toevoegen</x-submit>
+                    </form>
+                </x-cardstripe>
+            </div>
+        @endforeach
+    </div>
+
 
 
 </x-layout>
