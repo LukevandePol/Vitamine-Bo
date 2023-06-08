@@ -1,6 +1,5 @@
-@props(['product'])
-
-<div class="modal fade" id="{{$product->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="selectie{{$selectie->id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
 
         <div class="modal-content">
@@ -12,27 +11,26 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6 text-center d-flex align-items-center">
-                            <img src="{{$product->afbeelding_pad}}"
+                            <img src="{{$verpakkingsProduct->afbeelding_pad}}"
                                  class="product-image custom-margin1"
-                                 alt="{{$product->naam}}"
+                                 alt="{{$verpakkingsProduct->naam}}"
                             >
                         </div>
 
                         <div class="col-md-6">
-                            <h3 class="bo-hoofdkleur">{{$product->naam}}</h3>
-
+                            <h3 class="bo-hoofdkleur">{{$verpakkingsProduct->naam}}</h3>
                             <p>Dit is de standaard inhoud van het krat,
                                 voeg deze toe aan je bestelling of
                                 personaliseer de inhoud.
                             </p>
                             <p></p>
-                            @if($selectie !== null and $producten !== null)
+                            @if(isset($inhoud))
                                 <ul class="custom-ul stripe-top">
-                                    @foreach($producten as $p)
+                                    @foreach($inhoud as $i)
                                         <li>
-                                            <span class="list-text">{{$p->naam}}</span>
+                                            <span class="list-text">{{$i['naam']}}</span>
                                             <div class="wrapper">
-                                                <span class="num2">{{$selectie[$loop->index]->aantal}}</span>
+                                                <span class="num2">{{$i['aantal']}}</span>
                                             </div>
                                         </li>
                                     @endforeach
@@ -46,18 +44,16 @@
 
             <div class="modal-footer">
                 <div class="d-flex">
-                    @if($product->type == 'verpakking')
-                        <x-buttonicon class="modal-trigger me-2" data-bs-toggle="modal"
-                                      data-bs-target="#personalizeModal">
-                            Personaliseer
-                        </x-buttonicon>
-                    @endif
+                    <x-buttonicon class="modal-trigger me-2" data-bs-toggle="modal"
+                                  data-bs-target="#personalizeModal">
+                        Personaliseer
+                    </x-buttonicon>
                     <form action="/toevoegenAanBestelling/" method="post">
                         @csrf
                         <input
-                            name="inhoud"
+                            name="selectie_id"
                             type="hidden"
-                            value="{{$selectie_id}}"
+                            value="{{$selectie->id}}"
                         >
                         <x-buttonicon class="ml-2" data-bs-dismiss="modal" aria-label="Close">
                             Toevoegen
@@ -70,4 +66,4 @@
     </div>
 </div>
 
-<x-personalize/>
+{{--<x-personalize/>--}}

@@ -14,15 +14,23 @@ class SelectieSeeder extends Seeder
     {
         Selectie::create([
             'product_id' => 1,
+            'is_standaard' => true,
+            'is_zichtbaar' => true,
         ]);
         Selectie::create([
             'product_id' => 2,
+            'is_standaard' => true,
+            'is_zichtbaar' => true,
         ]);
         Selectie::create([
             'product_id' => 3,
+            'is_standaard' => true,
+            'is_zichtbaar' => true,
         ]);
         Selectie::create([
             'product_id' => 4,
+            'is_standaard' => true,
+            'is_zichtbaar' => true,
         ]);
     }
 }

@@ -12,7 +12,8 @@ use Illuminate\View\Component;
 class productpopup extends Component
 {
 
-    public ?Collection $inhoud = null;
+    public ?int $selectie_id;
+    public ?Collection $selectie = null;
     public ?Collection $producten = null;
 
     /**
@@ -23,8 +24,9 @@ class productpopup extends Component
     )
     {
         if ($this->product->type == 'verpakking') {
-            $this->inhoud = $this->get_inhoud();
-//            dd($this->inhoud);
+            $this->selectie = $this->get_selecties();
+            $this->selectie_id = $this->selectie[0]->selectie_id;
+//            dd($this->selectie_id);
             $this->producten = $this->get_producten();
         }
 
@@ -38,7 +40,7 @@ class productpopup extends Component
         return view('components.productpopup');
     }
 
-    private function get_inhoud(): Collection|null
+    private function get_selecties(): Collection|null
     {
         $selecties = DB::table('selecties')
             ->where('product_id', '=', $this->product->id)
@@ -55,8 +57,8 @@ class productpopup extends Component
 
     private function get_producten()
     {
-        if ($this->inhoud !== null) {
-            return Product::whereIn('id', $this->inhoud->pluck('product_id'))->get();
+        if ($this->selectie !== null) {
+            return Product::whereIn('id', $this->selectie->pluck('product_id'))->get();
         }
 
         return null;

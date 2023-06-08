@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bestelling;
-use App\Models\Product;
+use App\Models\Selectie;
 
 class BestellingController extends Controller
 {
@@ -20,13 +20,16 @@ class BestellingController extends Controller
 //        $selecteerbareProducten = DB::table('selecties')
 //            ->where('id', '=', $selecteerbareProducten_id)
 //            ->get();
-        $selecteerbareProducten = Product::all();
+        $standaardSelecties = Selectie::where('is_standaard', true)
+            ->where('is_zichtbaar', true)
+            ->get();
+//        $selecteerbareProducten = Product::all();
 //        dd($selecteerbareProducten);
 
         //wat als een klant nog geen bestelling heeft?
         return view('bestellingBewerken', [
                 'bestelling' => $laatsteBestelling,
-                'selecteerbareProducten' => $selecteerbareProducten,
+                'standaardSelecties' => $standaardSelecties,
             ]
         );
     }
