@@ -28,14 +28,14 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($faqs as $faq)
+            @forelse($faqs as $faq)
                 <tr>
                     <td>{{ $faq->question }}</td>
                     <td>{{ $faq->answer }}</td>
                     <td>{{ $faq->page }}</td>
                     <td>
                         <div class="d-flex">
-                            <x-button class="btn btn-primary" data-bs-toggle="modal"
+                            <x-button class="btn btn-sm btn-primary" data-bs-toggle="modal"
                                       data-bs-target="#bewerken{{ $faq->id }}">
                                 <i class="fa-solid fa-pen-to-square text-white"></i>
                             </x-button>
@@ -49,7 +49,7 @@
                                     <x-submit class="btn btn-primary w-100">Aanpassen</x-submit>
                                 </form>
                             </x-modal>
-                            <x-button class="btn btn-danger ms-2" data-bs-toggle="modal"
+                            <x-button class="btn btn-sm btn-danger ms-2" data-bs-toggle="modal"
                                       data-bs-target="#verwijder{{ $faq->id }}">
                                 <i class="fa-solid fa-xmark text-white"></i>
                             </x-button>
@@ -72,7 +72,13 @@
                         </div>
                     </td>
                 </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="4">
+                        <p class="mb-0">Er zijn geen vragen gevonden in de database.</p>
+                    </td>
+                </tr>
+            @endforelse
             </tbody>
         </table>
     </x-card>
