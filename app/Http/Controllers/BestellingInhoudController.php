@@ -31,6 +31,13 @@ class BestellingInhoudController extends Controller
             'product_id' => $standaardSelectie->product_id,
         ]);
 
+        DB::table('bestelling_selectie')
+            ->insert([
+                'bestelling_id' => $bestelling->id,
+                'selectie_id' => $nieuweSelectie->id,
+                'aantal' => 1
+            ]);
+
         $product_selectie = DB::table('product_selectie')
             ->where('selectie_id', $standaardSelectie->id)
             ->get();
