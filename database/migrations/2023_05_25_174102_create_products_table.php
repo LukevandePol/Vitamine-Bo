@@ -13,10 +13,15 @@ return new class extends Migration {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('naam');
-            $table->string('type');
+            $table->string('naam')->unique();
+            $table->enum('type', [
+                'fruit',
+                'groente',
+                'verpakking',
+                'fles'
+            ]);
             $table->string('inhoud')->nullable();
-            $table->string('smaak')->nullable();
+//            $table->string('smaak')->nullable();
             $table->string('afbeelding_pad')->nullable();
             $table->boolean('is_zichtbaar')->default(false);
         });

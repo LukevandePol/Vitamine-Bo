@@ -18,13 +18,13 @@
             </div>
 
             <div class="col-sm-6">
-                <x-cardstripe title="Goedkeuring aanpassing">
+                <x-cardstripe title="Goedkeuring aanpassing" class="bg-white">
                     <x-status-goedkeuring></x-status-goedkeuring>
                 </x-cardstripe>
                 <x-a href="#">Bekijk je levering</x-a>
 
                 <x-cardstripe
-                    title="Facturen">
+                    title="Facturen" class="bg-white">
                     <table class="table">
                         <thead>
                         <tr>
@@ -42,7 +42,7 @@
                 </x-cardstripe>
                 <x-a href="#">Bekijk je facturen</x-a>
 
-                <x-cardstripe title="Gegevens">
+                <x-cardstripe title="Gegevens" class="bg-white">
                     <p class="m-0">Naam: {{auth()->user()->name}}</p>
                     <p class="m-0">Email: {{auth()->user()->email}}</p>
                     <p class="m-0">Postcode: {{$bezorgadres->weergavenaam}}</p>

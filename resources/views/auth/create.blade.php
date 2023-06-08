@@ -1,8 +1,10 @@
 <x-guest title="Registreren">
     <div class="container py-5">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-lg-6">
-                <img src="https://picsum.photos/448/704" class="rounded shadow" alt="placeholder">
+                <img
+                    src="https://images.unsplash.com/photo-1618897996318-5a901fa6ca71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80"
+                    width="448" class="rounded shadow" alt="placeholder">
             </div>
             <div class="col-lg-6 my-auto">
                 <div class="d-flex justify-content-center align-items-center flex-column mb-5">

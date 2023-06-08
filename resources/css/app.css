@@ -10,6 +10,9 @@
  * 07. Sidebar
  * 08. Carousel
  * 09. List of items
+ * 10. Buttons
+ * 11. Orders
+ * 12. Aardbei
  */
 
 
@@ -77,7 +80,8 @@ main {
 }
 
 body {
-    background-color: #ffffff;
+    background-image: url('../../public/images/background.png');
+
 }
 
 h1 {
@@ -94,28 +98,6 @@ h2, h3 {
 
 ul {
     padding-left: 0;
-}
-
-.btn {
-    border: 0;
-}
-
-.btn-primary {
-    background-color: rgb(99, 190, 235);
-}
-
-.btn-link {
-    color: #4d4d4d;
-    text-decoration: none;
-}
-
-.btn-link:hover {
-    color: #63BEEB;
-}
-
-.btn-primary:hover {
-    background-color: rgba(99, 190, 235, .80);
-    color: rgba(255, 255, 255, 100);
 }
 
 a {
@@ -142,6 +124,11 @@ a:hover {
     color: #ffffff;
 }
 
+.alert {
+    border-left: 5px solid;
+    border-radius: 0;
+}
+
 
 /**
  * 03. Utilities
@@ -154,6 +141,12 @@ a:hover {
 
 .padding-left {
     padding-left: 15vw;
+}
+
+@media screen and (min-width: 1800px) {
+    .padding-left {
+        padding-left: 7vw;
+    }
 }
 
 
@@ -232,7 +225,6 @@ a:hover {
     box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
 }
 
-
 .card-blank {
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -244,37 +236,16 @@ a:hover {
 }
 
 /* Address card */
-.small-card {
-    max-width: 500px;
-    margin-left: 200px;
-}
-
-.custom-ul li {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-}
-
-.custom-ul li .list-text {
-    flex-grow: 1;
-    margin-right: 10px;
-}
-
-.product-image {
-    width: 360px;
-    height: 370px;
-}
-
-.stripe-top {
-    border-top: 1px solid #ddd;
-}
-
 .modal-trigger:hover {
     cursor: pointer;
 }
 
 .custom-margin1 {
     padding: 15px
+}
+
+.stripe-top {
+    border-top: 1px solid #ddd;
 }
 
 
@@ -528,19 +499,38 @@ a:hover {
 
 
 /**
- * 010. Adresscard
+ * 10. Buttons
  */
+.btn {
+    border: 0;
+}
+
+.btn-primary {
+    background-color: rgb(99, 190, 235);
+}
+
+.btn-link {
+    color: #4d4d4d;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: #63BEEB;
+}
+
+.btn-primary:hover {
+    background-color: rgba(99, 190, 235, .80);
+    color: rgba(255, 255, 255, 100);
+}
 
 .small-card {
     max-width: 500px;
-    margin-left: 200px;
-
+    /*margin-left: 200px;*/
 }
 
-.no-bottom-margin{
+.no-bottom-margin {
     margin-bottom: 0;
 }
-
 
 .custom-ul li {
     display: flex;
@@ -552,9 +542,10 @@ a:hover {
     margin-right: 10px;
 }
 
-.wrapper {
-    height: 55px;
-    width: 110px;
+/* .wrapper { */
+.teller {
+    height: 55px; /* Adjust the height as desired */
+    width: 110px; /* Adjust the width as desired */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -563,7 +554,7 @@ a:hover {
     box-shadow: none;
 }
 
-.wrapper span {
+.teller span {
     width: 100%;
     text-align: center;
     font-size: 18px;
@@ -572,21 +563,25 @@ a:hover {
     user-select: none;
 }
 
-.wrapper span.num {
-    font-size: 20px;
+/* .wrapper span.num { */
+.teller span.num {
+    font-size: 20px; /* Adjust the font size as desired */
     pointer-events: none;
     margin: 0 2px;
 }
 
-.wrapper span.num2 {
-    font-size: 20px;
+/* .wrapper span.num2 { */
+.teller span.num2 {
+    font-size: 20px; /* Adjust the font size as desired */
     pointer-events: none;
     margin: 0 2px;
 }
 
-.wrapper span.minus,
-.wrapper span.plus {
-    margin: 0 2px;
+/* .wrapper span.minus,
+.wrapper span.plus { */
+.teller span.minus,
+.teller span.plus {
+    margin: 0 2px; /* Adjust the margin as desired */
 }
 
 .product-image {
@@ -599,8 +594,8 @@ a:hover {
     cursor: pointer;
 }
 
-.custom-margin1{
-    padding:15px
+.custom-margin1 {
+    padding: 15px
 }
 
 .total-container {
@@ -608,7 +603,7 @@ a:hover {
     justify-content: flex-end;
 }
 
-.image-kist{
+.image-kist {
     width: 220px;
 
 }
@@ -660,8 +655,9 @@ a:hover {
     margin-bottom: 0;
 }
 
+
 /**
- * 09. Orders
+ * 11. Orders
  */
 .table td,
 .table th {
@@ -686,18 +682,19 @@ a:hover {
     color: #88D375;
 }
 
-.table-striped > tbody > tr:nth-of-type(odd) > td.in-behandeling{
+.table-striped > tbody > tr:nth-of-type(odd) > td.in-behandeling {
     color: #63BEEB;
 }
 
-.table-striped > tbody > tr:nth-of-type(odd) > td.afgekeurd{
+.table-striped > tbody > tr:nth-of-type(odd) > td.afgekeurd {
     color: red;
 }
 
-.year-selection{
+.year-selection {
     width: 150px;
 }
-.status-selection{
+
+.status-selection {
     width: 170px;
 }
 
@@ -763,7 +760,6 @@ a:hover {
 .item-number {
     display: inline-block;
     float: right;
-
 }
 
 .item-number-top {
@@ -789,4 +785,58 @@ a:hover {
     float: right;
     margin-right: 35px;
 
+/**
+ * 12. Aardbei
+ */
+.aardbei {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+}
+
+.dropup-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropup-content {
+    display: none;
+    position: fixed;
+    bottom: 185px;
+    right: 25px;
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.dropup-content a {
+    display: block;
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.dropup-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.accordion-item {
+    padding: 5px;
+    width: 100%;
+}
+
+.accordion-link {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+}
+
+.accordion-body {
+    padding: 0;
+    margin-top: 5px;
 }
