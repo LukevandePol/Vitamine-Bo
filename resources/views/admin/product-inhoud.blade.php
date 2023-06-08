@@ -1,6 +1,6 @@
 <x-layout title="Inhoud toevoegen">
     <div class="row">
-        <div class="col-7">
+        <div class="col-8">
             <div class="card-containerproduc">
                 @foreach(\App\Models\Product::all()->where('type', '=', 'fruit') as $product)
                     <div class="mb-3">
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div class="col-5">
+        <div class="col-4">
             <x-cardstripe class="bo-hoofdkleur-opacity title-smaller" title="Inhoud {{ $selectie->naam }}">
                 @if($inhoud !== null)
                     <div class="inhoud-lijst">
