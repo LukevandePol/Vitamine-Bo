@@ -49,4 +49,11 @@ class FaqController extends Controller
 
         return back()->with('success', 'De vraag is succesvol aangepast');
     }
+
+    public function destroy($id)
+    {
+        Faq::findOrFail($id)->delete();
+
+        return back()->with('success', 'De vraag is succesvol verwijderd');
+    }
 }

@@ -35,9 +35,11 @@
                     <td>{{ $faq->page }}</td>
                     <td>
                         <div class="d-flex">
-                            <x-buttonicon class="btn btn-sm btn-primary" icon="fa-pen-to-square text-white"
-                                          data-bs-toggle="modal" data-bs-target="#{{ $faq->id }}"/>
-                            <x-modal id="{{ $faq->id }}" title="Vraag bewerken">
+                            <x-button class="btn btn-primary" data-bs-toggle="modal"
+                                      data-bs-target="#bewerken{{ $faq->id }}">
+                                <i class="fa-solid fa-pen-to-square text-white"></i>
+                            </x-button>
+                            <x-modal id="bewerken{{ $faq->id }}" title="Vraag bewerken">
                                 <form method="POST" action="{{ route('veelgestelde-vragen-bewerken', $faq->id) }}">
                                     @csrf
 
@@ -47,9 +49,26 @@
                                     <x-submit class="btn btn-primary w-100">Aanpassen</x-submit>
                                 </form>
                             </x-modal>
-                            <x-button class="btn btn-sm btn-danger ms-3">
-                                <i class="fas fa-xmark text-white"></i>
+                            <x-button class="btn btn-danger ms-2" data-bs-toggle="modal"
+                                      data-bs-target="#verwijder{{ $faq->id }}">
+                                <i class="fa-solid fa-xmark text-white"></i>
                             </x-button>
+                            <x-modal id="verwijder{{ $faq->id }}" title="Vraag bewerken">
+                                <form method="POST" action="{{ route('veelgestelde-vragen-bewerken', $faq->id) }}">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <p>Weet je zeker dat je deze vraag wilt verwijderen? Deze actie kan niet meer
+                                        ongedaan gemaakt worden.</p>
+                                    <div class="d-flex">
+                                        <button type="button" class="btn btn-secondary me-2 w-100"
+                                                data-bs-dismiss="modal">
+                                            Annuleren
+                                        </button>
+                                        <x-submit class="btn btn-primary w-100">Verwijderen</x-submit>
+                                    </div>
+                                </form>
+                            </x-modal>
                         </div>
                     </td>
                 </tr>
