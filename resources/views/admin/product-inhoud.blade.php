@@ -1,6 +1,6 @@
 <x-layout title="Inhoud toevoegen">
     <div class="row">
-        <div class="col-8">
+        <div class="col-7">
             <div class="card-containerproduc">
                 @foreach(\App\Models\Product::all()->where('type', '=', 'fruit') as $product)
                     <div class="mb-3">
@@ -20,8 +20,8 @@
             </div>
         </div>
 
-        <div class="col-4">
-            <x-cardstripe class="bo-hoofdkleur-opacity" title="Inhoud {{ $selectie->naam }}">
+        <div class="col-5">
+            <x-cardstripe class="bo-hoofdkleur-opacity title-smaller" title="Inhoud {{ $selectie->naam }}">
                 @if($inhoud !== null)
                     <div class="inhoud-lijst">
                         @foreach($inhoud as $item)
@@ -36,7 +36,8 @@
                                         @csrf
                                         <input name="product_id" value="{{$product->id}}" type="hidden">
                                         <input name="selectie_id" value="{{$selectie->id}}" type="hidden">
-                                        <x-submit class="smallest-button">Verwijder</x-submit>
+                                        <x-submit class="smallest-button"><i class="fa-solid fa-trash-can smallest-trash"></i>
+                                        </x-submit>
                                     </form>
                                 </div>
                             </div>

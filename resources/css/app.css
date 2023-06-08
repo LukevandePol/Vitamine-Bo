@@ -794,8 +794,9 @@ a:hover {
 }
 
 
+
 .smallest-button{
-    font-size: 12px;
+    font-size: 14px;
     background-color: #63BEEB;
     color:#FFFFFF;
     border: none;
@@ -803,7 +804,16 @@ a:hover {
     border-radius: 8px;
 }
 
+.smallest-trash{
+    font-size: 14px;
+    color:#FFFFFF;
+
+}
+
 .smallest-button:hover{
     background-color: #a1d8f3;
     color: #FFFFFF;
+}
+.title-smaller h2 {
+    font-size: 1.2rem;
 }
