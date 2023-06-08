@@ -35,9 +35,18 @@
                     <td>{{ $faq->page }}</td>
                     <td>
                         <div class="d-flex">
-                            <x-button class="btn btn-sm btn-primary">
-                                <i class="fas fa-pen-to-square text-white"></i>
-                            </x-button>
+                            <x-buttonicon class="btn btn-sm btn-primary" icon="fa-pen-to-square text-white"
+                                          data-bs-toggle="modal" data-bs-target="#{{ $faq->id }}"/>
+                            <x-modal id="{{ $faq->id }}" title="Vraag bewerken">
+                                <form method="POST" action="{{ route('veelgestelde-vragen-bewerken', $faq->id) }}">
+                                    @csrf
+
+                                    <x-input label="Vraag:" name="question" value="{{ $faq->question }}" required/>
+                                    <x-input label="Antwoord:" name="answer" value="{{ $faq->answer }}" required/>
+                                    <x-input label="Pagina:" name="page" value="{{ $faq->page }}" required/>
+                                    <x-submit class="btn btn-primary w-100">Aanpassen</x-submit>
+                                </form>
+                            </x-modal>
                             <x-button class="btn btn-sm btn-danger ms-3">
                                 <i class="fas fa-xmark text-white"></i>
                             </x-button>
