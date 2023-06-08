@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdresController;
 use App\Http\Controllers\BestellingController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
@@ -84,4 +85,8 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     // Producten toevoegen
     Route::get('/admin/product', [ProductController::class, 'create'])->name('product-overzicht');
     Route::post('admin/product', [ProductController::class, 'store']);
+
+    // Veelgestelde vragen toevoegen/aanpassen
+    Route::get('/admin/faq', [FaqController::class, 'create'])->name('veelgestelde-vragen');
+    Route::post('/admin/faq', [FaqController::class, 'store']);
 });
