@@ -49,11 +49,11 @@
             @endif
 
             <div class="col-sm-6 scrollable-container d-flex flex-wrap">
-                @foreach($selecteerbareProducten as $product)
-                    @if($product->is_zichtbaar)
-                        <x-productitem :product="$product"/>
-                    @endif
+                @foreach($standaardSelecties as $selectie)
+                    {{--                    <x-productitem :product="$selectie"/>--}}
+                    <x-selectie-item :selectie="$selectie"/>
                 @endforeach
+
             </div>
 
         </div>
