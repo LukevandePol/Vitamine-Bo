@@ -27,7 +27,7 @@
                             <div class="d-flex justify-content-end">
                                 <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Annuleren
                                 </button>
-                                <form method="POST" action="{{ route('goedkeuren', $user->id) }}">
+                                <form method="POST" action="{{ route('account-goedkeuren', $user->id) }}">
                                     @csrf
 
                                     <x-submit class="btn btn-primary">Bevestigen</x-submit>
@@ -42,7 +42,7 @@
                         <x-modal id="deleteModal" title="Weet je het zeker?">
                             <p>Weet je zeker dat je dit account wilt verwijderen? Deze actie kan niet meer ongedaan
                                 gemaakt worden.</p>
-                            <form class="w-100" method="POST" action="{{ route('afkeuren', $user->id) }}">
+                            <form class="w-100" method="POST" action="{{ route('account-afkeuren', $user->id) }}">
                                 @csrf
                                 @method('DELETE')
                                 <div class="mb-3">
