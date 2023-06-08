@@ -3,7 +3,7 @@
     <x-card class="w-100">
         <div class="d-flex justify-content-between align-items-center">
             <h3 class="mb-0">Overzicht</h3>
-            <x-buttonicon class="btn btn-primary" icon="fa-plus" data-bs-toggle="modal"
+            <x-buttonicon class="btn btn-primary" icon="fa-plus text-white" data-bs-toggle="modal"
                           data-bs-target="#vraagToevoegen">
                 Vraag toevoegen
             </x-buttonicon>
@@ -33,13 +33,15 @@
                     <td>{{ $faq->question }}</td>
                     <td>{{ $faq->answer }}</td>
                     <td>{{ $faq->page }}</td>
-                    <td class="d-flex">
-                        <x-button class="btn btn-sm btn-primary">
-                            <i class="fas fa-pen-to-square text-white"></i>
-                        </x-button>
-                        <x-button class="btn btn-sm btn-danger ms-3">
-                            <i class="fas fa-xmark text-white"></i>
-                        </x-button>
+                    <td>
+                        <div class="d-flex">
+                            <x-button class="btn btn-sm btn-primary">
+                                <i class="fas fa-pen-to-square text-white"></i>
+                            </x-button>
+                            <x-button class="btn btn-sm btn-danger ms-3">
+                                <i class="fas fa-xmark text-white"></i>
+                            </x-button>
+                        </div>
                     </td>
                 </tr>
             @endforeach
