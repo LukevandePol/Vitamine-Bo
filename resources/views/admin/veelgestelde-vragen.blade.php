@@ -28,23 +28,57 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($faqs as $faq)
+            @forelse($faqs as $faq)
                 <tr>
                     <td>{{ $faq->question }}</td>
                     <td>{{ $faq->answer }}</td>
                     <td>{{ $faq->page }}</td>
                     <td>
                         <div class="d-flex">
-                            <x-button class="btn btn-sm btn-primary">
-                                <i class="fas fa-pen-to-square text-white"></i>
+                            <x-button class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                                      data-bs-target="#bewerken{{ $faq->id }}">
+                                <i class="fa-solid fa-pen-to-square text-white"></i>
                             </x-button>
-                            <x-button class="btn btn-sm btn-danger ms-3">
-                                <i class="fas fa-xmark text-white"></i>
+                            <x-modal id="bewerken{{ $faq->id }}" title="Vraag bewerken">
+                                <form method="POST" action="{{ route('veelgestelde-vragen-bewerken', $faq->id) }}">
+                                    @csrf
+
+                                    <x-input label="Vraag:" name="question" value="{{ $faq->question }}" required/>
+                                    <x-input label="Antwoord:" name="answer" value="{{ $faq->answer }}" required/>
+                                    <x-input label="Pagina:" name="page" value="{{ $faq->page }}" required/>
+                                    <x-submit class="btn btn-primary w-100">Aanpassen</x-submit>
+                                </form>
+                            </x-modal>
+                            <x-button class="btn btn-sm btn-danger ms-2" data-bs-toggle="modal"
+                                      data-bs-target="#verwijder{{ $faq->id }}">
+                                <i class="fa-solid fa-xmark text-white"></i>
                             </x-button>
+                            <x-modal id="verwijder{{ $faq->id }}" title="Vraag bewerken">
+                                <form method="POST" action="{{ route('veelgestelde-vragen-bewerken', $faq->id) }}">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <p>Weet je zeker dat je deze vraag wilt verwijderen? Deze actie kan niet meer
+                                        ongedaan gemaakt worden.</p>
+                                    <div class="d-flex">
+                                        <button type="button" class="btn btn-secondary me-2 w-100"
+                                                data-bs-dismiss="modal">
+                                            Annuleren
+                                        </button>
+                                        <x-submit class="btn btn-primary w-100">Verwijderen</x-submit>
+                                    </div>
+                                </form>
+                            </x-modal>
                         </div>
                     </td>
                 </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="4">
+                        <p class="mb-0">Er zijn geen vragen gevonden in de database.</p>
+                    </td>
+                </tr>
+            @endforelse
             </tbody>
         </table>
     </x-card>
