@@ -18,14 +18,14 @@
             </div>
 
             <div class="col-sm-6">
-                <x-cardstripe title="Goedkeuring aanpassing" class="bg-white">
+                <x-cardstripe title="Goedkeuring aanpassing" class="bg-white custom-cardstripe">
                     <x-status-goedkeuring></x-status-goedkeuring>
                 </x-cardstripe>
                 <x-a href="#">Bekijk je levering</x-a>
 
                 <x-cardstripe
                     title="Facturen" class="bg-white">
-                    <table class="table">
+                    <table class="table no-padding-table">
                         <thead>
                         <tr>
                             <th scope="col">Maand: april</th>
@@ -43,10 +43,16 @@
                 <x-a href="#">Bekijk je facturen</x-a>
 
                 <x-cardstripe title="Gegevens" class="bg-white">
-                    <p class="m-0">Naam: {{auth()->user()->name}}</p>
-                    <p class="m-0">Email: {{auth()->user()->email}}</p>
-                    <p class="m-0">Postcode: {{$bezorgadres->weergavenaam}}</p>
-                    <p class="m-0">Huisnummer: {{$bezorgadres->huisnummer}}</p>
+                    <div class="cardstripe-content">
+                        <div>
+                            <p class="m-0">Naam: {{ auth()->user()->name }}</p>
+                            <p class="m-0">Email: {{ auth()->user()->email }}</p>
+                            <p class="m-0">Postcode: {{ $bezorgadres->weergavenaam }}</p>
+                            <p class="m-0">Huisnummer: {{ $bezorgadres->huisnummer }}</p>
+                        </div>
+                        <div class="placement-user">
+                            <i class="fa-solid fa-user user-icon"></i>
+                        </div>
 
                 </x-cardstripe>
                 <x-a href="/account">Beheer je gegevens</x-a>
@@ -54,15 +60,15 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-12">
-                <h2>Geef je werknemers een boost</h2>
-                <p> Voeg ook onze heerlijke pakketten toe</p>
+                <h2 class="carousel-text">Geef je werknemers een boost</h2>
+                <p class="carousel-text"> Voeg ook onze heerlijke pakketten toe</p>
                 <x-carousel/>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-12">
                 <x-card>
                     <h2>Recente bestellingen</h2>

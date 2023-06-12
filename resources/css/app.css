@@ -841,3 +841,39 @@ a:hover {
     padding: 0;
     margin-top: 5px;
 }
+.custom-cardstripe .card-text {
+    margin-top: 10px;
+}
+
+.no-padding-table td,
+.no-padding-table th {
+    padding: 0;
+}
+
+.user-icon {
+    font-size: 70px; /* Adjust the size as needed */
+    color: #D0D0D0;
+}
+
+.cardstripe-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.placement-user{
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: 20px;
+
+}
+
+.carousel-text{
+    margin-left: 10px;
+}
+
+
+
+
+
+
