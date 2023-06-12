@@ -765,8 +765,9 @@ a:hover {
     background-color: #63BEEB;
     color:#FFFFFF;
     border: none;
-    padding: 10px 15px;
+    padding: 8px 15px;
     border-radius: 8px;
+
 }
 
 .small-button:hover{
@@ -774,18 +775,13 @@ a:hover {
     color: #FFFFFF;
 }
 
-.card-containerproduct {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
 
 .mb-3 {
     margin-bottom: 3rem;
 }
 
-.card-containerproduc{
-    width: 550px;
+.submit-button-margin {
+    margin-right: 0.6rem;
 }
 
 .text-container p {
@@ -816,4 +812,21 @@ a:hover {
 }
 .title-smaller h2 {
     font-size: 1.2rem;
+}
+
+.inhoud-lijst {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.inhoud-lijst-item {
+    width: 100%;
+    margin-left:20px;
+}
+
+.card-containerproduc {
+    margin-bottom: 30px;
 }
