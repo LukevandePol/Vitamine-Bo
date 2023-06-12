@@ -17,7 +17,12 @@ class AdresFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'postcode' => fake()->postcode(),
+            'huisnummer' => fake()->numberBetween(1, 1300),
+            'weergavenaam' => fake()->streetName(),
+            'straatnaam' => fake()->streetName(),
+            'woonplaatsnaam' => fake()->city(),
+            'voorkeur_type' => 'bezorg',
         ];
     }
 }

@@ -15,15 +15,18 @@ class BestellingInhoudController extends Controller
         ]);
 
 //        dd($attributes['selectie_id']);
-//        try {
-        $bestelling = Bestelling::firstOrCreate([
-            'user_id' => auth()->id(),
-            'bezorgadres_id' => auth()->user()->adres->where('voorkeur_type', 'bezorg')->first()->id,
-            'factuuradres_id' => auth()->user()->adres->where('voorkeur_type', 'factuur')->first()->id,
-        ]);
-//        } catch (\Exception $e) {
-////            return back()->with('error', 'iets k')
-//        }
+        try {
+            $bestelling = Bestelling::firstOrCreate([
+                'user_id' => auth()->id(),
+                'bezorgadres_id' => auth()->user()->adres->where('voorkeur_type', 'bezorg')->first()->id,
+                'factuuradres_id' => auth()->user()->adres->where('voorkeur_type', 'factuur')->first()->id,
+            ]);
+        } catch (\Exception $e) {
+            $bestelling = Bestelling::firstOrCreate([
+                'user_id' => auth()->id(),
+                'bezorgadres_id' => auth()->user()->adres->where('voorkeur_type', 'bezorg')->first()->id,
+            ]);
+        }
 //        dd($bestelling);
         $standaardSelectie = Selectie::find($attributes['selectie_id']);
 
@@ -56,12 +59,12 @@ class BestellingInhoudController extends Controller
 
     public function deleteSelectieUitBestelling()
     {
-        $attributes = request()->validate([
-            'selectie_id' => ['required'],
-            'bestelling_id' => ['required']
-        ]);
-
         try {
+            $attributes = request()->validate([
+                'selectie_id' => ['required'],
+                'bestelling_id' => ['required']
+            ]);
+
             //verwijder bestelling_selectie
             DB::table('bestelling_selectie')
                 ->where('selectie_id', $attributes['selectie_id'])
