@@ -53,7 +53,7 @@
                         <div class="placement-user">
                             <i class="fa-solid fa-user user-icon"></i>
                         </div>
-
+                    </div>
                 </x-cardstripe>
                 <x-a href="/account">Beheer je gegevens</x-a>
 
