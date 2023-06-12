@@ -52,10 +52,35 @@ class BestellingInhoudController extends Controller
         }
 
         return back()->with('succes', 'dit ging goed');
+    }
 
+    public function deleteSelectieUitBestelling()
+    {
+        $attributes = request()->validate([
+            'selectie_id' => ['required'],
+            'bestelling_id' => ['required']
+        ]);
 
-//        $standaardSelectie = DB::table('product_selectie')->
-//            where()
+        try {
+            //verwijder bestelling_selectie
+            DB::table('bestelling_selectie')
+                ->where('selectie_id', $attributes['selectie_id'])
+                ->where('bestelling_id', $attributes['bestelling_id'])
+                ->delete();
 
+            //verwijder product_selectie
+            DB::table('product_selectie')
+                ->where('selectie_id', $attributes['selectie_id'])
+                ->delete();
+
+            //verwijder selectie
+            DB::table('selecties')
+                ->where('id', $attributes['selectie_id'])
+                ->delete();
+
+            return back()->with('success', 'Item succesvol verwijderd uit bestelling');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Kon item niet verwijderen uit bestelling');
+        }
     }
 }
