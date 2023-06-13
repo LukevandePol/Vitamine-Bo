@@ -59,6 +59,7 @@ Route::group(['middleware' => ['auth']], function () {
     // Bestelling aanpassen
     Route::get('BestellingAanpassen', [BestellingController::class, 'create'])->name('BestellingAanpassen');
     Route::post('/toevoegenAanBestelling', [BestellingInhoudController::class, 'standaardToevoegenAanBestelling']);
+    Route::post('/deleteSelectieUitBestelling', [BestellingInhoudController::class, 'deleteSelectieUitBestelling']);
 
     // Uitloggen
     Route::post('uitloggen', [SessionsController::class, 'destroy']);
@@ -82,17 +83,19 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 
     // Account goedkeuren
     Route::get('/admin/goedkeuren', [AdminController::class, 'approve'])->name('account-goedkeuren');
-    Route::post('/admin/goedkeuren/{id}', [AccountController::class, 'approveAccount'])->name('goedkeuren');
-    Route::delete('/admin/goedkeuren/{id}', [AccountController::class, 'destroyAccount'])->name('afkeuren');
+    Route::post('/admin/goedkeuren/{id}', [AccountController::class, 'approveAccount'])->name('account-goedkeuren');
+    Route::delete('/admin/goedkeuren/{id}', [AccountController::class, 'destroyAccount'])->name('account-afkeuren');
 
     // Veelgestelde vragen toevoegen/aanpassen
     Route::get('/admin/faq', [FaqController::class, 'create'])->name('veelgestelde-vragen');
     Route::post('/admin/faq', [FaqController::class, 'store']);
+    Route::post('/admin/faq/{id}', [FaqController::class, 'edit'])->name('veelgestelde-vragen-bewerken');
+    Route::delete('/admin/faq/{id}', [FaqController::class, 'destroy'])->name('veelgestelde-vragen-verwijderen');
 
     // Producten toevoegen
     Route::get('/admin/product', [ProductController::class, 'create'])->name('product-overzicht');
     Route::post('admin/product', [ProductController::class, 'store']);
-  
+
     Route::get('/admin/product', [ProductController::class, 'create'])->name('admin.product');
     Route::post('/admin/product', [ProductController::class, 'store']);
 

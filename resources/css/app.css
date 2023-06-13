@@ -485,6 +485,11 @@ a:hover {
     border: none;
     height: 40px;
     margin-left: auto;
+    color:#FFFFFF;
+}
+.icon-button:hover {
+    background-color: #a1d8f3;
+    color: #FFFFFF;
 }
 
 .text-color {
@@ -530,6 +535,8 @@ a:hover {
 .custom-ul li {
     display: flex;
     align-items: center;
+    border-bottom: none; /* Remove the border between items */
+
 }
 
 .custom-ul li .list-text {
@@ -537,38 +544,43 @@ a:hover {
     margin-right: 10px;
 }
 
+/* .wrapper { */
 .teller {
     height: 55px; /* Adjust the height as desired */
     width: 110px; /* Adjust the width as desired */
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent; /* Set the background to transparent */
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove box shadow */
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 .teller span {
     width: 100%;
     text-align: center;
-    font-size: 18px; /* Adjust the font size as desired */
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     user-select: none;
 }
 
+/* .wrapper span.num { */
 .teller span.num {
     font-size: 20px; /* Adjust the font size as desired */
     pointer-events: none;
-    margin: 0 2px; /* Adjust the margin as desired */
+    margin: 0 2px;
 }
 
+/* .wrapper span.num2 { */
 .teller span.num2 {
     font-size: 20px; /* Adjust the font size as desired */
     pointer-events: none;
-    margin: 0 2px; /* Adjust the margin as desired */
+    margin: 0 2px;
 }
 
+/* .wrapper span.minus,
+.wrapper span.plus { */
 .teller span.minus,
 .teller span.plus {
     margin: 0 2px; /* Adjust the margin as desired */
@@ -605,8 +617,8 @@ a:hover {
 .scrollable-container2 {
     height: 220px;
     overflow-y: scroll;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-    position: relative; /* Add position relative */
+    overflow-x: hidden;
+    position: relative;
 }
 
 /* Add custom scrollbar styles */
@@ -618,12 +630,12 @@ a:hover {
 }
 
 .scrollable-container2::-webkit-scrollbar-thumb {
-    background-color: #888; /* Set thumb color */
-    border-radius: 4px; /* Rounded corners */
+    background-color: #888;
+    border-radius: 4px;
 }
 
 .scrollable-container2::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Set thumb color on hover */
+    background-color: #555;
 }
 
 .totaal-counter {
@@ -645,7 +657,9 @@ a:hover {
     margin-bottom: 0;
 }
 
-
+.custom-button {
+    font-style: normal;
+}
 /**
  * 11. Orders
  */
@@ -653,7 +667,7 @@ a:hover {
 .table th {
     padding: 15px;
     vertical-align: top;
-    border: none; /* Remove the border on top of cells */
+    border: none;
 }
 
 .goedgekeurd {
@@ -662,6 +676,11 @@ a:hover {
 
 .in-behandeling {
     color: #63BEEB;
+}
+
+
+.medium-card {
+    max-width: 900px;
 }
 
 .afgekeurd {
@@ -689,9 +708,92 @@ a:hover {
 }
 
 .jaar-dropdown-container {
-    padding: 0 1.00rem; /* Adjust the padding value as needed */
+    padding: 0 1.00rem;
 }
 
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    margin: 0;
+}
+
+.margin-total-list {
+    margin-left: 20px;
+}
+
+.item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.number {
+    padding: 0 5px;
+}
+
+.icon-container i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-left: 5px;
+}
+
+.margin-ul-items {
+    margin-left: 35px;
+}
+
+.item-name {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.item-number {
+    display: inline-block;
+    float: right;
+}
+
+.item-number-top {
+    display: inline-block;
+    float: right;
+    padding-right: 18px;
+}
+
+.long-version{
+    position: relative;
+    height:800px;
+}
+
+
+.button-bottom {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.item-number-all {
+    display: inline-block;
+    float: right;
+    margin-right: 35px;
+}
 
 /**
  * 12. Aardbei
@@ -829,4 +931,35 @@ a:hover {
 
 .card-containerproduc {
     margin-bottom: 30px;
+
+.page-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#rowIndication {
+    margin-left: 15px;
+}
+
+.pagination {
+    margin-left: auto;
+    width: auto;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    color: gray; /* Default color for non-active links */
+    text-decoration: none;
+}
+
+.pagination a.active {
+    color: blue;
+    text-decoration: underline;
+}
+
+.pagination a.disabled {
+    color: gray;
+    pointer-events: none;
 }
