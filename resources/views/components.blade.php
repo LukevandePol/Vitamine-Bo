@@ -1,17 +1,3 @@
 <x-layout title="Components">
-    <div class="container">
-
-<x-adresscard/>
-  <x-sidebar/>
-<x-standaardpakketten/>
-<x-fruitlijst/>
-    <x-productpopup/>
-  <x-buttonicon/>
-
-  <x-adresscard/>
-        <x-adressinformation/>
-    </div>
-
-  <x-sidebar/>
-
+    Bo je hebt nu een database, ga de dingen maken op de daadwerkelijke pagina!
 </x-layout>
