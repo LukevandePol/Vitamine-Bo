@@ -13,20 +13,10 @@ class AdminController extends Controller
 
     public function approve()
     {
-        $users = User::whereNull('status');
+        $users = User::whereNull('status')->orderBy('id', 'asc');
         $users = $users->paginate(20);
 
         return view('admin.goedkeuren', compact('users'));
-    }
-
-    public function update($id)
-    {
-        $user = User::findOrFail($id);
-
-        $user->status = now();
-        $user->save();
-
-        return redirect()->back()->with('success', 'Account succesvol goedgekeurd!');
     }
 
     public function product()

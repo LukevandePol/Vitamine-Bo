@@ -1,26 +1,35 @@
 <div class="sidebar">
-    <x-logo class="sidebar-image imagebox"/>
+    <div class="imagebox">
+        <x-logo class="sidebar-logo"/>
+    </div>
     <ul class="nav-list">
         @cannot('isAdmin')
-            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <x-nav-link href="/dashboard"
+                        :active="request()->routeIs('klant-dashboard')">
                 Dashboard
             </x-nav-link>
-            <x-nav-link :href="route('account')" icon="fa-user" :active="request()->routeIs('account')">
+            <x-nav-link href="/account" icon="fa-user"
+                        :active="request()->routeIs('account')">
                 Account
             </x-nav-link>
         @endcannot
 
         @can('isAdmin')
-            <x-nav-link :href="route('admin.index')" icon="fa-shield" :active="request()->routeIs('admin.index')">
+            <x-nav-link href="/admin" icon="fa-shield"
+                        :active="request()->routeIs('admin-dashboard')">
                 Admin Panel
             </x-nav-link>
-            <x-nav-link :href="route('admin.approve')" icon="fa-check"
-                        :active="request()->routeIs('admin.approve')">
+            <x-nav-link href="/admin/goedkeuren" icon="fa-check"
+                        :active="request()->routeIs('account-goedkeuren')">
                 Klant goedkeuren
             </x-nav-link>
-            <x-nav-link :href="route('admin.product')" icon="fa-cart-shopping"
-                        :active="request()->routeIs('admin.product')">
+            <x-nav-link href="/admin/product" icon="fa-cart-shopping"
+                        :active="request()->routeIs('product-overzicht')">
                 Product beheer
+            </x-nav-link>
+            <x-nav-link href="/admin/faq" icon="fa-question"
+                        :active="request()->routeIs('veelgestelde-vragen')">
+                FAQ
             </x-nav-link>
         @endcan
 

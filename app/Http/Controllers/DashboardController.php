@@ -3,23 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Adres;
+use App\Models\Bestelling;
 
 class DashboardController extends Controller
 {
     public function create()
     {
         $user = auth()->user();
-        $klantgegevens_id = $user->klantgegevens->id;
 
-        $bezorgadres = Adres::query()
-            ->where('klantgegevens_id', '=', $klantgegevens_id)
-            ->where('type', '=', 'bezorg')
-            ->get()
-            ->get(0);
+        $bezorgadres = Adres::where('user_id', auth()->user()->id)
+            ->where('voorkeur_type', 'bezorg')
+            ->first();
+
+        $bestelling = Bestelling::where('user_id', auth()->user()->id)
+            ->latest()
+            ->first();
 
         return view('dashboard', [
             'user' => $user,
-            'adres' => $bezorgadres,
+            'bezorgadres' => $bezorgadres,
+            'bestelling' => $bestelling,
         ]);
     }
 }

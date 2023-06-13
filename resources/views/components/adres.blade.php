@@ -1,27 +1,34 @@
 @props(['adres'])
+<x-card class="small-card">
+    <form action="/updateAdres/{{$adres->id}}" method="post">
+        @csrf
+        <div class="row">
+            <div class="col-12">
+                <h3>{{$adres->voorkeur_type}}adres</h3>
+                <p>{{$adres->huisnummer}} {{$adres->weergavenaam}}</p>
+            </div>
+        </div>
 
-<div>
-    <p>{{$adres->adres}} {{$adres->huisnummer}}</p>
-    <p>{{$adres->postcode}} {{$adres->plaatsnaam}}</p>
-    <p>{{$adres->type}}</p>
-
-    <a href="/AdresBewerken/{{$adres->id}}">
-        pas adres aan
-    </a>
-
-    @if($adres->type == 'niet_gebruikt')
-        {{--        <a href="/deleteAdres/{{$adres->id}}">Verwijden</a>--}}
-        <form action="deleteAdres/{{$adres->id}}" method="post">
-            @csrf
-            <x-submit>Verwijderen</x-submit>
-        </form>
-        <form action="setBezorg/{{$adres->id}}" method="post">
-            @csrf
-            <x-submit>Bezorgadres</x-submit>
-        </form>
-        <form action="setFactuur/{{$adres->id}}" method="post">
-            @csrf
-            <x-submit>Factuuradres</x-submit>
-        </form>
-    @endif
-</div>
+        <div class="row">
+            <div class="col-sm-6 my-3">
+                <x-input
+                    label="Postcode"
+                    name="postcode"
+                    value="{{$adres->postcode}}"
+                />
+            </div>
+            <div class="col-sm-6 my-3">
+                <x-input
+                    label="Huisnummer"
+                    name="huisnummer"
+                    value="{{$adres->huisnummer}}"
+                />
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-12">
+                <x-buttonicon class="mt-2">Aanpassen</x-buttonicon>
+            </div>
+        </div>
+    </form>
+</x-card>

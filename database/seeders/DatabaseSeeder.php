@@ -14,13 +14,15 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
-            KlantgegevensSeeder::class,
-//            BestellingSeeder::class,
-            ProductSeeder::class,
             AdresSeeder::class,
-            BeschikbareProductenSeeder::class,
+            BestellingSeeder::class,
+            ProductSeeder::class,
+            SelectieSeeder::class,
+            ProductSelectieSeeder::class,
+            BestellingSelectieSeeder::class,
+            BezorgdatumSeeder::class,
+            BestellingBezorgdataSeeder::class,
         ]);
-
 
     }
 }

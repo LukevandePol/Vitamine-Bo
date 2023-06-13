@@ -4,11 +4,15 @@
  * 01. Font Face
  * 02. Algemeen
  * 03. Utilities
- * 04. Header
- * 05. Form
- * 06. Cards
- * 08. Sidebar
- * 09. Carousel
+ * 04. Form
+ * 05. Cards
+ * 06. Pagination
+ * 07. Sidebar
+ * 08. Carousel
+ * 09. List of items
+ * 10. Buttons
+ * 11. Orders
+ * 12. Aardbei
  */
 
 
@@ -76,8 +80,8 @@ main {
 }
 
 body {
-    background-color: #ffffff;
-    /*font-size: 1.2rem;*/
+    background-image: url('../../public/images/background.png');
+
 }
 
 h1 {
@@ -94,28 +98,6 @@ h2, h3 {
 
 ul {
     padding-left: 0;
-}
-
-.btn {
-    border: 0;
-}
-
-.btn-primary {
-    background-color: rgb(99, 190, 235);
-}
-
-.btn-link {
-    color: #4d4d4d;
-    text-decoration: none;
-}
-
-.btn-link:hover {
-    color: #63BEEB;
-}
-
-.btn-primary:hover {
-    background-color: rgba(99, 190, 235, .80);
-    color: rgba(255, 255, 255, 100);
 }
 
 a {
@@ -142,6 +124,11 @@ a:hover {
     color: #ffffff;
 }
 
+.alert {
+    border-left: 5px solid;
+    border-radius: 0;
+}
+
 
 /**
  * 03. Utilities
@@ -153,39 +140,18 @@ a:hover {
 }
 
 .padding-left {
-    padding-left: 7vw;
+    padding-left: 15vw;
+}
+
+@media screen and (min-width: 1800px) {
+    .padding-left {
+        padding-left: 7vw;
+    }
 }
 
 
 /**
- * 04. Header
- */
-header {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-
-.header svg {
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
-    width: 100%;
-}
-
-.logo-wrapper {
-    position: absolute;
-    top: 8.7%;
-    left: 7.8%;
-    width: 11%;
-}
-
-.logo-wrapper img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-/**
- * 05. Form
+ * 04. Form
  */
 .form-label {
     border-radius: 10px;
@@ -251,14 +217,13 @@ header {
 
 
 /**
- * 06. Cards
+ * 05. Cards
  */
 .card-custom {
     padding: 20px;
     margin-top: 5vh;
     box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
 }
-
 
 .card-blank {
     padding: 20px;
@@ -270,9 +235,22 @@ header {
     height: 67px;
 }
 
+/* Address card */
+.modal-trigger:hover {
+    cursor: pointer;
+}
+
+.custom-margin1 {
+    padding: 15px
+}
+
+.stripe-top {
+    border-top: 1px solid #ddd;
+}
+
 
 /**
- * 07. Pagination
+ * 06. Pagination
  */
 .pagination {
     width: 325px;
@@ -280,22 +258,19 @@ header {
 
 
 /**
- * 08. sidebar
+ * 07. sidebar
  */
 .imagebox {
-    text-align: center;
     margin-top: 40px;
     margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.sidebar-image {
-    width: 40%;
+.sidebar-logo {
+    width: 80px;
     height: auto;
-}
-
-.sidebar.open .sidebar-image {
-    max-width: 40%;
-    margin: 30px auto 40px; /* Adjust margin values to move the image down */
 }
 
 .sidebar {
@@ -404,9 +379,8 @@ header {
 
 
 /**
- * 09. Carousel
+ * 08. Carousel
  */
-
 .wrapper {
     display: flex;
     max-width: 1200px;
@@ -488,6 +462,7 @@ header {
     }
 }
 
+
 /**
  * 09. List of items
  */
@@ -510,36 +485,56 @@ header {
     border: none;
     height: 40px;
     margin-left: auto;
+    color:#FFFFFF;
+}
+.icon-button:hover {
+    background-color: #a1d8f3;
+    color: #FFFFFF;
 }
 
 .text-color {
-    color:#FFFFFF;
+    color: #FFFFFF;
     margin-left: 6px;
 }
 
 
 /**
- * 010. Adresscard
+ * 10. Buttons
  */
+.btn {
+    border: 0;
+}
+
+.btn-primary {
+    background-color: rgb(99, 190, 235);
+}
+
+.btn-link {
+    color: #4d4d4d;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: #63BEEB;
+}
+
+.btn-primary:hover {
+    background-color: rgba(99, 190, 235, .80);
+    color: rgba(255, 255, 255, 100);
+}
 
 .small-card {
     max-width: 500px;
-    margin-left: 200px;
-
+    /*margin-left: 200px;*/
 }
 
-
-
-
-.no-bottom-margin{
+.no-bottom-margin {
     margin-bottom: 0;
 }
-
 
 .custom-ul li {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #ddd;
 }
 
 .custom-ul li .list-text {
@@ -547,48 +542,338 @@ header {
     margin-right: 10px;
 }
 
-.wrapper {
+/* .wrapper { */
+.teller {
     height: 55px; /* Adjust the height as desired */
-    width: 120px; /* Adjust the width as desired */
+    width: 110px; /* Adjust the width as desired */
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent; /* Set the background to transparent */
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove box shadow */
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
-
-.wrapper span {
+.teller span {
     width: 100%;
     text-align: center;
-    font-size: 18px; /* Adjust the font size as desired */
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     user-select: none;
 }
 
-.wrapper span.num {
+/* .wrapper span.num { */
+.teller span.num {
     font-size: 20px; /* Adjust the font size as desired */
-    border-right: 2px solid rgba(0,0,0,0.2);
-    border-left: 2px solid rgba(0,0,0,0.2);
     pointer-events: none;
+    margin: 0 2px;
+}
+
+/* .wrapper span.num2 { */
+.teller span.num2 {
+    font-size: 20px; /* Adjust the font size as desired */
+    pointer-events: none;
+    margin: 0 2px;
+}
+
+/* .wrapper span.minus,
+.wrapper span.plus { */
+.teller span.minus,
+.teller span.plus {
+    margin: 0 2px; /* Adjust the margin as desired */
 }
 
 .product-image {
     width: 360px;
     height: 370px;
-
 }
 
-.stripe-top{
-    border-top: 1px solid #ddd;
-}
 
 .modal-trigger:hover {
     cursor: pointer;
 }
 
-.custom-margin1{
-    padding:15px
+.custom-margin1 {
+    padding: 15px
+}
+
+.total-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image-kist {
+    width: 220px;
+
+}
+
+.smaller-image {
+    max-width: 80%;
+}
+
+.scrollable-container2 {
+    height: 220px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Add custom scrollbar styles */
+.scrollable-container2::-webkit-scrollbar {
+    width: 6px; /* Adjust width as desired */
+    background-color: #f1f1f1; /* Set background color */
+    margin-left: 10px; /* Add desired margin to push it to the right */
+
+}
+
+.scrollable-container2::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.scrollable-container2::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.totaal-counter {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.personalize-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.personalize-text {
+    margin-bottom: 0;
+}
+
+.totaal-counter {
+    margin-bottom: 0;
+}
+
+
+/**
+ * 11. Orders
+ */
+.table td,
+.table th {
+    padding: 15px;
+    vertical-align: top;
+    border: none;
+}
+
+.goedgekeurd {
+    color: #88D375;
+}
+
+.in-behandeling {
+    color: #63BEEB;
+}
+
+
+.medium-card{
+    max-width: 900px;
+
+.afgekeurd {
+    color: red;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > td.goedgekeurd {
+    color: #88D375;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > td.in-behandeling {
+    color: #63BEEB;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > td.afgekeurd {
+    color: red;
+}
+
+.year-selection {
+    width: 150px;
+}
+
+.status-selection {
+    width: 170px;
+}
+
+.jaar-dropdown-container {
+    padding: 0 1.00rem;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    margin: 0;
+}
+
+.margin-total-list {
+    margin-left: 20px;
+}
+
+.item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.number {
+    padding: 0 5px;
+}
+
+.icon-container i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-left: 5px;
+}
+
+.margin-ul-items {
+    margin-left: 35px;
+}
+
+.item-name {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.item-number {
+    display: inline-block;
+    float: right;
+}
+
+.item-number-top {
+    display: inline-block;
+    float: right;
+    padding-right: 18px;
+}
+
+.long-version{
+    position: relative;
+    height:800px;
+}
+
+
+.button-bottom {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.item-number-all {
+    display: inline-block;
+    float: right;
+    margin-right: 35px;
+}
+
+/**
+ * 12. Aardbei
+ */
+.aardbei {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+}
+
+.dropup-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropup-content {
+    display: none;
+    position: fixed;
+    bottom: 185px;
+    right: 25px;
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.dropup-content a {
+    display: block;
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.dropup-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.accordion-item {
+    padding: 5px;
+    width: 100%;
+}
+
+.accordion-link {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+}
+
+.accordion-body {
+    padding: 0;
+    margin-top: 5px;
+}
+
+.page-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#rowIndication {
+    margin-left: 15px;
+}
+
+.pagination {
+    margin-left: auto;
+    width: auto;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    color: gray; /* Default color for non-active links */
+    text-decoration: none;
+}
+
+.pagination a.active {
+    color: blue;
+    text-decoration: underline;
+}
+
+.pagination a.disabled {
+    color: gray;
+    pointer-events: none;
 }
