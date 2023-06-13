@@ -221,7 +221,7 @@ a:hover {
  */
 .card-custom {
     padding: 20px;
-    margin-top: 5vh;
+    margin-top: 1vh;
     box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
 }
 
@@ -850,6 +850,87 @@ a:hover {
     padding: 0;
     margin-top: 5px;
 }
+
+.form-length{
+    width: 200px;
+}
+
+.font-stylecard{
+    background-color:#FFFFFF;
+}
+.font-stylecard h2 {
+    font-size: 1.2rem; /* Adjust the font size as needed */
+}
+
+.small-button{
+    font-size: 15px;
+    background-color: #63BEEB;
+    color:#FFFFFF;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+
+}
+
+.small-button:hover{
+    background-color: #a1d8f3;
+    color: #FFFFFF;
+}
+
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.submit-button-margin {
+    margin-right: 0.6rem;
+}
+
+.text-container p {
+    display: inline;
+    margin-right: 10px;
+}
+
+
+
+.smallest-button{
+    font-size: 14px;
+    background-color: #63BEEB;
+    color:#FFFFFF;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.smallest-trash{
+    font-size: 14px;
+    color:#FFFFFF;
+
+}
+
+.smallest-button:hover{
+    background-color: #a1d8f3;
+    color: #FFFFFF;
+}
+.title-smaller h2 {
+    font-size: 1.2rem;
+}
+
+.inhoud-lijst {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.inhoud-lijst-item {
+    width: 100%;
+    margin-left:20px;
+}
+
+.card-containerproduc {
+    margin-bottom: 30px;
 
 .page-container {
     display: flex;
