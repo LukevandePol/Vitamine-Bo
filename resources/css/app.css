@@ -535,6 +535,8 @@ a:hover {
 .custom-ul li {
     display: flex;
     align-items: center;
+    border-bottom: none; /* Remove the border between items */
+
 }
 
 .custom-ul li .list-text {
@@ -655,6 +657,8 @@ a:hover {
     margin-bottom: 0;
 }
 
+.custom-button {
+    font-style: normal;
 
 /**
  * 11. Orders
