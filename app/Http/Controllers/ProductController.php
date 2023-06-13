@@ -3,10 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Selectie;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $products = Product::all();
+
+        return view('admin.product', compact('products'));
+    }
+
+    public function createProductBewerken($id)
+    {
+        $product = Product::find($id);
+        return view('admin.product-bewerken', [
+            'product' => $product
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -19,35 +38,117 @@ class ProductController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'naam' => ['required', 'max:255'],
-            'smaak' => ['max:255'],
-            'type' => ['required', 'max:255'],
-            'inhoud' => ['max:255'],
+            'type' => ['required'],
         ]);
 
-        $productdata = [
-            'naam' => $attributes['naam'],
-            'smaak' => $attributes['smaak'],
-            'inhoud' => $attributes['inhoud']
-        ];
-
-        Product::create($attributes);
-
+        switch ($attributes['type']) {
+            case 'fruit':
+                return view('admin.fruit-toevoegen');
+            case 'groente':
+                return view('admin.groente-toevoegen');
+            case 'fles':
+                return view('admin.fles-toevoegen');
+            case 'verpakking':
+                return view('admin.verpakking-toevoegen');
+        }
         return back()->with('success', 'Product toegevoegd!');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-//Request $request
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function fruitToevoegen()
     {
-        $products = Product::all();
+        try {
+            $attributes = request()->validate([
+                'naam' => ['required', 'max:255'],
+                'afbeelding' => []
+            ]);
+            try {
+                Product::create([
+                    'naam' => $attributes['naam'],
+                    'type' => 'fruit',
+                    'is_zichtbaar' => true,
+                ]);
+                return back()->with('success', 'Product Toegevoegd!');
+            } catch (\Exception $e) {
+                return back()->with('error', 'Product bestaat al!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', 'Oeps, er ging iets mis');
+        }
+    }
 
-        return view('admin.product', compact('products'));
+    public function groenteToevoegen()
+    {
+        try {
+            $attributes = request()->validate([
+                'naam' => ['required', 'max:255'],
+                'afbeelding' => []
+            ]);
+
+            try {
+                Product::create([
+                    'naam' => $attributes['naam'],
+                    'type' => 'groente',
+                    'is_zichtbaar' => true,
+                ]);
+                return back()->with('success', 'Product Toegevoegd!');
+            } catch (\Exception $e) {
+                return back()->with('error', 'Product bestaat al!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', 'Oeps, er ging iets mis');
+        }
+    }
+
+    public function flesToevoegen()
+    {
+        try {
+            $attributes = request()->validate([
+                'naam' => ['required', 'max:255'],
+                'afbeelding' => [],
+                'inhoud' => ['required', 'max:255'],
+            ]);
+            try {
+                Product::create([
+                    'naam' => $attributes['naam'],
+                    'type' => 'fles',
+                    'inhoud' => $attributes['inhoud'],
+                    'is_zichtbaar' => true,
+                ]);
+                return back()->with('success', 'Product Toegevoegd!');
+            } catch (\Exception $e) {
+                return back()->with('error', 'Product bestaat al!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', 'Oeps, er ging iets mis');
+        }
+    }
+
+    public function verpakkingToevoegen()
+    {
+        try {
+            $attributes = request()->validate([
+                'naam' => ['required', 'max:255'],
+                'afbeelding' => []
+            ]);
+
+            try {
+                $product = Product::create([
+                    'naam' => $attributes['naam'],
+                    'type' => 'verpakking',
+                    'is_zichtbaar' => true,
+                ]);
+
+                $selectie = Selectie::create([
+                    'product_id' => $product->id
+                ]);
+
+                return redirect('/admin/productInhoudBewerken/' . $product->id);
+            } catch (\Exception $e) {
+                return back()->with('error', 'Product bestaat al!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', 'Oeps, er ging iets mis!');
+        }
     }
 
     /**
@@ -80,5 +181,10 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+
+    public function getStandaardPakketen()
+    {
+
     }
 }

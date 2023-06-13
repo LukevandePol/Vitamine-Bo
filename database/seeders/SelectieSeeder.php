@@ -13,12 +13,24 @@ class SelectieSeeder extends Seeder
     public function run(): void
     {
         Selectie::create([
-            'naam' => 'Krat'
+            'product_id' => 1,
+            'is_standaard' => true,
+            'is_zichtbaar' => true,
         ]);
-
         Selectie::create([
-            'naam' => 'Mand'
+            'product_id' => 2,
+            'is_standaard' => true,
+            'is_zichtbaar' => true,
         ]);
-
+        Selectie::create([
+            'product_id' => 3,
+            'is_standaard' => true,
+            'is_zichtbaar' => true,
+        ]);
+        Selectie::create([
+            'product_id' => 4,
+            'is_standaard' => true,
+            'is_zichtbaar' => true,
+        ]);
     }
 }
