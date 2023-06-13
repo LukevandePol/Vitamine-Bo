@@ -4,20 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Product extends Model
 {
     use HasFactory;
 
-    public function bestelling(): BelongsTo
-    {
-        return $this->belongsTo('App\Models\Bestelling');
-    }
+    protected $guarded = [];
 
-    public function fruit(): HasMany
+    public function selecties(): BelongsToMany
     {
-        return $this->hasMany('App\Models\Fruit');
+        return $this->belongsToMany(Selectie::class);
     }
 }

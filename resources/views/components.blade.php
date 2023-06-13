@@ -10,6 +10,4 @@
 
   <x-sidebar/>
 
-
-
 </x-layout>

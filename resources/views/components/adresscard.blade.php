@@ -18,7 +18,7 @@
         </div>
         <div class="row justify-content-end">
             <div class="col-12">
-                <x-buttonicon class="mt-2"></x-buttonicon>
+                <x-buttonicon class="mt-2">Aanpassen</x-buttonicon>
             </div>
         </div>
     </form>

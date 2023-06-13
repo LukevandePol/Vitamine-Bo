@@ -1,6 +1,6 @@
 @props(['title', 'header', 'beschrijving' => ''])
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -19,16 +19,19 @@
 
 <body class="antialiased">
 @include('layout.sidebar')
+
 @isset($header)
     <x-dashboard-header beschrijving="{{ $beschrijving }}">
         {{ $header }}
     </x-dashboard-header>
 @endisset
 
-<div class="container">
+<div class="container padding-left py-5">
     @include('components.alerts')
+
+    {{ $slot }}
 </div>
 
-{{ $slot }}
+<x-aardbei/>
 
 @include('layout.footer')

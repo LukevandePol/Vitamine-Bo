@@ -16,11 +16,6 @@
                         name="huisnummer"
                         value="{{$adres->huisnummer}}"
                     />
-                    <x-input
-                        label="Plaatsnaam"
-                        name="plaatsnaam"
-                        value="{{$adres->plaatsnaam}}"
-                    />
                     <x-submit>pas aan</x-submit>
                 </form>
             </div>

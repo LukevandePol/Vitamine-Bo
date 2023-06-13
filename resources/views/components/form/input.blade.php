@@ -1,7 +1,9 @@
 @props(['label', 'type' => 'text', 'name', 'placeholder', 'value'])
 
 <div class="mb-3">
-    <label for="{{ $name }}" class="form-label">{{ $label }}</label>
+    @isset($label)
+        <label for="{{ $name }}" class="form-label">{{ $label }}</label>
+    @endisset
     <input type="{{ $type }}"
            class="form-control"
            name="{{ $name }}"

@@ -2,11 +2,10 @@
 
 namespace Database\Factories;
 
-use App\Models\Adres;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Adres>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Adres>
  */
 class AdresFactory extends Factory
 {
@@ -17,13 +16,13 @@ class AdresFactory extends Factory
      */
     public function definition(): array
     {
-//        $klantgegevens = Klantgegevens::all()->pluck('id')->toArray();
-
         return [
-            'postcode' => $this->faker->postcode,
-            'huisnummer' => $this->faker->numberBetween(1, 1300),
-            'adres' => $this->faker->streetAddress,
-            'plaatsnaam' => $this->faker->city,
+            'postcode' => fake()->postcode(),
+            'huisnummer' => fake()->numberBetween(1, 1300),
+            'weergavenaam' => fake()->streetName(),
+            'straatnaam' => fake()->streetName(),
+            'woonplaatsnaam' => fake()->city(),
+            'voorkeur_type' => 'bezorg',
         ];
     }
 }
