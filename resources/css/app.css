@@ -675,8 +675,9 @@ a:hover {
 }
 
 
-.medium-card{
+.medium-card {
     max-width: 900px;
+}
 
 .afgekeurd {
     color: red;
