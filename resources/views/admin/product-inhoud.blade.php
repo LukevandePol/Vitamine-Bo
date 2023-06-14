@@ -7,10 +7,10 @@
                         <x-cardstripe :title="$product->naam" class="font-stylecard">
                             <form action="/verpakkingInhoudToevoegen" method="post">
                                 @csrf
-                                <x-input type="hidden" name="selectie_id" :value="$selectie->id" />
-                                <x-input type="hidden" name="product_id" :value="$product->id" />
+                                <input type="hidden" name="selectie_id" value="{{$selectie->id}}">
+                                <input type="hidden" name="product_id" value="{{$product->id}}">
                                 <div class="form-length">
-                                    <x-input name="aantal" label="aantal" />
+                                    <x-input name="aantal" label="aantal"/>
                                 </div>
                                 <x-submit class="small-button">Toevoegen</x-submit>
                             </form>
@@ -36,7 +36,8 @@
                                         @csrf
                                         <input name="product_id" value="{{$product->id}}" type="hidden">
                                         <input name="selectie_id" value="{{$selectie->id}}" type="hidden">
-                                        <x-submit class="smallest-button submit-button-margin"><i class="fa-solid fa-trash-can smallest-trash"></i>
+                                        <x-submit class="smallest-button submit-button-margin">
+                                            <i class="fa-solid fa-trash-can smallest-trash"></i>
                                         </x-submit>
                                     </form>
                                 </div>
