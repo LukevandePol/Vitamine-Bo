@@ -44,7 +44,7 @@
                 <th scope="col">Actie</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="product-table-body">
             @foreach($products as $product)
                 <tr data-type="{{ $product->type }}">
                     <td>{{ $product->naam }}</td>
@@ -52,9 +52,9 @@
                     <td>{{ $product->inhoud ? $product->inhoud : 'n.v.t.' }}</td>
                     <td>
                         @if($product->type != 'groente' && $product->type != 'fruit')
-                                <div class="checkbox-cell">
-                                    <input type="checkbox" name="zichtbaar_op_website" value="{{ $product->id }}" class="bigger-checkbox">
-                                </div>
+                            <div class="checkbox-cell">
+                                <input type="checkbox" name="zichtbaar_op_website" value="{{ $product->id }}" class="bigger-checkbox">
+                            </div>
                         @else
                             <span class="checkbox-label">-</span>
                         @endif
@@ -68,6 +68,15 @@
             @endforeach
             </tbody>
         </table>
+
+        <div class="mt-2">
+            <div class="row">
+                <div class="page-container">
+                    <div class="rowIndication" id="rowIndication"></div>
+                    <ul class="pagination" id="pagination-container"></ul>
+                </div>
+            </div>
+        </div>
     </x-card>
 
     @section('page-scripts')
