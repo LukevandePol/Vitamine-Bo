@@ -11,8 +11,10 @@
                                 <x-input type="hidden" name="product_id" :value="$product->id" />
                                 <div class="form-length">
                                     <x-input name="aantal" label="aantal" />
+                                    <div class="button-wrapper">
+                                        <x-submit class="small-button">Toevoegen</x-submit>
+                                    </div>
                                 </div>
-                                <x-submit class="small-button">Toevoegen</x-submit>
                             </form>
                         </x-cardstripe>
                     </div>

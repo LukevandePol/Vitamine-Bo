@@ -851,10 +851,6 @@ a:hover {
     margin-top: 5px;
 }
 
-.form-length{
-    width: 200px;
-}
-
 .font-stylecard{
     background-color:#FFFFFF;
 }
@@ -862,21 +858,33 @@ a:hover {
     font-size: 1.2rem; /* Adjust the font size as needed */
 }
 
-.small-button{
+.form-length {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.small-button {
     font-size: 15px;
     background-color: #63BEEB;
-    color:#FFFFFF;
+    color: #FFFFFF;
     border: none;
     padding: 8px 15px;
     border-radius: 8px;
-
+    margin-top: 15px;
 }
 
-.small-button:hover{
+.small-button:hover {
     background-color: #a1d8f3;
     color: #FFFFFF;
 }
-
 
 .mb-3 {
     margin-bottom: 3rem;
@@ -964,3 +972,33 @@ a:hover {
     color: gray;
     pointer-events: none;
 }
+.product-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.label-wrapper {
+    margin-right: 10px;
+}
+
+.button-wrapper {
+    margin-left: auto;
+}
+
+
+
+.form-group1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-wrapper1 {
+    margin-bottom: 5px;
+}
+
+.button-wrapper1 {
+    margin-top: 5px;
+}
+
+

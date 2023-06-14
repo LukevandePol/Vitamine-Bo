@@ -1,6 +1,29 @@
-<x-layout title="Product" header="Producten" beschrijving="Voeg hier nieuwe producten toe of verwijder ze.">
-    <x-card>
-        <table class="table table-striped mt-5">
+    <x-layout title="Product" header="Producten" beschrijving="Voeg hier nieuwe producten toe of verwijder ze.">
+        <x-card class="mt-3">
+        <form method="POST" action="/admin/product">
+            @csrf
+            <div class="product-group">
+                <div class="label-wrapper">
+                    <label for="type">Voeg een nieuw product toe</label>
+                </div>
+                <div class="select-wrapper">
+                    <select name="type" id="type">
+                        <option value="">--Kies een optie--</option>
+                        <option value="fruit">Fruit</option>
+                        <option value="groente">Groente</option>
+                        <option value="fles">Fles</option>
+                        <option value="verpakking">Verpakking</option>
+                    </select>
+                </div>
+                <div class="button-wrapper">
+                    <x-submit>Toevoegen</x-submit>
+                </div>
+            </div>
+        </form>
+    </x-card>
+
+    <x-card class="mt-5">
+        <table class="table table-striped">
             <thead>
             <tr>
                 <th scope="col">Naam</th>
@@ -26,18 +49,4 @@
         </table>
     </x-card>
 
-    <x-card class="mt-5">
-        <form method="POST" action="/admin/product">
-            @csrf
-            <label for="type">Kies het type product</label>
-            <select name="type" id="type">
-                <option value="">--Please choose an option--</option>
-                <option value="fruit">Fruit</option>
-                <option value="groente">Groente</option>
-                <option value="fles">Fles</option>
-                <option value="verpakking">Verpakking</option>
-            </select>
-            <x-submit>Toevoegen</x-submit>
-        </form>
-    </x-card>
 </x-layout>
