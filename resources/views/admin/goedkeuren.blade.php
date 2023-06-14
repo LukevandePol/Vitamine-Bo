@@ -1,7 +1,7 @@
 <x-layout title="Goedkeuren" header="Goedkeuren" beschrijving="Hier vind je de lijst met accounts die nog niet zijn goedgekeurd.">
     <x-card class="w-100">
         <h3>Accounts goedkeuren</h3>
-        <table class="table table-striped mt-5">
+        <table class="table table-striped mt-2">
             <thead>
             <tr>
                 <th scope="col">Naam</th>
