@@ -987,18 +987,17 @@ a:hover {
 }
 
 
-
-.form-group1 {
-    display: flex;
-    flex-direction: column;
-}
-
-.label-wrapper1 {
-    margin-bottom: 5px;
-}
-
-.button-wrapper1 {
-    margin-top: 5px;
+.filter-wrapper{
+    margin-left: 15px;
 }
 
 
+.bigger-checkbox {
+    transform: scale(1.2); /* Increase the scale factor as desired */
+    margin: 0 70px; /* Adjust the margin values as needed */
+
+}
+
+.checkbox-label {
+    margin: 0 73px; /* Adjust the margin values as needed */
+}
