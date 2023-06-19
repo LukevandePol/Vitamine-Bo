@@ -9,7 +9,7 @@ function confirmApprove() {
 
 // Global variables
 const tableRows = Array.from(document.querySelectorAll('#orderTableBody tr'));
-const rowsPerPage = 10; // Updated value to display 15 rows per page
+const rowsPerPage = 10;
 let currentPage = 0;
 
 // Function to generate table rows based on current page and rows per page
@@ -80,7 +80,7 @@ function createPaginationLink(label, enabled, pageIndex) {
 
     if (currentPage === pageIndex) {
         link.classList.add('active');
-        link.style.color = '#63BEEB'; // Set the active page number color to blue
+        link.style.color = '#63BEEB';
     }
 
     return link;
