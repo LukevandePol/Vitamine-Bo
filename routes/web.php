@@ -24,10 +24,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/component', function () {
-    return view('components');
-});
-
 Route::get('/', [SessionsController::class, 'index'])->middleware(['auth', 'status']);
 Route::get('/niet-goedgekeurd', function () {
     return view('niet-goedgekeurd');
@@ -86,6 +82,9 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::post('/admin/goedkeuren/{id}', [AccountController::class, 'approveAccount'])->name('account-goedkeuren');
     Route::delete('/admin/goedkeuren/{id}', [AccountController::class, 'destroyAccount'])->name('account-afkeuren');
 
+    // Bestelling goedkeuren
+    Route::get('/admin/BestellingGoedkeuren', [BestellingController::class, 'createBestellingenGoedkeuren'])->name('bestelling-goedkeuren');
+
     // Veelgestelde vragen toevoegen/aanpassen
     Route::get('/admin/faq', [FaqController::class, 'create'])->name('veelgestelde-vragen');
     Route::post('/admin/faq', [FaqController::class, 'store']);
@@ -95,9 +94,6 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     // Producten toevoegen
     Route::get('/admin/product', [ProductController::class, 'create'])->name('product-overzicht');
     Route::post('admin/product', [ProductController::class, 'store']);
-
-    Route::get('/admin/product', [ProductController::class, 'create'])->name('admin.product');
-    Route::post('/admin/product', [ProductController::class, 'store']);
 
     //producten toevoegen aan de products tabel
     Route::post('/fruitToevoegen', [ProductController::class, 'fruitToevoegen']);
