@@ -10,8 +10,8 @@ class BestellingController extends Controller
     public function create()
     {
         $laatsteBestelling = Bestelling::where('user_id', '=', auth()->user()->id)
-            ->latest()
-            ->first();
+            ->latest()  // haalt de items met de laatste 'created_at' datum
+            ->first(); // pak het eerste item van de lijst
 
 //        $selecteerbareProducten_id = DB::table('bestelling_selectie')
 //            ->whereNull('bestelling_id')
@@ -23,14 +23,21 @@ class BestellingController extends Controller
         $standaardSelecties = Selectie::where('is_standaard', true)
             ->where('is_zichtbaar', true)
             ->get();
-//        $selecteerbareProducten = Product::all();
-//        dd($selecteerbareProducten);
 
-        //wat als een klant nog geen bestelling heeft?
         return view('bestellingBewerken', [
                 'bestelling' => $laatsteBestelling,
                 'standaardSelecties' => $standaardSelecties,
             ]
         );
+    }
+
+    public function createBestellingenGoedkeuren()
+    {
+        $aangepasteBestellingen = Bestelling::where('controle_datum', '=', null)
+            ->get();
+
+        return view('bestellingGoedkeuren', [
+            'aangepasteBestellingen' => $aangepasteBestellingen,
+        ]);
     }
 }
