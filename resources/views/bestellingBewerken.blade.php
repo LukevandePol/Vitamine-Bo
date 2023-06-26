@@ -4,7 +4,7 @@
     beschrijving="Hieronder zie je een overzicht van je bestelling. Deze kun je ook aanpassen.">
     <div class="container">
 
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-12">
                 <x-cardstripe title="Hoe werkt het?">
                     <p>
@@ -65,6 +65,9 @@
                                 </ul>
                             @endif
                         @endforeach
+                        <div class="d-flex flex-row-reverse">
+                            <x-submit>Aanpassing aanvragen</x-submit>
+                        </div>
                     </x-cardstripe>
                 @else
                     <x-cardstripe
@@ -76,11 +79,15 @@
                 @endif
             </div>
 
-            <div class="col-sm-6 scrollable-container d-flex flex-wrap">
-                @foreach($standaardSelecties as $selectie)
-                    {{--                    <x-productitem :product="$selectie"/>--}}
-                    <x-selectie-item :selectie="$selectie"/>
-                @endforeach
+            <div class="col-sm-6">
+                <div class="mb-3">
+                    <h2>Standaard pakketten</h2>
+                    <div class="scrollable-container d-flex flex-wrap">
+                        @foreach($standaardSelecties as $selectie)
+                            <x-selectie-item :selectie="$selectie"/>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
 
