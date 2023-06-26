@@ -27,10 +27,10 @@
             <label for="product-type">Filter artikelen:</label>
             <select id="product-type">
                 <option value="">Alles</option>
-                <option value="groente">Groente</option>
                 <option value="fruit">Fruit</option>
-                <option value="verpakking">Verpakking</option>
+                <option value="groente">Groente</option>
                 <option value="fles">Fles</option>
+                <option value="verpakking">Verpakking</option>
             </select>
         </div>
 
@@ -49,20 +49,14 @@
                 <tr data-type="{{ $product->type }}">
                     <td>{{ $product->naam }}</td>
                     <td>{{ $product->type }}</td>
-                    <td>{{ $product->inhoud ? $product->inhoud : 'n.v.t.' }}</td>
+                    <td>{{ $product->inhoud ? : 'n.v.t.' }}</td>
                     <td>
-                        @if($product->type != 'groente' && $product->type != 'fruit')
-                            <div class="checkbox-cell">
-                                <input type="checkbox" name="zichtbaar_op_website" value="{{ $product->id }}" class="bigger-checkbox">
-                            </div>
-                        @else
-                            <span class="checkbox-label">-</span>
-                        @endif
-                    </td>
-                    <td>
-                        @if($product->type == 'verpakking')
-                            <x-a href="/admin/productInhoudBewerken/{{$product->id}}">Bewerken</x-a>
-                        @endif
+                        <div class="checkbox-cell">
+                            <form action="" method="post">
+                                <input type="checkbox" name="zichtbaar_op_website" value="{{ $product->id }}"
+                                       class="bigger-checkbox">
+                            </form>
+                        </div>
                     </td>
                 </tr>
             @endforeach
