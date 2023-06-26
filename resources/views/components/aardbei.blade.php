@@ -1,6 +1,6 @@
 <div class="dropup-container">
     <button class="dropup-btn">
-        <img src="{{ asset('images/strawberry.svg') }}" class="aardbei" width="125" alt="Aardbei Hulp">
+        <img src="{{ asset('images/aardbei.png') }}" class="aardbei" width="100" alt="Aardbei Hulp">
     </button>
     <div class="dropup-content">
         <div class="accordion accordion-flush" id="faq">
