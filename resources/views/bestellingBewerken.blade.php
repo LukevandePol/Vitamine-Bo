@@ -6,12 +6,10 @@
 
         <div class="row mb-5">
             <div class="col-12">
-                <x-cardstripe title="Hoe werkt het?">
+                <x-cardstripe title="Hoe werkt het?" class="bg-white">
                     <p>
                         Hieronder zie je de bestelling voor volgende maand,
-                        deze kun je aanpassen door rechts fruit en/of pakketten toe te voegen aan je bestelling zodat.
-                        Je kunt hier met de & opties het aantal stuks fruit veranderen binnen het maximale aantal van de
-                        pakketten.
+                        deze kun je aanpassen door rechts fruit en/of pakketten toe te voegen aan je bestelling.
                     </p>
                 </x-cardstripe>
             </div>
