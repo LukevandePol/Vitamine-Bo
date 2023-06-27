@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Faq;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
 
 class FaqController extends Controller
 {
@@ -26,9 +27,20 @@ class FaqController extends Controller
 
     public function create()
     {
+        $routes = collect(Route::getRoutes())->filter(function ($route) {
+            return $route->getName() !== null;
+        })->map(function ($route) {
+            return [
+                'uri' => $route->uri(),
+                'name' => $route->getName(),
+                'action' => ltrim($route->getActionName(), '\\'),
+                'method' => implode('|', $route->methods()),
+            ];
+        });
+
         $faqs = Faq::all();
 
-        return view('admin.veelgestelde-vragen', compact('faqs'));
+        return view('admin.veelgestelde-vragen', compact('faqs', 'routes'));
     }
 
     public function edit($id)
