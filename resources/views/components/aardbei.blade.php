@@ -4,10 +4,10 @@
     </button>
     <div class="dropup-content">
         <div class="accordion accordion-flush" id="faq">
-            @foreach($faqs as $faq)
+            @forelse($faqs as $faq)
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-link collapsed" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-link collapsed p-0" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#{{ $faq->id }}">
                             {{ $faq->question }}
                         </button>
@@ -18,9 +18,10 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <p class="m-0">Er zijn nog geen vragen voor deze pagina, heb je een vraag? Neem gerust contact met ons
+                    op.</p>
+            @endforelse
         </div>
     </div>
 </div>
-
-

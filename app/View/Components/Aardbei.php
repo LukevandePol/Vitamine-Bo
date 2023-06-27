@@ -22,7 +22,8 @@ class Aardbei extends Component
      */
     public function render(): View|Closure|string
     {
-        $faqs = Faq::all();
+        $routeName = request()->route()->getName();
+        $faqs = Faq::where('page', $routeName)->get();
 
         return view('components.aardbei', compact('faqs'));
     }

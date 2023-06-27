@@ -1,4 +1,4 @@
-@props(['title', 'header', 'beschrijving' => ''])
+@props(['title', 'header', 'beschrijving' => '', 'page'])
 
     <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -32,6 +32,8 @@
     {{ $slot }}
 </div>
 
-<x-aardbei/>
+@isset($faqs)
+    <x-aardbei/>
+@endisset
 
 @include('layout.footer')
