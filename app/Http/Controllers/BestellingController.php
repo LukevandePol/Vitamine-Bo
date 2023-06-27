@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Adres;
 use App\Models\Bestelling;
 use App\Models\Selectie;
+use Illuminate\Support\Facades\DB;
 
 class BestellingController extends Controller
 {
@@ -33,11 +35,37 @@ class BestellingController extends Controller
 
     public function createBestellingenGoedkeuren()
     {
-        $aangepasteBestellingen = Bestelling::where('controle_datum', '=', null)
+        $aangepasteBestellingen = Bestelling::whereNull('controle_datum')
             ->get();
 
-        return view('bestellingGoedkeuren', [
+        return view('admin.bestellingGoedkeuren', [
             'aangepasteBestellingen' => $aangepasteBestellingen,
+        ]);
+    }
+
+    public function createBestellingBekijken($id)
+    {
+        $aangepasteBestelling = DB::table('bestellings')
+            ->where('id', '=', $id)
+            ->join('bestelling_selectie', 'bestellings.id', '=', 'bestelling_selectie.bestelling_id')
+            ->get();
+
+        try {
+            $bezorgadres = Adres::where('id', '=', $aangepasteBestelling[0]->bezorgadres_id)->get()[0];
+        } catch (\Exception $e) {
+            return back()->with('error', 'Bestelling heeft geen bezorgadres');
+        }
+
+        if ($aangepasteBestelling[0]->factuuradres_id !== null) {
+            $factuuradres = Adres::where('id', '=', $aangepasteBestelling[0]->factuuradres_id)->get()[0];
+        } else {
+            $factuuradres = null;
+        }
+
+        return view('admin.bestellingBekijken', [
+            'aangepasteBestelling' => $aangepasteBestelling,
+            'bezorgadres' => $bezorgadres,
+            'factuuradres' => $factuuradres
         ]);
     }
 }
