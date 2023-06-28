@@ -6,6 +6,7 @@ use App\Models\Adres;
 use App\Models\Bestelling;
 use App\Models\Selectie;
 use Illuminate\Support\Facades\DB;
+use PHPUnit\Exception;
 
 class BestellingController extends Controller
 {
@@ -67,5 +68,28 @@ class BestellingController extends Controller
             'bezorgadres' => $bezorgadres,
             'factuuradres' => $factuuradres
         ]);
+    }
+
+    public function BestellingGoedkeuren()
+    {
+        try {
+            $attributes = request()->validate([
+                'bestelling_id' => ['required'],
+                'prijs_in_centen' => ['required', 'integer'],
+                'reden' => ['required']
+            ]);
+
+            $bestelling = Bestelling::find($attributes['bestelling_id']);
+
+            $bestelling->prijs_in_centen = $attributes['prijs_in_centen'];
+            $bestelling->reden = $attributes['reden'];
+            $bestelling->controle_datum = now()->toDateTime();
+
+            $bestelling->save();
+
+        } catch (Exception $e) {
+            return back()->with('error', 'oeps er ging iets mis');
+        }
+        return redirect('/admin/BestellingGoedkeuren')->with('success', 'Bestelling goedgekeurd');
     }
 }

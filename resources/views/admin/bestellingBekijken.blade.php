@@ -41,7 +41,7 @@
                 <p></p>
                 <p>{{$bezorgadres->postcode}}</p>
                 <p>{{$bezorgadres->straatnaam}} {{$bezorgadres->huisnummer}}</p>
-                <p>{{$bezorgadres->woonplaatsnaam}}, {{$bezorgadres->proficienaam ? : 'Profincie onbekend'}}</p>
+                <p>{{$bezorgadres->woonplaatsnaam}}, {{$bezorgadres->provincienaam ? : 'provincie onbekend'}}</p>
             </div>
             @if($factuuradres !== null)
                 <div class="flex-column">
@@ -49,7 +49,7 @@
                     <p></p>
                     <p>{{$factuuradres->postcode}}</p>
                     <p>{{$factuuradres->straatnaam}} {{$factuuradres->huisnummer}}</p>
-                    <p>{{$factuuradres->woonplaatsnaam}}, {{$factuuradres->proficienaam ? : 'Profincie onbekend'}}</p>
+                    <p>{{$factuuradres->woonplaatsnaam}}, {{$factuuradres->provincienaam ? : 'provincie onbekend'}}</p>
                 </div>
             @else
                 <div class="flex-column">
@@ -69,17 +69,57 @@
         </div>
     </x-cardstripe>
 
+
     <x-card class="mt-3">
         <div class="d-flex justify-content-between">
             <h2>Bestelling Goedkeuren/afkeuren</h2>
             <div class="flex-row d-flex justify-content-between w-25">
-                <form action="" method="post">
-                    <x-submit>Goedkeuren</x-submit>
-                </form>
-                <form action="" method="post">
-                    <x-submit>Afkeuren</x-submit>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#goedkeurenModal">
+                    Goedkeuren
+                </button>
+
+            </div>
+        </div>
+
+    </x-card>
+</x-layout>
+
+<!-- Modal -->
+<div class="modal fade" id="goedkeurenModal" tabindex="-1" aria-labelledby="bestellingGoedkeuren" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="bestellingGoedkeuren">Goedkeuren</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/admin/BestellingGoedkeuren" method="post">
+                    @csrf
+                    <input type="hidden" value="{{$aangepasteBestelling[0]->id}}" name="bestelling_id">
+                    <x-input
+                        type="number"
+                        label="Prijs in eurocenten"
+                        name="prijs_in_centen"
+                    />
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="goedkeuren">
+                                Reden voor goedkeuren
+                            </label>
+                            <textarea name="reden" id="goedkeuren"
+                                      class="form-control"
+                                      cols="10"
+                                      rows="8">
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row-reverse mt-3">
+                        <x-submit>Bevestigen</x-submit>
+                    </div>
                 </form>
             </div>
         </div>
-    </x-card>
-</x-layout>
+    </div>
+</div>
+

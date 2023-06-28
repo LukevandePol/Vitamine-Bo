@@ -85,6 +85,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     // Bestelling goedkeuren
     Route::get('/admin/BestellingGoedkeuren', [BestellingController::class, 'createBestellingenGoedkeuren'])->name('bestelling-goedkeuren');
     Route::get('/admin/BestellingBekijken/{id}', [BestellingController::class, 'createBestellingBekijken'])->name('bestelling-bekijken');
+    Route::post('/admin/BestellingGoedkeuren', [BestellingController::class, 'BestellingGoedkeuren']);
 
     // Veelgestelde vragen toevoegen/aanpassen
     Route::get('/admin/faq', [FaqController::class, 'create'])->name('veelgestelde-vragen');
