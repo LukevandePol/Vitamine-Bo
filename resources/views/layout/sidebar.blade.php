@@ -19,19 +19,23 @@
                         :active="request()->routeIs('admin-dashboard')">
                 Admin Panel
             </x-nav-link>
-            <x-nav-link href="/admin/goedkeuren" icon="fa-check"
-                        :active="request()->routeIs('account-goedkeuren')">
-                Klant goedkeuren
-            </x-nav-link>
-            <x-nav-link href="/admin/product" icon="fa-cart-shopping"
-                        :active="request()->routeIs('product-overzicht')">
-                Product beheer
-            </x-nav-link>
-            <x-nav-link href="/admin/faq" icon="fa-question"
-                        :active="request()->routeIs('veelgestelde-vragen')">
-                FAQ
-            </x-nav-link>
-        @endcan
+                <x-nav-link href="/admin/goedkeuren" icon="fa-check"
+                            :active="request()->routeIs('account-goedkeuren')">
+                    Klant goedkeuren
+                </x-nav-link>
+                <x-nav-link href="/admin/BestellingGoedkeuren" icon="fa-apple-whole"
+                            :active="request()->routeIs('bestelling-goedkeuren')">
+                    Bestelling keuren
+                </x-nav-link>
+                <x-nav-link href="/admin/product" icon="fa-cart-shopping"
+                            :active="request()->routeIs('product-overzicht')">
+                    Product beheer
+                </x-nav-link>
+                <x-nav-link href="/admin/faq" icon="fa-question"
+                            :active="request()->routeIs('veelgestelde-vragen')">
+                    FAQ
+                </x-nav-link>
+            @endcan
 
         <li class="logout d-flex justify-content-center">
             <form method="POST" action="/uitloggen">

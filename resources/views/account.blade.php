@@ -3,7 +3,8 @@
         <div class="row">
             <div class="col-12">
                 <x-cardstripe
-                    title="Accountgegevens">
+                    title="Accountgegevens"
+                    class="bg-white">
                     <form action="/updateUser" method="POST">
                         @csrf
                         <x-input

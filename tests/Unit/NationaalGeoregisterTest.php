@@ -12,8 +12,8 @@ class NationaalGeoregisterTest extends TestCase
      */
     public function test_straatnaam(): void
     {
-        $data = NationaalGeoregisterController::getData("9216VT");
+        $data = NationaalGeoregisterController::getData("8917DD");
 
-        $this->assertEquals('Smidterij', $data['straatnaam']);
+        $this->assertEquals('Rengerslaan', $data['straatnaam']);
     }
 }

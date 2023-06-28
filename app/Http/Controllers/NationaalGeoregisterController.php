@@ -28,8 +28,5 @@ class NationaalGeoregisterController extends Controller
             // Geen resultaten gevonden
             return null;
         }
-        // Verwerk de ontvangen data zoals gewenst
-        // ...
-
     }
 }

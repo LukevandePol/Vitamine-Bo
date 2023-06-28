@@ -82,6 +82,11 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::post('/admin/goedkeuren/{id}', [AccountController::class, 'approveAccount'])->name('account-goedkeuren');
     Route::delete('/admin/goedkeuren/{id}', [AccountController::class, 'destroyAccount'])->name('account-afkeuren');
 
+    // Bestelling goedkeuren
+    Route::get('/admin/BestellingGoedkeuren', [BestellingController::class, 'createBestellingenGoedkeuren'])->name('bestelling-goedkeuren');
+    Route::get('/admin/BestellingBekijken/{id}', [BestellingController::class, 'createBestellingBekijken'])->name('bestelling-bekijken');
+    Route::post('/admin/BestellingGoedkeuren', [BestellingController::class, 'BestellingGoedkeuren']);
+
     // Veelgestelde vragen toevoegen/aanpassen
     Route::get('/admin/faq', [FaqController::class, 'create'])->name('veelgestelde-vragen');
     Route::post('/admin/faq', [FaqController::class, 'store']);
@@ -90,9 +95,6 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 
     // Producten toevoegen
     Route::get('/admin/product', [ProductController::class, 'create'])->name('product-overzicht');
-    Route::post('admin/product', [ProductController::class, 'store']);
-
-    Route::get('/admin/product', [ProductController::class, 'create'])->name('admin.product');
     Route::post('/admin/product', [ProductController::class, 'store']);
 
     //producten toevoegen aan de products tabel
@@ -105,7 +107,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/productBewerken/{id}', [ProductController::class, 'createProductBewerken']);
     Route::post('/admin/productBewerken/{id}', [ProductController::class, 'updateProduct']);
 
-    //verpakkings inhoud bewerken in de selectie en product_selectie tabel
+    //verpakkingsinhoud bewerken in de selectie en product_selectie tabel
     Route::get('/admin/productInhoudBewerken/{id}', [ProductInhoudController::class, 'createProductInhoud']);
     Route::post('/verpakkingInhoudToevoegen', [ProductInhoudController::class, 'verpakkingInhoudToevoegen']);
     Route::post('/deleteVerpakkingInhoud', [ProductInhoudController::class, 'deleteVerpakkingInhoud']);

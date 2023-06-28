@@ -136,6 +136,7 @@ class ProductController extends Controller
                     'naam' => $attributes['naam'],
                     'type' => 'verpakking',
                     'is_zichtbaar' => true,
+                    'is_standaard' => true,
                 ]);
 
                 $selectie = Selectie::create([
