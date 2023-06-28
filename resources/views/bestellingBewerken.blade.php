@@ -26,7 +26,9 @@
                                 <div class="item-row">
                                     <h5>1x {{\App\Models\Product::find($selectie->product_id)->naam}}</h5>
                                     <div class="icon-container">
-                                        <i class="fa-regular fa-pen-to-square"></i>
+                                        <x-button>
+                                            <i class="fas fa-pen-to-square"></i>
+                                        </x-button>
                                         <form action="/deleteSelectieUitBestelling" method="post">
                                             @csrf
                                             <input type="hidden"
@@ -37,9 +39,9 @@
                                                    value="{{$selectie->id}}"
                                                    name="selectie_id"
                                             />
-                                            <button>
-                                                <i class="fa-solid fa-trash-can"></i>
-                                            </button>
+                                            <x-button>
+                                                <i class="fas fa-trash-can"></i>
+                                            </x-button>
                                         </form>
                                     </div>
                                 </div>
