@@ -851,9 +851,24 @@ a:hover {
     margin-top: 5px;
 }
 
+.custom-cardstripe .card-text {
+    margin-top: 10px;
+}
+
+.no-padding-table td,
+.no-padding-table th {
+    padding: 0;
+}
+
+.user-icon {
+    font-size: 70px; /* Adjust the size as needed */
+    color: #D0D0D0;
+}
+
 .font-stylecard{
     background-color:#FFFFFF;
 }
+
 .font-stylecard h2 {
     font-size: 1.2rem; /* Adjust the font size as needed */
 }
@@ -899,8 +914,6 @@ a:hover {
     margin-right: 10px;
 }
 
-
-
 .smallest-button{
     font-size: 14px;
     background-color: #63BEEB;
@@ -920,6 +933,7 @@ a:hover {
     background-color: #a1d8f3;
     color: #FFFFFF;
 }
+
 .title-smaller h2 {
     font-size: 1.2rem;
 }
@@ -942,9 +956,22 @@ a:hover {
 }
 
 .page-container {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+
+.placement-user{
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: 20px;
+
+}
+
+.carousel-text{
+    margin-left: 10px;
 }
 
 #rowIndication {
@@ -972,6 +999,7 @@ a:hover {
     color: gray;
     pointer-events: none;
 }
+
 .product-group {
     display: flex;
     flex-direction: row;
