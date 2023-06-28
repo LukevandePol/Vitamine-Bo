@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             BestellingSelectieSeeder::class,
             BezorgdatumSeeder::class,
             BestellingBezorgdataSeeder::class,
+            FaqSeeder::class,
         ]);
 
     }
