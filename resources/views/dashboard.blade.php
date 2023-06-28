@@ -54,8 +54,8 @@
             </div>
 
             <div class="col-sm-6">
-                <x-cardstripe title="Goedkeuring aanpassing" class="bg-white custom-cardstripe">
-                    <x-status-goedkeuring></x-status-goedkeuring>
+                <x-cardstripe title="Goedkeuring aanpassing" class="bg-white custom-cardstripe status-goedkeuring">
+                    <x-status-goedkeuring/>
                 </x-cardstripe>
                 <x-a href="#">Bekijk je levering</x-a>
 

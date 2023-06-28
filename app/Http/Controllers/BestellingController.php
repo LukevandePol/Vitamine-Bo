@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Adres;
 use App\Models\Bestelling;
 use App\Models\Selectie;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PHPUnit\Exception;
 
@@ -91,5 +92,22 @@ class BestellingController extends Controller
             return back()->with('error', 'oeps er ging iets mis');
         }
         return redirect('/admin/BestellingGoedkeuren')->with('success', 'Bestelling goedgekeurd');
+    }
+
+    public function BestellingAfkeuren($id, Request $request)
+    {
+        $bestelling = Bestelling::findOrFail($id);
+        $bestelling->controle_datum = now()->toDateTime();
+        $reason = $request->input('reden');
+
+        DB::table('bestellings')
+            ->where('id', $bestelling->id)
+            ->update([
+                'reden' => $reason
+            ]);
+
+        $bestelling->save();
+
+        return redirect('/admin/BestellingGoedkeuren')->with('success', 'Bestelling is afgekeurd.');
     }
 }

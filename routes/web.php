@@ -77,15 +77,17 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     // Dashboard
     Route::get('/admin', [AdminController::class, 'index'])->name('admin-dashboard');
 
-    // Account goedkeuren
+    // Account goedkeuren/afkeuren
     Route::get('/admin/goedkeuren', [AdminController::class, 'approve'])->name('account-goedkeuren');
     Route::post('/admin/goedkeuren/{id}', [AccountController::class, 'approveAccount'])->name('account-goedkeuren');
     Route::delete('/admin/goedkeuren/{id}', [AccountController::class, 'destroyAccount'])->name('account-afkeuren');
 
-    // Bestelling goedkeuren
+    // Bestelling goedkeuren/afkeuren
     Route::get('/admin/BestellingGoedkeuren', [BestellingController::class, 'createBestellingenGoedkeuren'])->name('bestelling-goedkeuren');
     Route::get('/admin/BestellingBekijken/{id}', [BestellingController::class, 'createBestellingBekijken'])->name('bestelling-bekijken');
     Route::post('/admin/BestellingGoedkeuren', [BestellingController::class, 'BestellingGoedkeuren']);
+    Route::post('/admin/BestellingBekijken/{id}', [BestellingController::class, 'BestellingAfkeuren'])->name('bestelling-afkeuren');
+
 
     // Veelgestelde vragen toevoegen/aanpassen
     Route::get('/admin/faq', [FaqController::class, 'create'])->name('veelgestelde-vragen');
