@@ -1,4 +1,4 @@
-<div class="modal fade" id="personalizeModal" tabindex="-1" aria-labelledby="personalizeModalLabel" aria-hidden="true">
+<div class="modal fade" id="personalizeschaalModal" tabindex="-1" aria-labelledby="personalizeschaalModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,16 +8,15 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6 text-center d-flex align-items-center">
-                            <img src="images/fruitkistbo.png" class="product-image custom-margin1" alt="product">
+                            <img src="images/fruitschaalbo.png" class="product-image custom-margin1" alt="product">
                         </div>
                         <div class="col-md-6">
-                            <h3 class="bo-hoofdkleur">1x Krat (30 stuks)</h3>
-                            <p class="no-bottom-margin"><strong>Let op!</strong></p>
-                            <p>Het aanpassen van de inhoud kan invloed hebben op de prijs en moet daarom een goedkeuring
-                                krijgen van Vitamine Bo.</p>
+                            <h3 class="bo-hoofdkleur">1x Schaal (43 stuks)</h3>
+                            <p class="no-bottom-margin"><strong>Let op!</strong> </p>
+                            <p>Het aanpassen van de inhoud kan invloed hebben op de prijs en moet daarom een goedkeuring krijgen van Vitamine Bo.</p>
                             <div class="personalize-row mb-2">
-                                <p class="personalize-text">Personaliseer hier uw krat:</p>
-                                <p class="totaal-counter">Totaal: <span id="total-counter"> 0 / 30</span></p>
+                                <p class="personalize-text">Personaliseer hier uw schaal:</p>
+                                <p class="totaal-counter">Totaal: <span id="total-counter"> 0 / 43</span></p>
                             </div>
                             <div class="scrollable-container2">
                                 <ul class="custom-ul stripe-top">
@@ -192,10 +191,12 @@
             </div>
             <div class="modal-footer">
                 <div class="d-flex">
-                    <x-buttonicon class="modal-trigger me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <x-buttonicon class="modal-trigger me-2" data-bs-toggle="modal" data-bs-target="#schaalModal">
+                        <i class="fa-close"></i>
                         Annuleren
                     </x-buttonicon>
                     <x-buttonicon class="ml-2" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-plus"></i>
                         Wijziging toevoegen
                     </x-buttonicon>
                 </div>

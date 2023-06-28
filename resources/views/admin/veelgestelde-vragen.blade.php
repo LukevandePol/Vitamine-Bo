@@ -15,6 +15,13 @@
                 <x-input label="Vraag:" name="question" required/>
                 <x-input label="Antwoord:" name="answer" required/>
                 <x-input label="Pagina:" name="page" required/>
+                <label for="page" class="form-label">Pagina:</label>
+                <select class="form-select" name="page" id="page">
+                    <option selected>Selecteer een pagina</option>
+                    @foreach($routes as $route)
+                        <option value="{{ $route['name'] }}">{{ $route['name'] }}</option>
+                    @endforeach
+                </select>
                 <x-submit class="btn btn-primary w-100">Toevoegen</x-submit>
             </form>
         </x-modal>

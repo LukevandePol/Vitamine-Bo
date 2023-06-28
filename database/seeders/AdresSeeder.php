@@ -30,5 +30,9 @@ class AdresSeeder extends Seeder
             'provincienaam' => 'Friesland',
             'voorkeur_type' => 'factuur'
         ]);
+
+        for ($i = 4; $i < 23; $i++) {
+            adres::factory()->create(['user_id' => $i]);
+        }
     }
 }

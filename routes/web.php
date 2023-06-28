@@ -24,10 +24,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/component', function () {
-    return view('components');
-});
-
 Route::get('/', [SessionsController::class, 'index'])->middleware(['auth', 'status']);
 Route::get('/niet-goedgekeurd', function () {
     return view('niet-goedgekeurd');
@@ -59,6 +55,7 @@ Route::group(['middleware' => ['auth']], function () {
     // Bestelling aanpassen
     Route::get('BestellingAanpassen', [BestellingController::class, 'create'])->name('BestellingAanpassen');
     Route::post('/toevoegenAanBestelling', [BestellingInhoudController::class, 'standaardToevoegenAanBestelling']);
+    Route::post('/deleteSelectieUitBestelling', [BestellingInhoudController::class, 'deleteSelectieUitBestelling']);
 
     // Uitloggen
     Route::post('uitloggen', [SessionsController::class, 'destroy']);

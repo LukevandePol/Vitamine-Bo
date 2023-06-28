@@ -9,12 +9,48 @@
 
         <div class="row">
             <div class="col-sm-6">
-                <x-cardstripe
-                    title="Aankomende Levering"
-                    class="bo-hoofdkleur-opacity">
-                    hallo
-                </x-cardstripe>
-                <x-a href="BestellingAanpassen">Bekijk je leveringen</x-a>
+                @if($bestelling !== null)
+                    <x-cardstripe
+                        title="Aankomende Levering"
+                        class="bo-hoofdkleur-opacity">
+                        @foreach($bestelling->selecties as $selectie)
+                            <div class="margin-total-list">
+                                <div class="item-row">
+                                    <h5>1x {{\App\Models\Product::find($selectie->product_id)->naam}}</h5>
+                                </div>
+                            </div>
+                            @if($selectie->products !== null)
+                                <ul class="margin-ul-items">
+                                    @foreach($selectie->products as $product)
+                                        <li>
+                                            <div class="item-name">
+                                                {{$product->naam}}
+                                            </div>
+                                            <div class="item-number-top">
+                                                {{\Illuminate\Support\Facades\DB::table('product_selectie')
+                                                    ->where('product_id', $product->id)
+                                                    ->where('selectie_id', $selectie->id)
+                                                    ->get()[0]->aantal
+                                                }}
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                        @endforeach
+                    </x-cardstripe>
+                @else
+                    <x-cardstripe
+                        title="Nieuwe bestelling"
+                        class="bo-hoofdkleur-opacity"
+                    >
+                        <p>U heeft nog geen bestelling.</p>
+                        <p>
+                            <x-a href="BestellingAanpassen"> Hier om een bestelling te maken</x-a>
+                        </p>
+                    </x-cardstripe>
+                @endif
+                <x-a href="BestellingAanpassen">Bekijk je Bestelling</x-a>
             </div>
 
             <div class="col-sm-6">

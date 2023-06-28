@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let count = parseInt(num.innerText); // Initialize count based on the initial value
 
         plus.addEventListener("click", () => {
-            if (totalCount < 30 && count < 30) {
+            if (totalCount < 43 && count < 43) {
                 count++;
                 num.innerText = count;
                 updateTotal();
@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateTotal() {
         totalCount = Array.from(numSpans).reduce((sum, span) => sum + parseInt(span.innerText), 0);
-        totalCounter.innerText = `${totalCount} / 30`;
+        totalCounter.innerText = `${totalCount} / 43`;
 
-        if (totalCount >= 30) {
+        if (totalCount >= 43) {
             totalCounter.style.color = "red";
         } else {
             totalCounter.style.color = "initial";
