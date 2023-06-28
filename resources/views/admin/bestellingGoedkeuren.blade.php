@@ -19,7 +19,7 @@
                     <td>{{\App\Models\User::find($bestelling->user_id)->name}}</td>
                     <td>{{\App\Models\User::find($bestelling->user_id)->email}}</td>
                     <td>
-                        <x-a href="BestellingBekijken/{{$bestelling->id}}">Bekijk</x-a>
+                        <x-a href="BestellingBekijken/{{$bestelling->id}}" class="mt-0">Bekijk</x-a>
                     </td>
                 </tr>
             @endforeach

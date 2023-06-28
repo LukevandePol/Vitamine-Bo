@@ -78,10 +78,11 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#goedkeurenModal">
                     Goedkeuren
                 </button>
-
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#afkeurenModal">
+                    Afkeuren
+                </button>
             </div>
         </div>
-
     </x-card>
 </x-layout>
 
@@ -123,3 +124,30 @@
     </div>
 </div>
 
+<div class="modal fade" id="afkeurenModal" tabindex="-1" aria-labelledby="bestellingGoedkeuren" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="bestellingGoedkeuren">Goedkeuren</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('bestelling-afkeuren', $aangepasteBestelling[0]->id) }}" method="post">
+                    @csrf
+
+                    <label for="afkeuren">
+                        Reden voor afkeuren
+                    </label>
+                    <textarea name="reden" id="afkeuren"
+                              class="form-control"
+                              cols="10"
+                              rows="8"></textarea>
+
+                    <div class="d-flex flex-row-reverse mt-3">
+                        <x-submit>Afkeuren</x-submit>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
