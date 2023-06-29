@@ -56,6 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('BestellingAanpassen', [BestellingController::class, 'create'])->name('BestellingAanpassen');
     Route::post('/toevoegenAanBestelling', [BestellingInhoudController::class, 'standaardToevoegenAanBestelling']);
     Route::post('/deleteSelectieUitBestelling', [BestellingInhoudController::class, 'deleteSelectieUitBestelling']);
+    Route::post('/speciaalToevoegenAanBestelling', [BestellingInhoudController::class, 'samengesteldeSelectieToevoegenAanBestelling']);
 
     // Uitloggen
     Route::post('uitloggen', [SessionsController::class, 'destroy']);

@@ -36,7 +36,7 @@ class SelectiePopup extends Component
                 'naam' => Product::find($ps->product_id)->naam,
             ];
 
-            $this->inhoud[] = $test;
+            $this->inhoud = $test;
 
         }
 //        dd($this->inhoud);

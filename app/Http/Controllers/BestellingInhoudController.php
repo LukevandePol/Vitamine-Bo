@@ -86,4 +86,23 @@ class BestellingInhoudController extends Controller
             return back()->with('error', 'Kon item niet verwijderen uit bestelling');
         }
     }
+
+    public function samengesteldeSelectieToevoegenAanBestelling()
+    {
+        //attributes aanmaken
+        $attributes = request()->validate([
+            'selectie_id' => ['required']
+        ]);
+
+        $standaardSelectie = Selectie::find($attributes['selectie_id']);
+
+        //nieuwe selectie maken, baseren op product zoals krat
+        $samengesteldeSelectie = Selectie::create([
+            'product_id' => $standaardSelectie->product_id,
+        ]);
+
+        //nieuwe product_selectie maken
+
+
+    }
 }
