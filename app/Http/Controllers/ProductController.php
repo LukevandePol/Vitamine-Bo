@@ -136,11 +136,12 @@ class ProductController extends Controller
                     'naam' => $attributes['naam'],
                     'type' => 'verpakking',
                     'is_zichtbaar' => true,
-                    'is_standaard' => true,
                 ]);
 
                 $selectie = Selectie::create([
-                    'product_id' => $product->id
+                    'product_id' => $product->id,
+                    'is_standaard' => true,
+                    'is_zichtbaar' => true
                 ]);
 
                 return redirect('/admin/productInhoudBewerken/' . $product->id);
