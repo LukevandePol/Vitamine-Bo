@@ -89,59 +89,67 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 text-center d-flex align-items-center">
+            <form action="/speciaalToevoegenAanBestelling" method="post">
+                @csrf
+                <input type="hidden" name="selectie_id" value="{{$selectie->id}}">
+
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
                             <div class="col-md-6 text-center d-flex align-items-center">
-                                <img src="{{$verpakkingsProduct->afbeelding_pad}}"
-                                     class="product-image custom-margin1"
-                                     alt="{{$verpakkingsProduct->naam}}"
-                                >
+                                <div class="col-md-6 text-center d-flex align-items-center">
+                                    <img src="{{$verpakkingsProduct->afbeelding_pad}}"
+                                         class="product-image custom-margin1"
+                                         alt="{{$verpakkingsProduct->naam}}"
+                                    >
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <h3 class="bo-hoofdkleur">1x {{$verpakkingsProduct->naam}}</h3>
-                            <p class="no-bottom-margin"><strong>! Let op !</strong></p>
-                            <p>Het aanpassen van de inhoud kan invloed hebben op de prijs en moet daarom een goedkeuring
-                                krijgen van Vitamine Bo.</p>
-                            {{--                            <div class="personalize-row mb-2">--}}
-                            {{--                                <p class="personalize-text">Personaliseer hier uw schaal:</p>--}}
-                            {{--                                <p class="totaal-counter">Totaal: <span id="total-counter"> 0 / 43</span></p>--}}
-                            {{--                            </div>--}}
+                            <div class="col-md-6">
+                                <h3 class="bo-hoofdkleur">1x {{$verpakkingsProduct->naam}}</h3>
+                                <p class="no-bottom-margin">
+                                    <strong>! Let op !</strong>
+                                </p>
+                                <p>Het aanpassen van de inhoud kan invloed hebben op de prijs en moet daarom een
+                                    goedkeuring
+                                    krijgen van Vitamine Bo.
+                                </p>
+                                {{--                            <div class="personalize-row mb-2">--}}
+                                {{--                                <p class="personalize-text">Personaliseer hier uw schaal:</p>--}}
+                                {{--                                <p class="totaal-counter">Totaal: <span id="total-counter"> 0 / 43</span></p>--}}
+                                {{--                            </div>--}}
 
-                            <div class="scrollable-container2">
-                                <ul class="custom-ul stripe-top">
-                                    @foreach($beschikbaarFruitEnGroenten as $fruitOfGroente)
-                                        <li>
-                                            <span class="list-text">{{$fruitOfGroente->naam}}</span>
-                                            <div class="teller">
-                                                <span class="minus">-</span>
-                                                <span class="num">0</span>
-                                                <span class="plus">+</span>
-                                            </div>
-                                        </li>
-                                    @endforeach
-                                </ul>
+                                <div class="scrollable-container2">
+                                    <ul class="custom-ul stripe-top">
+                                        @foreach($beschikbaarFruitEnGroenten as $fruitOfGroente)
+                                            <li>
+                                                <span class="list-text">{{$fruitOfGroente->naam}}</span>
+                                                <div class="teller">
+                                                    <span class="minus">-</span>
+                                                    <span class="num">0</span>
+                                                    <span class="plus">+</span>
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+
                             </div>
-
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="modal-footer">
-                <div class="d-flex">
-                    <x-buttonicon class="modal-trigger me-2" data-bs-toggle="modal" data-bs-target="#schaalModal">
-                        <i class="fa-close"></i>
-                        Annuleren
-                    </x-buttonicon>
-                    <x-buttonicon class="ml-2" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="fa-plus"></i>
-                        Wijziging toevoegen
-                    </x-buttonicon>
+                <div class="modal-footer">
+                    <div class="d-flex">
+                        {{--                    <x-buttonicon class="modal-trigger me-2" data-bs-toggle="modal" data-bs-target="#schaalModal" icon="fa-close">--}}
+                        {{--                        Annuleren--}}
+                        {{--                    </x-buttonicon>--}}
+                        <x-buttonicon class="ml-2" data-bs-dismiss="modal" aria-label="Close" icon="fa-plus">
+                            Wijziging toevoegen
+                        </x-buttonicon>
+                    </div>
                 </div>
-            </div>
+
+            </form>
 
         </div>
     </div>
