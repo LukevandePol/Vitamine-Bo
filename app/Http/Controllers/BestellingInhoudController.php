@@ -94,9 +94,11 @@ class BestellingInhoudController extends Controller
             'selectie_id' => ['required']
         ]);
 
+        dd($attributes);
+
         $standaardSelectie = Selectie::find($attributes['selectie_id']);
 
-        //nieuwe selectie maken, baseren op product zoals krat
+        //nieuwe selectie maken, baseren op verpakkingsproduct zoals krat
         $samengesteldeSelectie = Selectie::create([
             'product_id' => $standaardSelectie->product_id,
         ]);
