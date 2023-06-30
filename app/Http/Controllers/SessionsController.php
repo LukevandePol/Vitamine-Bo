@@ -6,6 +6,11 @@ use Illuminate\Validation\ValidationException;
 
 class SessionsController extends Controller
 {
+    public function index()
+    {
+        return view('welcome');
+    }
+
     public function create()
     {
         return view('auth.login');
@@ -21,7 +26,11 @@ class SessionsController extends Controller
         if (auth()->attempt($attributes)) {
             session()->regenerate();
 
-            return redirect('/');
+            if (auth()->user()->rol == 'administrator' or auth()->user()->rol == 'bo_medewerker') {
+                return redirect('/admin');
+            } else {
+                return redirect('/dashboard');
+            }
         }
 
         throw ValidationException::withMessages([

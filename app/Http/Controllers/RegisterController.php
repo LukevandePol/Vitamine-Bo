@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Adres;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class RegisterController extends Controller
 {
-    public function create()
+    public function create(): view
     {
         return view('auth.create');
     }
@@ -15,18 +16,37 @@ class RegisterController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'name' => 'required|max:255',
-            'password' => 'required|min:8|max:255',
-            'kvknummer' => 'required|min:8|max:8',
-            'adres' => 'required',
-            'telefoon' => 'required',
-            'postcode' => 'required',
-            'email' => 'required|email|max:255'
+            'name' => ['required', 'max:255'],
+            'password' => ['required', 'min:8', 'max:255'],
+            'email' => ['required', 'email', 'max:255', 'unique:users'],
+            'postcode' => ['required', 'min:6', 'max:7'],
+            'huisnummer' => ['required'],
+            'kvknummer' => ['required', 'min:8', 'max:8'],
+            'telefoon' => ['required'],
         ]);
 
-        $attributes['password'] = bcrypt($attributes['password']);
+        $user = User::create([
+            'name' => $attributes['name'],
+            'password' => bcrypt($attributes['password']),
+            'email' => $attributes['email'],
+            'telefoon' => $attributes['telefoon'],
+            'kvk_nummer' => $attributes['kvknummer'],
+        ]);
 
-        $user = User::create($attributes);
+        $georegisterData = NationaalGeoregisterController::getData($attributes['postcode']);
+
+        Adres::create([
+            'postcode' => $attributes['postcode'],
+            'huisnummer' => $attributes['huisnummer'],
+
+            'weergavenaam' => $georegisterData['weergavenaam'],
+            'straatnaam' => $georegisterData['straatnaam'],
+            'woonplaatsnaam' => $georegisterData['woonplaatsnaam'],
+            'provincienaam' => $georegisterData['provincienaam'],
+
+            'user_id' => $user->id,
+            'voorkeur_type' => 'bezorg'
+        ]);
 
         auth()->login($user);
 

@@ -1,25 +1,29 @@
-<x-layout :title="'- Inloggen'">
-    <main class="w-100">
-        <x-card>
-            <div class="center">
-                <img src="/images/Logo.png" class="logo" alt="Logo">
+<x-guest title="Inloggen">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <img
+                    src="https://images.unsplash.com/photo-1619241638225-14d56e47ae64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80"
+                    width="448" class="rounded shadow" alt="placeholder">
             </div>
-
-            <h1 class="h3 mb-3 fw-normal">Log in</h1>
-
-            <form method="POST" action="/inloggen">
-                @csrf
-
-                <x-input label="E-mailadres:" type="email" name="email" />
-                <x-input label="Wachtwoord:" type="password" name="password" />
-                <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" id="remember" name="remember">
-                    <label class="form-check-label" for="remember">
-                        Onthoud mij
-                    </label>
+            <div class="col-lg-6 my-auto">
+                <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                    <x-logo width="120"/>
+                    <h1 class="mt-5 h2">Inloggen</h1>
                 </div>
-                <x-submit>Inloggen</x-submit>
-            </form>
-        </x-card>
-    </main>
-</x-layout>
+
+                <form method="post" action="/inloggen">
+                    @csrf
+
+                    <x-input label="E-mailadres:" type="email" name="email"/>
+                    <x-input label="Wachtwoord:" type="password" name="password"/>
+
+                    <x-submit class="btn btn-primary w-100" id="submit">Inloggen</x-submit>
+                </form>
+                <div class="d-flex justify-content-center mt-3">
+                    <a href="/registreren">Heeft u nog geen account? Maak er hier een aan.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</x-guest>
